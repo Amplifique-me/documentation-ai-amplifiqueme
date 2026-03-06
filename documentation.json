@@ -101,6 +101,10 @@
             "expandable": false,
             "pages": [
               {
+                "title": "Pesquisas e Respostas",
+                "path": "pesquisas-e-respostas"
+              },
+              {
                 "title": "Create New Project",
                 "path": "help-center/guides/create-new-project"
               }
