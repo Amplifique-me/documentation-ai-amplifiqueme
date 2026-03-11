@@ -50,3 +50,35 @@ window.Amplifiqueme.onLoad = function () {
 
 ---
 
+### **Amplifiqueme.identify**
+
+Este é o método que deve ser chamado para enviar os dados do respondente.
+
+Ele aceita 2 parâmetros um **Objeto** que pode conter os seguintes dados:
+
+| **Campo**       | **Tipo**                         | **Observação**                                                                                                                                                                                      |
+| --------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| email           | String (required)                | Campo que irá identificar o e-mail do respondente, este é um campo obrigatório para pesquisas identificadas                                                                                         |
+| name            | String (optional)                | Campo que irá identificar o nome do respondente, este campo é opcional                                                                                                                              |
+| phone           | String (optional)                | Campo que irá identificar o telefone do respondente, este campo é opcional, e caso seja enviado deve estar na Formatação E.164. Ex: +55DD9XXXXXXXX                                                  |
+| company         | String (optional)                | Campo que irá identificar a empresa do respondente, este campo é opcional.                                                                                                                          |
+| companyDocument | String (optional)                | Campo que irá identificar o CPF/CNPJ da empresa do respondente, este campo é opcional.                                                                                                              |
+| created\_at     | Timestamp miliseconds (optional) | Campo que irá identificar a data de criação do respondente, este campo é opcional. Ele irá realizar o gatilho de **mostrar a primeira pesquisa X dias**. Fornecer o dado em timestamp milisegundos. |
+| custom\_fields  | Objeto (optional)                | Objeto contendo os campos customizados do respondente. Este é um campo opcional. Ex: \{"regiao": "SUL", "tipo": "cliente"}                                                                          |
+
+E uma variável booleano que define se os gatilhos já podem começar a serem executados. Padrão **false**
+
+```javascript wrap="true"
+window.Amplifiqueme.identify(
+  {
+    email: 'example@company.com'
+  },
+  true
+)
+```
+
+Caso deseje que os gatilhos sejam executados em um segundo momento, defina o segundo parâmetro da função a cima como **false**
+
+E no momento que desejar que os gatilhos comecem a serem executados realize a chamada ao seguinte método:
+
+---
