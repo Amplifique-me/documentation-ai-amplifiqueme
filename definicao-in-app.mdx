@@ -27,3 +27,13 @@ Onde está escrito **SEU IDENTIFICADOR DA UNIDADE VAI AQUI** é o local onde ir�
         }
  </script>
 ```
+O Elemento aceita os seguintes parâmetros
+
+| **Parâmetro** | **Tipo**           | **Observação**                                                                                                                                                                                                     |
+| ------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| identifier    | String (required)  | Identificador da unidade da organização.                                                                                                                                                                           |
+| debug         | Boolean (optional) | Caso seja enviado esse parâmetro irá habilitar a impressão de logs  no console do navegador.                                                                                                                       |
+| anonymous     | Boolean (optional) | Caso seja enviado esse parâmetro fará a pesquisa rodar em modo anônimo,  ignorando o método identify. Não recomendamos que seja chamado o método identify() nesse caso.                                            |
+| force         | Boolean (optional) | Caso seja enviado esse parâmetro irá forçar a mostrar uma pesquisa  desde que atinja o gatilho (ela irá ignorar demais regras de elegibilidade e fadigas das pesquisas) Use apenas para testes em desenvolvimento. |
+
+---
