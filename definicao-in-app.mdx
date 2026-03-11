@@ -81,4 +81,30 @@ Caso deseje que os gatilhos sejam executados em um segundo momento, defina o seg
 
 E no momento que desejar que os gatilhos comecem a serem executados realize a chamada ao seguinte método:
 
+### Amplifiqueme.run
+
+Este método deve ser chamado para iniciar a execução dos gatilhos.
+
+```javascript
+window.Amplifiqueme.run()
+```
+
 ---
+
+### Amplifiqueme.clearSession
+
+Este método deve ser chamado em SPA (Single Page Application) em caso de um usuário executar **logout** em seu sistema. Ao chamar o método ***clearSession*** todos os dados de identificação serão eliminados da sessão e a verificação de eligibilidade da pesquisa pararão até que o método ***identify*** seja acionado novamente.
+
+```javascript
+window.Amplifiqueme.clearSession();
+```
+
+---
+
+### Amplifiqueme.showSurvey
+
+Este método deve ser chamado em pesquisas que estão com a configuração de **"Quando a pesquisa deve ser mostrada?"** para **"Ao chamar o método Amplifiqueme.showSurvey()"**. Você deve chamar antes o método ***identifty*** caso deseje que o respondente seja idenficado, e em seguida, chamar o método ***showSurvey*** passando como primeiro e único parâmetro o **ID da Pesquisa**.
+
+```javascript
+window.Amplifiqueme.showSurvey("6984d2eaf8a5c3b2a91702d8") //EXEMPLO do ID: 6984d2eaf8a5c3b2a91702d8
+```
