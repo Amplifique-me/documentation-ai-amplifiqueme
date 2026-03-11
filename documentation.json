@@ -17,31 +17,66 @@
       {
         "tab": "Central de Ajuda",
         "icon": "help-circle",
-        "pages": [
+        "groups": [
           {
-            "title": "Bem-vindo à Amplifique.me",
-            "path": "help-center",
-            "icon": "home"
+            "group": "Como começar",
+            "pages": [
+              {
+                "title": "Bem-vindo à Amplifique.me",
+                "path": "help-center",
+                "icon": "home"
+              },
+              {
+                "title": "Primeiros Passos",
+                "path": "primeiros-passos",
+                "icon": "lucide-rocket"
+              }
+            ]
           },
           {
-            "title": "Primeiros Passos",
-            "path": "primeiros-passos",
-            "icon": "lucide-rocket"
-          },
-          {
-            "title": "Módulo Contatos",
-            "path": "mdulo-contatos",
-            "icon": "person-standing-icon"
-          },
-          {
-            "title": "Reputação Online",
-            "path": "reputao-online",
-            "icon": "lucide-star"
+            "group": "Modulo contatos",
+            "pages": [
+              {
+                "title": "Módulo Contatos",
+                "path": "mdulo-contatos",
+                "icon": "person-standing-icon"
+              }
+            ]
           },
           {
             "group": "FAQs",
             "icon": "help-circle",
             "expandable": false,
+            "pages": []
+          },
+          {
+            "group": "Reputação Online",
+            "pages": [
+              {
+                "title": "Reputação Online",
+                "path": "reputao-online",
+                "icon": "lucide-star"
+              }
+            ]
+          },
+          {
+            "group": "Pesquisas e Respostas",
+            "pages": []
+          },
+          {
+            "group": "Análise e Resultados",
+            "pages": []
+          },
+          {
+            "group": "Amplifique.me Insights",
+            "pages": []
+          },
+          {
+            "group": "Fechamento de loop",
+            "pages": []
+          },
+          {
+            "group": "Configurações",
             "pages": []
           }
         ]
