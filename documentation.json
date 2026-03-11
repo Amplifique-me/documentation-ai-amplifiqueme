@@ -69,6 +69,10 @@
         "icon": "help-circle",
         "pages": [
           {
+            "title": "Teste",
+            "path": "teste"
+          },
+          {
             "title": "Help Center",
             "path": "help-center",
             "icon": "home"
