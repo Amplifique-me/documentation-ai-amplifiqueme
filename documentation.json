@@ -29,6 +29,16 @@
             "icon": "lucide-rocket"
           },
           {
+            "title": "Módulo Contatos",
+            "path": "mdulo-contatos",
+            "icon": "person-standing-icon"
+          },
+          {
+            "title": "Reputação Online",
+            "path": "reputao-online",
+            "icon": "lucide-star"
+          },
+          {
             "group": "FAQs",
             "icon": "help-circle",
             "expandable": false,
