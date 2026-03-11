@@ -1,0 +1,114 @@
+---
+title: Definições do Script do InApp
+---
+No novo InApp cada unidade da sua organização terá um Script único, não necessitando trocar o script para cada pesquisa a ser mostrada.
+
+Abaixo está a base do script.
+
+Onde está escrito **SEU IDENTIFICADOR DA UNIDADE VAI AQUI** é o local onde irá o identificador da sua unidade, que pode ser obtido dentro das **Configurações da Unidade** ou no Passo **4. Canais** no criador de uma pesquisa com o canal **InApp novo** ativado.
+
+```html
+<ampl-survey identifier="SEU IDENTIFICADOR DA UNIDADE VAI AQUI"></ampl-survey>
+<script defer src="https://cdn.amplifique.me/amplifiqueme-inapp-survey.js"></script>
+ <script>
+        window.Amplifiqueme = {};
+        window.Amplifiqueme.onLoad = ()=> {
+          window.Amplifiqueme.identify(
+            {
+              email: 'example@company.com', //Tipo: Email. Campo obrigatório. É o identificador chave do usuário dentro da plataforma
+              // created_at: 1234567890, //Tipo: Timestamp. Opcional. (caso não utilize, remova a declaração ou defina como undefined). Campo de definição da Data de Criação do Usuário em sua Base.
+              // name: 'User Name', //Opcional. Nome do Usuário.
+              // company: 'Nome da Empresa'//Opcional. Para definir o nome da Empresa do usuário.
+              // phone: '+5542999999999'//Tipo: Celular(Formatio E.164). Opcional. Para definir o celular do usuário.
+              // custom_fields:{
+              //   "tipo":"cliente" //substituir com seus campos customizados ou remover. Opcional
+              // }
+            }, true)
+        }
+ </script>
+```
+
+O Elemento aceita os seguintes parâmetros
+
+| **Parâmetro** | **Tipo**           | **Observação**                                                                                                                                                                                                     |
+| ------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| identifier    | String (required)  | Identificador da unidade da organização.                                                                                                                                                                           |
+| debug         | Boolean (optional) | Caso seja enviado esse parâmetro irá habilitar a impressão de logs  no console do navegador.                                                                                                                       |
+| anonymous     | Boolean (optional) | Caso seja enviado esse parâmetro fará a pesquisa rodar em modo anônimo,  ignorando o método identify. Não recomendamos que seja chamado o método identify() nesse caso.                                            |
+| force         | Boolean (optional) | Caso seja enviado esse parâmetro irá forçar a mostrar uma pesquisa  desde que atinja o gatilho (ela irá ignorar demais regras de elegibilidade e fadigas das pesquisas) Use apenas para testes em desenvolvimento. |
+
+---
+
+### **Amplifiqueme.onLoad**
+
+Esta variável aceita como valor uma função a ser chamada para ser executada logo após o script ter sido carregado.
+
+```javascript
+window.Amplifiqueme.onLoad = function () {
+	console.log('Executar isto após carregar o script!');
+}
+```
+
+---
+
+### **Amplifiqueme.identify**
+
+Este é o método que deve ser chamado para enviar os dados do respondente.
+
+Ele aceita 2 parâmetros um **Objeto** que pode conter os seguintes dados:
+
+| **Campo**       | **Tipo**                         | **Observação**                                                                                                                                                                                      |
+| --------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| email           | String (required)                | Campo que irá identificar o e-mail do respondente, este é um campo obrigatório para pesquisas identificadas                                                                                         |
+| name            | String (optional)                | Campo que irá identificar o nome do respondente, este campo é opcional                                                                                                                              |
+| phone           | String (optional)                | Campo que irá identificar o telefone do respondente, este campo é opcional, e caso seja enviado deve estar na Formatação E.164. Ex: +55DD9XXXXXXXX                                                  |
+| company         | String (optional)                | Campo que irá identificar a empresa do respondente, este campo é opcional.                                                                                                                          |
+| companyDocument | String (optional)                | Campo que irá identificar o CPF/CNPJ da empresa do respondente, este campo é opcional.                                                                                                              |
+| created\_at     | Timestamp miliseconds (optional) | Campo que irá identificar a data de criação do respondente, este campo é opcional. Ele irá realizar o gatilho de **mostrar a primeira pesquisa X dias**. Fornecer o dado em timestamp milisegundos. |
+| custom\_fields  | Objeto (optional)                | Objeto contendo os campos customizados do respondente. Este é um campo opcional. Ex: \{"regiao": "SUL", "tipo": "cliente"}                                                                          |
+
+E uma variável booleano que define se os gatilhos já podem começar a serem executados. Padrão **false**
+
+```javascript wrap="true"
+window.Amplifiqueme.identify(
+  {
+    email: 'example@company.com'
+  },
+  true
+)
+```
+
+Caso deseje que os gatilhos sejam executados em um segundo momento, defina o segundo parâmetro da função a cima como **false**
+
+E no momento que desejar que os gatilhos comecem a serem executados realize a chamada ao seguinte método:
+
+---
+
+### Amplifiqueme.run
+
+Este método deve ser chamado para iniciar a execução dos gatilhos.
+
+```javascript
+window.Amplifiqueme.run()
+```
+
+---
+
+### Amplifiqueme.clearSession
+
+Este método deve ser chamado em SPA (Single Page Application) em caso de um usuário executar **logout** em seu sistema. Ao chamar o método ***clearSession*** todos os dados de identificação serão eliminados da sessão e a verificação de eligibilidade da pesquisa pararão até que o método ***identify*** seja acionado novamente.
+
+```javascript
+window.Amplifiqueme.clearSession()
+```
+
+---
+
+### Amplifiqueme.showSurvey
+
+Este método deve ser chamado em pesquisas que estão com a configuração de **"Quando a pesquisa deve ser mostrada?"** para **"Ao chamar o método Amplifiqueme.showSurvey()"**. Você deve chamar antes o método ***identifty*** caso deseje que o respondente seja idenficado, e em seguida, chamar o método ***showSurvey*** passando como primeiro e único parâmetro o **ID da Pesquisa**.
+
+```javascript
+window.Amplifiqueme.showSurvey("6984d2eaf8a5c3b2a91702d8") //EXEMPLO do ID: 6984d2eaf8a5c3b2a91702d8 
+```
+
