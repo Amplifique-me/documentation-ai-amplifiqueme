@@ -45,12 +45,19 @@
         "tab": "API",
         "pages": [
           {
+            "title": "Listar Solicitações de Pesquisa",
+            "path": "listar-solicitaes-de-pesquisa",
+            "openapi": "api-reference/openapi.yaml POST /partners/cf/requests",
+            "openapi-mode": "auto",
+            "method": "POST"
+          },
+          {
             "title": "API",
             "path": "api"
           },
           {
-            "title": "Enviar Pesquisa",
-            "path": "enviar-pesquisa",
+            "title": "Listar Respostas de Pesquisas",
+            "path": "listar-respostas-de-pesquisas",
             "openapi": "api-reference/openapi.yaml POST /partners/cf/answers",
             "openapi-mode": "auto",
             "method": "POST"
