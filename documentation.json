@@ -27,38 +27,7 @@
             "group": "FAQs",
             "icon": "help-circle",
             "expandable": false,
-            "pages": [
-              {
-                "title": "Getting Started FAQ",
-                "path": "help-center/faq/getting-started"
-              }
-            ]
-          },
-          {
-            "group": "Primeiros Passos",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Cannot Upload File",
-                "path": "help-center/troubleshooting/cannot-upload-file"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Pesquisas e Respostas",
-                "path": "pesquisas-e-respostas"
-              },
-              {
-                "title": "Create New Project",
-                "path": "help-center/guides/create-new-project"
-              }
-            ]
+            "pages": []
           },
           {
             "group": "Primeiros Passos",
