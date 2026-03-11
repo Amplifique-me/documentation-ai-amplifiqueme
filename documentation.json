@@ -42,6 +42,11 @@
         ]
       },
       {
+        "tab": "API",
+        "pages": [],
+        "icon": "code"
+      },
+      {
         "tab": "Changelog",
         "icon": "clock",
         "pages": [
@@ -51,11 +56,6 @@
             "icon": "history"
           }
         ]
-      },
-      {
-        "tab": "API",
-        "pages": [],
-        "icon": "code"
       }
     ]
   }
