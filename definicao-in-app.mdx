@@ -37,3 +37,16 @@ O Elemento aceita os seguintes parâmetros
 | force         | Boolean (optional) | Caso seja enviado esse parâmetro irá forçar a mostrar uma pesquisa  desde que atinja o gatilho (ela irá ignorar demais regras de elegibilidade e fadigas das pesquisas) Use apenas para testes em desenvolvimento. |
 
 ---
+
+### **Amplifiqueme.onLoad**
+
+Esta variável aceita como valor uma função a ser chamada para ser executada logo após o script ter sido carregado.
+
+```javascript
+window.Amplifiqueme.onLoad = function () {
+	console.log('Executar isto após carregar o script!');
+}
+```
+
+---
+
