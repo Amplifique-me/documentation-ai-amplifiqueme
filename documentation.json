@@ -2,12 +2,12 @@
   "name": "Amplifique.me",
   "colors": {
     "light": {
-      "brand": "#ffca00",
+      "brand": "#5885f7",
       "heading": "undefined",
       "text": "undefined"
     },
     "dark": {
-      "brand": "#ffca00",
+      "brand": "#c2d3ff",
       "heading": "undefined",
       "text": "undefined"
     }
