@@ -43,7 +43,15 @@
       },
       {
         "tab": "API",
-        "pages": [],
+        "pages": [
+          {
+            "title": "Enviar Pesquisa",
+            "path": "enviar-pesquisa",
+            "openapi": "api-reference/openapi.yaml POST /partners/cf",
+            "openapi-mode": "auto",
+            "method": "POST"
+          }
+        ],
         "icon": "code"
       },
       {
