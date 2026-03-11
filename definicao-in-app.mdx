@@ -5,3 +5,25 @@ No novo InApp cada unidade da sua organização terá um Script único, não nec
 
 Abaixo está a base do script.
 
+Onde está escrito **SEU IDENTIFICADOR DA UNIDADE VAI AQUI** é o local onde irá o identificador da sua unidade, que pode ser obtido dentro das **Configurações da Unidade** ou no Passo **4. Canais** no criador de uma pesquisa com o canal **InApp novo** ativado.
+
+```html
+<ampl-survey identifier="SEU IDENTIFICADOR DA UNIDADE VAI AQUI"></ampl-survey>
+<script defer src="https://cdn.amplifique.me/amplifiqueme-inapp-survey.js"></script>
+ <script>
+        window.Amplifiqueme = {};
+        window.Amplifiqueme.onLoad = ()=> {
+          window.Amplifiqueme.identify(
+            {
+              email: 'example@company.com', //Tipo: Email. Campo obrigatório. É o identificador chave do usuário dentro da plataforma
+              // created_at: 1234567890, //Tipo: Timestamp. Opcional. (caso não utilize, remova a declaração ou defina como undefined). Campo de definição da Data de Criação do Usuário em sua Base.
+              // name: 'User Name', //Opcional. Nome do Usuário.
+              // company: 'Nome da Empresa'//Opcional. Para definir o nome da Empresa do usuário.
+              // phone: '+5542999999999'//Tipo: Celular(Formatio E.164). Opcional. Para definir o celular do usuário.
+              // custom_fields:{
+              //   "tipo":"cliente" //substituir com seus campos customizados ou remover. Opcional
+              // }
+            }, true)
+        }
+ </script>
+```
