@@ -1,309 +1,265 @@
 ---
-title: Primeiros passos na Amplifique.me
+title: "Guia completo de início"
+description: "Do cadastro ao primeiro resultado em menos de 30 minutos. Configure sua conta, importe contatos, crie e envie sua primeira pesquisa, leia os resultados e ative o Fechamento de Loop."
 ---
-<Iframe uid="3ea9fefe-101b-4b25-a5f4-a74193792737" src="https://www.loom.com/embed/bfede4b0ca22423d82c1feaf9e375a1f" title="Embedded content" width="560" height="315" allow-full-screen="true" frame-border="0" loading="lazy" style="width: 560px; height: auto; cursor: pointer; margin: 0 auto;" />
 
-## 1. Primeros Pasos
+## Visão geral
 
-### Conectar tus Bancos
+Este guia cobre as 6 etapas essenciais para começar a usar a Amplifique.me. Siga na ordem — cada etapa prepara a próxima.
 
-<Steps>
-  <Step title="Accede a Bancos" title-type="p">
-    Dirígete a la sección [Bancos](/banktrack/bancos/como-conectar-un-banco) en
-    el menú lateral.
-  </Step>
+<Columns cols={3}>
+  <Card title="1. Configure sua conta" icon="settings" href="#1-configure-sua-conta" />
+  <Card title="2. Importe seus contatos" icon="users" href="#2-importe-seus-contatos" />
+  <Card title="3. Crie sua primeira pesquisa" icon="file-text" href="#3-crie-sua-primeira-pesquisa" />
+  <Card title="4. Envie a pesquisa" icon="send" href="#4-envie-a-pesquisa" />
+  <Card title="5. Leia os resultados" icon="bar-chart-2" href="#5-leia-os-primeiros-resultados" />
+  <Card title="6. Ative Fechamento de Loop" icon="refresh-cw" href="#6-ative-o-fechamento-de-loop" />
+</Columns>
 
-  Haz clic en "Añadir Banco".
+<Callout kind="info">
+  **Permissão necessária:** Proprietário ou Administrador para todas as etapas abaixo.
+</Callout>
 
-  <Step title="Selecciona tu banco" title-type="p">
-    Selecciona tu banco en el buscador. Puedes filtrar por país usando el
-    desplegable a la izquierda del buscador.
-  </Step>
+---
 
-  <Step title="Elige el tipo de conexión" title-type="p">
-    Elige el tipo de conexión (Open Banking PSD2 o Acceso Directo). - **Acceso
-    Directo**: Permite acceder a más productos pero puede ser menos estable.
-    Además, incluye el saldo asociado a cada transacción. - **Open Banking
-    PSD2**: Conexión más estable pero limitada a cuentas corrientes.
-  </Step>
+## 1. Configure sua conta
 
-  <Step title="Completa la vinculación" title-type="p">
-    Sigue las instrucciones en pantalla para completar la vinculación. Es
-    posible que se requiera verificación adicional (código OTP, notificación en
-    app, etc.).
-  </Step>
-</Steps>
-
-### Sincronización Histórica
+Antes de enviar qualquer pesquisa, defina as informações básicas da empresa. Elas aparecem no rodapé dos e-mails enviados aos seus clientes.
 
 <Steps>
-  <Step title="Realiza la sincronización histórica" title-type="p">
-    Una vez conectado el banco, realiza la [sincronización
-    histórica](/banktrack/bancos/sincronizacion-bancaria).
-  </Step>
 
-  <Step title="Busca el botón" title-type="p">
-    Ve a la sección "Bancos" y busca el botón "Sincronización histórica".
-  </Step>
+<Step title="Acesse as Configurações">
+  No menu lateral esquerdo, clique em `⚙️ Configurações` → `Conta`.
+</Step>
 
-  <Step title="Sigue las instrucciones" title-type="p">
-    Haz clic y sigue las instrucciones. Este proceso puede requerir pasos de
-    seguridad adicionales.
-  </Step>
+<Step title="Preencha os dados da empresa">
+  Informe o nome da empresa, fuso horário e faça o upload do logotipo.
 
-  <Step title="Recupera el historial" title-type="p">
-    La sincronización histórica recuperará el máximo historial disponible según
-    las condiciones del banco.
-  </Step>
+  <Callout kind="tip">
+    Use um logotipo com fundo transparente (PNG) para melhor resultado nos e-mails disparados.
+  </Callout>
+</Step>
+
+<Step title="Convide sua equipe (opcional)">
+  Em `Configurações → Usuários`, adicione colegas que precisam ter acesso ao painel. Defina o perfil de cada um: **Admin**, **Visualizador** ou **Atendente**.
+</Step>
+
+<Step title="Salve as configurações">
+  Clique em `Salvar` no canto superior direito da tela.
+
+  <Callout kind="success">
+    Conta configurada. Você pode voltar aqui a qualquer momento para editar as informações.
+  </Callout>
+</Step>
+
 </Steps>
 
-### Personalizar Cuentas
+---
+
+## 2. Importe seus contatos
+
+Importe toda a sua base de uma vez via planilha CSV ou adicione contatos individualmente. A importação em massa é recomendada para bases com mais de 10 contatos.
+
+<Callout kind="info">
+  **Limite por arquivo:** 5.000 linhas. Para bases maiores, divida em múltiplos arquivos e importe em sequência. **Formato obrigatório:** CSV UTF-8 (delimitado por vírgulas).
+</Callout>
 
 <Steps>
-  <Step title="Accede a Ajustes" title-type="p">
-    En la sección "Bancos", pulsa en "Ajustes" de cada cuenta.
-  </Step>
 
-  <Step title="Personaliza nombres" title-type="p">
-    Cambia el nombre de las cuentas y productos para adaptarlos a tus
-    preferencias.
-  </Step>
+<Step title="Acesse Contatos → Importar">
+  No menu lateral, clique em `👤 Contatos`. Depois clique no botão `Importar` no canto superior direito.
+</Step>
 
-  <Step title="Configura el saldo" title-type="p">
-    Selecciona el saldo que deseas visualizar en cada producto.
-  </Step>
+<Step title="Baixe e preencha o modelo">
+  Clique em `Baixar modelo CSV UTF-8`. Abra no Excel ou Google Sheets e preencha a partir da linha 2. Campo obrigatório: e-mail **ou** telefone.
 
-  <Step title="Oculta productos" title-type="p">
-    Oculta productos si lo deseas marcando la casilla correspondiente.
-  </Step>
+  <Callout kind="tip">
+    Não renomeie as colunas do modelo. Campos customizados configurados em `Configurações → Campos Customizados` aparecem automaticamente como colunas disponíveis.
+  </Callout>
+</Step>
+
+<Step title="Faça o upload e aplique etiquetas">
+  Arraste o arquivo para a área indicada ou clique em `Selecionar arquivo`. Antes de confirmar, aplique etiquetas para facilitar a segmentação no disparo — ex: `Cliente prime` ou `Lead evento`.
+</Step>
+
+<Step title="Confirme e acompanhe">
+  Clique em `Iniciar importação`. Os contatos ficam disponíveis imediatamente após o processamento.
+
+  <Callout kind="alert">
+    Se aparecer o status **"Importação com erros"**, baixe o relatório de erros na tela de resultado, corrija as linhas indicadas e reimporte apenas esse arquivo corrigido.
+  </Callout>
+</Step>
+
 </Steps>
 
-## 2. Organizar Transacciones
+<ExpandableGroup>
 
-### Buscador de Transacciones
+<Expandable title="O que acontece se um contato já existir na base?">
+  O sistema **atualiza os dados** do contato existente — não duplica. Campos em branco no arquivo não sobrescrevem dados já cadastrados.
+</Expandable>
 
-Accede al [Buscador](/banktrack/transacciones/buscador-de-transacciones) de transacciones desde el menú lateral izquierdo. Utiliza los filtros disponibles para buscar transacciones específicas:
+<Expandable title="Posso importar campos customizados na planilha?">
+  Sim! Campos criados em `Configurações → Campos Customizados` aparecem automaticamente como colunas disponíveis no modelo CSV. Basta preencher normalmente.
+</Expandable>
 
-- Tipo (cobros/pagos)
+</ExpandableGroup>
 
-- Fecha
+---
 
-- Etiquetas
+## 3. Crie sua primeira pesquisa
 
-- Banco
-
-- Producto financiero
-
-- Importe
-
-- Otros filtros avanzados (con/sin factura, ignoradas, etc.)
-
-Realiza acciones como [categorizar](/banktrack/etiquetas/como-categorizar-transacciones-automaticamente), modificar conceptos, o [ignorar](/banktrack/transacciones/como-ignorar-una-transaccion) transacciones directamente desde los resultados.
-
-### Crear Etiquetas y Categorías
+Escolha o tipo de pesquisa adequado ao seu objetivo. O NPS é o ponto de partida mais comum para quem está começando.
 
 <Steps>
-  <Step title="Accede a Etiquetas" title-type="p">
-    Ve a la sección
-    [Etiquetas](/banktrack/etiquetas/como-crear-una-categoria-personalizada) en
-    el menú lateral.
-  </Step>
 
-  <Step title="Crea taxonomías" title-type="p">
-    Crea una o varias taxonomías (ej. Categorías, Proyectos, Ubicaciones).
-  </Step>
+<Step title="Acesse Pesquisas → Nova pesquisa">
+  No menu lateral, clique em `📋 Pesquisas` → botão `+ Nova pesquisa`.
+</Step>
 
-  <Step title="Añade categorías" title-type="p">
-    Haz clic en "Añadir categoría" para crear categorías principales.
-  </Step>
+<Step title="Escolha o tipo">
+  Selecione entre **NPS**, **CSAT**, **CES** ou pesquisa customizada.
 
-  <Step title="Añade subcategorías" title-type="p">
-    Utiliza el botón "+" junto a cada categoría para añadir subcategorías.
-  </Step>
+  <Callout kind="tip">
+    Recomendamos começar com **NPS** — pergunta "De 0 a 10, qual a probabilidade de você recomendar?" e gera dados comparáveis com benchmarks de mercado.
+  </Callout>
+</Step>
 
-  <Step title="Personaliza" title-type="p">
-    Asigna colores e iconos a tus categorías para una mejor visualización.
-  </Step>
+<Step title="Personalize o conteúdo">
+  Edite o texto da pergunta principal, as etiquetas de resposta e a mensagem de agradecimento. Adicione a pergunta de follow-up para coletar feedback qualitativo junto com a nota.
+</Step>
+
+<Step title="Configure a identidade visual">
+  Aplique as cores e o logotipo da sua empresa. Clique em `Prévia` para ver como o cliente vai visualizar antes de publicar.
+</Step>
+
+<Step title="Salve a pesquisa">
+  Clique em `Salvar`. A pesquisa fica em rascunho — o disparo acontece na próxima etapa.
+
+  <Callout kind="success">
+    Pesquisa criada e salva. Pronto para configurar o envio.
+  </Callout>
+</Step>
+
 </Steps>
 
-### Reglas Automáticas
+---
+
+## 4. Envie a pesquisa
+
+Escolha o canal de disparo e selecione os contatos que vão receber. Você pode enviar para toda a base ou para um segmento usando etiquetas.
 
 <Steps>
-  <Step title="Accede a Reglas" title-type="p">
-    Accede a [Reglas
-    Automáticas](/banktrack/reglas-automaticas/crear-automatizaciones) en el
-    menú lateral.
-  </Step>
 
-  Haz clic en "Añadir regla".
+<Step title="Abra a pesquisa e clique em Disparar">
+  Na lista de pesquisas, clique na que você acabou de criar → botão `Disparar`.
+</Step>
 
-  <Step title="Define el trigger" title-type="p">
-    Define el trigger (cuándo se ejecuta): Por descripción, tipo de transacción,
-    importe, o regla personalizada.
-  </Step>
+<Step title="Selecione os contatos">
+  Filtre por etiqueta, importação recente ou selecione contatos individualmente.
 
-  <Step title="Configura la acción" title-type="p">
-    Configura la acción: Categorizar, modificar descripción, o ignorar
-    transacción.
-  </Step>
+  <Callout kind="tip">
+    Para o primeiro envio, use um grupo pequeno (10–50 contatos) para validar o fluxo antes de escalar para toda a base.
+  </Callout>
+</Step>
 
-  <Step title="Selecciona productos" title-type="p">
-    Selecciona los productos bancarios a los que se aplicará la regla.
-  </Step>
+<Step title="Escolha o canal">
+  Selecione **E-mail**, **WhatsApp** ou **Link direto**.
 
-  <Step title="Guarda la regla" title-type="p">
-    Dale un nombre a la regla y guárdala. Opcionalmente, aplica la regla al
-    histórico de transacciones.
-  </Step>
+  <Callout kind="alert">
+    E-mail não requer configuração extra. WhatsApp requer a integração com **WhatsApp Oficial** ativa. Contatos sem o dado correspondente ao canal escolhido serão ignorados no disparo.
+  </Callout>
+</Step>
+
+<Step title="Confirme o disparo">
+  Revise o resumo (quantidade de contatos, canal, pesquisa selecionada) e clique em `Confirmar disparo`.
+
+  <Callout kind="success">
+    Pesquisa disparada! As primeiras respostas costumam chegar em minutos para WhatsApp e em horas para e-mail.
+  </Callout>
+</Step>
+
 </Steps>
 
-## 3. Visualizar Información
+---
 
-### Dashboards
+## 5. Leia os primeiros resultados
+
+Assim que as respostas chegarem, o painel atualiza automaticamente. Veja onde encontrar cada métrica.
 
 <Steps>
-  <Step title="Accede a Dashboard" title-type="p">
-    Ve a la sección
-    [Dashboard](/banktrack/paneles-financieros/dashboards-y-paneles-personalizados)
-    en el menú lateral.
-  </Step>
 
-  <Step title="Crea un dashboard" title-type="p">
-    Haz clic en "Crear nuevo dashboard" o usa una plantilla predefinida.
-  </Step>
+<Step title="Acesse o Dashboard">
+  No menu lateral, clique em `📊 Dashboard`. Você verá o NPS consolidado, a distribuição de promotores/neutros/detratores e as respostas em tempo real.
+</Step>
 
-  <Step title="Añade bloques" title-type="p">
-    Añade bloques haciendo clic en "Añadir bloque": Gráficos, Listas, KPIs,
-    Tablas.
-  </Step>
+<Step title="Entenda o NPS">
+  NPS = % Promotores (notas 9–10) − % Detratores (notas 0–6). Varia de −100 a +100.
 
-  <Step title="Configura bloques" title-type="p">
-    Configura cada bloque según tus necesidades: período de tiempo, categorías,
-    tipo de datos.
-  </Step>
+  <Callout kind="info">
+    Resultados com menos de 30 respostas têm baixa confiabilidade estatística. Use os primeiros disparos para validar o processo antes de interpretar tendências.
+  </Callout>
+</Step>
 
-  <Step title="Organiza" title-type="p">
-    Organiza los bloques arrastrándolos a la posición deseada.
-  </Step>
+<Step title="Leia os comentários">
+  Em `Pesquisas → Respostas`, filtre por nota para ler o que os detratores estão dizendo. Esses são os contatos prioritários para o Fechamento de Loop.
+</Step>
+
 </Steps>
 
-### Informes
+<ExpandableGroup>
+
+<Expandable title="Como exportar os resultados?">
+  Em `Dashboard` → botão `Exportar` no canto superior direito. Você pode exportar em CSV ou PDF.
+</Expandable>
+
+<Expandable title="Os dados atualizam em tempo real?">
+  Sim. Cada nova resposta atualiza o painel automaticamente, sem precisar recarregar a página.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## 6. Ative o Fechamento de Loop
+
+Configure respostas automáticas para detratores e passivos. Isso demonstra ao cliente que a empresa recebeu o feedback — aumenta a confiança e reduz o churn.
 
 <Steps>
-  <Step title="Accede a Informes" title-type="p">
-    Accede a [Informes](/banktrack/informes/crear-informes-personalizados) en el
-    menú lateral.
-  </Step>
 
-  Haz clic en "Añadir informe".
+<Step title="Acesse Fechamento de Loop">
+  No menu lateral, clique em `🔄 Fechamento de Loop`.
+</Step>
 
-  <Step title="Configura el informe" title-type="p">
-    Configura: nombre, periodicidad, hora de recepción, productos bancarios,
-    canales de envío.
-  </Step>
+<Step title="Crie uma regra para detratores">
+  Clique em `+ Nova regra`. Selecione o gatilho: **Nota de 0 a 6**. Defina a ação: enviar e-mail automático agradecendo e informando que a equipe entrará em contato.
 
-  <Step title="Selecciona bloques" title-type="p">
-    Selecciona los bloques de información a incluir.
-  </Step>
+  <Callout kind="tip">
+    Personalize a mensagem com o nome do cliente usando a variável `{nome}`. Respostas personalizadas têm taxa de abertura significativamente maior.
+  </Callout>
+</Step>
 
-  <Step title="Guarda y activa" title-type="p">
-    Personaliza el formato y guarda el informe.
-  </Step>
+<Step title="Ative a regra">
+  Clique em `Salvar e ativar`. A partir de agora, todo detrator recebe a resposta automática imediatamente após enviar a avaliação.
+
+  <Callout kind="success">
+    Jornada concluída! Você tem pesquisa rodando, resultados sendo coletados e Fechamento de Loop ativo.
+  </Callout>
+</Step>
+
 </Steps>
 
-### Alertas
+---
 
-<Steps>
-  <Step title="Accede a Alertas" title-type="p">
-    Ve a la sección [Alertas](/banktrack/alertas/crear-una-alerta-personalizada)
-    en el menú lateral.
-  </Step>
+## O que explorar agora
 
-  Haz clic en "Añadir alerta".
-
-  <Step title="Define el tipo" title-type="p">
-    Define el tipo de alerta: Por transacción e importe, cargo duplicado, saldo,
-    o personalizada.
-  </Step>
-
-  <Step title="Configura detalles" title-type="p">
-    Configura los detalles de la alerta y selecciona los productos financieros.
-  </Step>
-
-  <Step title="Elige canales" title-type="p">
-    Elige los canales de notificación, dale un nombre y guárdala.
-  </Step>
-</Steps>
-
-## 4. Gestión de Facturas
-
-### Subir y Conciliar Facturas
-
-<Steps>
-  <Step title="Accede a Facturas" title-type="p">
-    Accede a la sección [Facturas](/banktrack/facturas/conciliar-facturas).
-  </Step>
-
-  <Step title="Sube facturas" title-type="p">
-    Sube facturas o [envíalas a tu
-    cuenta](/banktrack/facturas/enviar-facturas-a-banktrack) de Banktrack: -
-    **Manualmente**: Haz clic en "Subir factura" y selecciona el archivo. -
-    **Por email**: Envía la factura a tu dirección personalizada de Banktrack. -
-    **Por WhatsApp/Telegram**: Envía la factura al número/bot configurado.
-  </Step>
-
-  <Step title="Valida información" title-type="p">
-    Valida la información escaneada automáticamente.
-  </Step>
-
-  <Step title="Concilia" title-type="p">
-    Haz clic en "Transacciones", busca y selecciona el movimiento bancario
-    correspondiente, y confirma la conciliación.
-  </Step>
-</Steps>
-
-## 5. Previsiones y Presupuestos
-
-### Crear Previsiones
-
-<Steps>
-  <Step title="Accede a Previsiones" title-type="p">
-    Ve a la sección
-    [Previsiones](/banktrack/previsiones/como-hacer-una-prevision-a-futuro) en
-    el menú lateral.
-  </Step>
-
-  Haz clic en "Crear previsión".
-
-  <Step title="Configura filtros" title-type="p">
-    Configura los filtros en la parte superior derecha (productos, categorías).
-  </Step>
-
-  <Step title="Añade valores" title-type="p">
-    Haz clic en una celda para añadir valores: valor fijo, fórmula basada en
-    datos históricos, o recurrencia.
-  </Step>
-</Steps>
-
-### Configurar Recurrencias
-
-<Steps>
-  <Step title="Accede a Contactos" title-type="p">
-    Accede a la sección
-    [Contactos](/banktrack/previsiones/como-crear-operaciones).
-  </Step>
-
-  <Step title="Selecciona contacto" title-type="p">
-    Selecciona un contacto y ve a "Operaciones Recurrentes".
-  </Step>
-
-  Haz clic en "Añadir recurrencia".
-
-  <Step title="Configura detalles" title-type="p">
-    Configura: tipo de operación, descripción, importe, etiqueta, fecha de
-    inicio, frecuencia y fecha de finalización (opcional).
-  </Step>
-
-  Guarda la recurrencia.
-</Steps>
-
+<Columns cols={3}>
+  <Card title="Insights com IA" icon="cpu" href="/insights-ia" cta="Explorar">
+    Deixe a IA categorizar automaticamente os comentários e identificar padrões nos feedbacks.
+  </Card>
+  <Card title="Reputação Online" icon="star" href="/reputacao-online" cta="Explorar">
+    Peça avaliações no Google e outros canais a partir das respostas de promotores.
+  </Card>
+  <Card title="Integrações e API" icon="plug" href="/integracoes-e-api" cta="Explorar">
+    Dispare pesquisas automaticamente a partir de eventos no seu CRM ou ERP.
+  </Card>
+</Columns>
