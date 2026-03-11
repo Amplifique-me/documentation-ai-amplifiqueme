@@ -24,8 +24,9 @@
             "icon": "home"
           },
           {
-            "group": "Primeiros Passos",
-            "pages": []
+            "title": "Primeiros Passos",
+            "path": "primeiros-passos",
+            "icon": "lucide-rocket"
           },
           {
             "group": "FAQs",
