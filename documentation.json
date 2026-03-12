@@ -106,6 +106,22 @@
             "group": "Análise e Resultados",
             "pages": [
               {
+                "title": "Como usar aba detalhamento?",
+                "path": "como-usar-aba-detalhamento"
+              },
+              {
+                "title": "Como criar um grupo de pesquisas?",
+                "path": "como-criar-um-grupo-de-pesquisas"
+              },
+              {
+                "title": "Como criar um grupo de perguntas?",
+                "path": "como-criar-um-grupo-de-perguntas"
+              },
+              {
+                "title": "Como analisar resultados?",
+                "path": "como-analisar-resultados"
+              },
+              {
                 "title": "Páineis e detalhamento",
                 "path": "pineis-e-detalhamento"
               }

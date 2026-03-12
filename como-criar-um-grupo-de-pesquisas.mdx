@@ -1,0 +1,80 @@
+---
+title: "Como criar um grupo de pesquisas?"
+description: "Junte pesquisas com a mesma estrutura para analisá-las em conjunto como um único painel consolidado. Entenda as regras de compatibilidade e as restrições de edição."
+---
+
+## Visão geral
+
+O **Grupo de Pesquisas** permite reunir pesquisas com estrutura idêntica e analisá-las em conjunto — como se fossem uma única pesquisa consolidada. É útil quando você roda a mesma pesquisa em períodos, unidades ou equipes diferentes e quer comparar ou somar os resultados.
+
+<Callout kind="info">
+  Não confundir com **Grupo de Perguntas**, que soma perguntas dentro de uma mesma pesquisa. O Grupo de Pesquisas agrupa pesquisas diferentes que tenham a mesma estrutura.
+</Callout>
+
+---
+
+## Regras de compatibilidade
+
+Para que duas ou mais pesquisas possam ser agrupadas, todas precisam ter **exatamente** a mesma estrutura:
+
+- As mesmas perguntas
+- Na mesma ordem
+- Com as mesmas métricas e tipos de pergunta (NPS, CSAT, matriz etc.)
+- Com os mesmos **Identificadores de Pergunta**
+- Com as mesmas configurações de opções (única escolha, múltipla escolha, colunas, linhas, escala Likert)
+
+<Callout kind="tip">
+  O **texto** das perguntas pode ser diferente entre as pesquisas do grupo. O que precisa ser idêntico é a estrutura — tipo, ordem e identificadores.
+</Callout>
+
+<Callout kind="alert">
+  Se qualquer pergunta de uma pesquisa não seguir todas as regras acima, **não será possível adicionar essa pesquisa ao grupo**. Verifique os identificadores de pergunta antes de tentar agrupar.
+</Callout>
+
+---
+
+## Restrições após entrar em um grupo
+
+Quando uma pesquisa passa a fazer parte de um grupo, sua estrutura fica bloqueada para edição. Você **pode** alterar:
+
+- Condicionais e texto das perguntas
+- Opções de visualização: escala colorida, obrigatoriedade, permissão de pulo
+
+Você **não pode** alterar:
+
+- Tipo de pergunta ou métrica
+- Ordem das perguntas
+- Identificadores de pergunta
+- Configurações de opções, colunas, linhas ou escala
+
+<Callout kind="danger">
+  Para editar a estrutura de uma pesquisa que está em um grupo, é necessário **removê-la de todos os grupos** primeiro, fazer as alterações e só então readicioná-la. Lembre-se de que todas as pesquisas do grupo precisarão estar com a mesma estrutura após a edição.
+</Callout>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Uma pesquisa pode participar de mais de um grupo ao mesmo tempo?">
+  Não. Uma pesquisa só pode pertencer a um grupo por vez. Para incluí-la em outro grupo, é necessário removê-la do grupo atual primeiro.
+</Expandable>
+
+<Expandable title="O que são os Identificadores de Pergunta?">
+  São rótulos únicos que identificam cada pergunta dentro da estrutura da pesquisa. Duas pesquisas só podem ser agrupadas se os identificadores das perguntas correspondentes forem idênticos. Você encontra e edita os identificadores nas configurações de cada pergunta ao editar a pesquisa.
+</Expandable>
+
+<Expandable title="Remover uma pesquisa do grupo apaga os dados históricos do grupo?">
+  Não. Os dados coletados enquanto a pesquisa fazia parte do grupo são preservados. A remoção afeta apenas análises futuras.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como criar um grupo de perguntas?" icon="list" href="/analise-e-resultados/grupo-de-perguntas" cta="Ver artigo">
+  Some perguntas de métricas iguais dentro de uma pesquisa para analisá-las como um único indicador consolidado.
+</Card>
