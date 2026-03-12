@@ -120,10 +120,6 @@
               {
                 "title": "Como analisar resultados?",
                 "path": "como-analisar-resultados"
-              },
-              {
-                "title": "Páineis e detalhamento",
-                "path": "pineis-e-detalhamento"
               }
             ]
           },
@@ -140,7 +136,23 @@
             "group": "Fechamento de loop",
             "pages": [
               {
-                "title": "Criar fluxo ",
+                "title": "Como configurar níveis de acesso no Fechamento de Loop?",
+                "path": "como-configurar-nveis-de-acesso-no-fechamento-de-loop"
+              },
+              {
+                "title": "Como automatizar a criação de tickets?",
+                "path": "como-automatizar-a-criao-de-tickets"
+              },
+              {
+                "title": "Como criar e gerenciar tickets manuais?",
+                "path": "como-criar-e-gerenciar-tickets-manuais"
+              },
+              {
+                "title": "Como criar e configurar um fluxo?",
+                "path": "como-criar-e-configurar-um-fluxo"
+              },
+              {
+                "title": "O que é o Fechamento de Loop?",
                 "path": "criar-fluxo"
               }
             ]

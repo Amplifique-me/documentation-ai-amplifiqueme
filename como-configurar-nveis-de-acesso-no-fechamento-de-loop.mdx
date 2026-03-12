@@ -1,0 +1,110 @@
+---
+title: "Como configurar níveis de acesso no Fechamento de Loop?"
+description: "Defina as permissões de cada usuário no módulo Fechamento de Loop — Administrador, Analista ou Agente — e adicione membros aos fluxos corretos para controlar quem vê e opera cada ticket."
+---
+
+## Visão geral
+
+O Fechamento de Loop tem um sistema de permissões em dois níveis: o **nível na plataforma** (que define o que o usuário pode fazer no módulo) e o **acesso ao fluxo** (que define quais fluxos o usuário consegue visualizar e operar).
+
+<Callout kind="alert">
+  Se o usuário não tiver nenhum nível atribuído no Fechamento de Loop, **ele não conseguirá ver nenhum fluxo, ticket ou tratativa** — mesmo que seja administrador da plataforma.
+</Callout>
+
+---
+
+## Níveis de permissão
+
+| Nível | O que pode fazer |
+|---|---|
+| **Administrador** | Acesso completo: criar, editar e excluir fluxos; visualizar e operar todos os tickets do módulo |
+| **Analista** | Analisar dados do módulo; criar, editar e excluir tickets nos fluxos em que foi incluído por um Administrador |
+| **Agente** | Criar, operar e editar apenas os tickets em que é o responsável ou seguidor. Precisa ter acesso explícito ao fluxo |
+
+---
+
+## Como definir o nível de acesso de um usuário
+
+<Steps>
+
+<Step title="Acesse Configurações → Usuários">
+  No menu lateral da plataforma, vá em `Configurações → Usuários`. Selecione o usuário que deseja configurar ou clique em **Convidar usuário** para adicionar um novo membro.
+</Step>
+
+<Step title="Defina o nível no Fechamento de Loop">
+  Localize o campo **Nível do Fechamento de Loop** e selecione: Administrador, Analista ou Agente.
+
+  <Callout kind="tip">
+    Se a opção Fechamento de Loop não aparecer para você ao tentar criar um fluxo, peça ao **Proprietário da conta** que ative a permissão de Administrador para o seu usuário em `Configurações → Usuários`.
+  </Callout>
+</Step>
+
+<Step title="Salve as alterações">
+  Clique em **Salvar**. As permissões entram em vigor imediatamente.
+
+  <Callout kind="success">
+    Permissão definida! O usuário já pode acessar o módulo com o nível configurado.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Como adicionar um usuário a um fluxo específico
+
+Ter o nível de acesso não é suficiente para Agentes — eles também precisam ser adicionados a cada fluxo em que irão operar.
+
+<Steps>
+
+<Step title="Acesse o fluxo desejado">
+  No módulo Fechamento de Loop, localize o fluxo e clique nos três pontos (`⋯`) → **Editar fluxo**.
+</Step>
+
+<Step title="Adicione o usuário à lista de membros">
+  No campo **Usuários com acesso**, selecione o usuário desejado e clique em **Salvar**.
+
+  <Callout kind="alert">
+    Apenas usuários com nível **Agente, Analista ou Administrador** podem ser adicionados a um fluxo. Usuários sem nível atribuído não aparecem na lista.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Diagnóstico de problemas comuns
+
+| Problema | Causa provável | Solução |
+|---|---|---|
+| Usuário não vê o módulo Fechamento de Loop | Sem nível atribuído | Definir nível em `Configurações → Usuários` |
+| Fluxo não aparece para o Agente | Usuário não foi adicionado ao fluxo | Editar fluxo e adicionar o usuário |
+| Usuário não consegue editar a estrutura do fluxo | Nível é Analista ou Agente | Elevar para Administrador se necessário |
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Um usuário pode ter níveis diferentes em fluxos diferentes?">
+  O nível é definido por usuário na plataforma, não por fluxo. O que varia por fluxo é se ele tem **acesso** ou não. Um Agente tem acesso apenas aos tickets dos fluxos em que foi incluído.
+</Expandable>
+
+<Expandable title="O Analista pode criar fluxos?">
+  Não. Criação, edição e exclusão de fluxos são exclusivas do Administrador. O Analista pode criar e gerenciar tickets dentro dos fluxos em que foi incluído.
+</Expandable>
+
+<Expandable title="Posso remover um usuário de um fluxo sem alterar seu nível de acesso?">
+  Sim. Edite o fluxo e remova o usuário da lista de membros. O nível de acesso dele na plataforma permanece inalterado, mas ele deixará de ver aquele fluxo específico.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como criar e configurar um fluxo?" icon="git-branch" href="/fechamento-de-loop/como-criar-fluxo" cta="Ver artigo">
+  Com as permissões definidas, crie o primeiro fluxo com fases, checklists e responsável padrão.
+</Card>
