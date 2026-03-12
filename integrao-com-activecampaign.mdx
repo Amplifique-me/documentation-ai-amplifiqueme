@@ -1,0 +1,75 @@
+---
+title: "Integração com ActiveCampaign"
+description: "Dispare pesquisas automaticamente a partir de gatilhos nas automações do ActiveCampaign via webhook. Ideal para enviar NPS, CSAT ou CES em momentos-chave da jornada do lead."
+---
+
+## Visão geral
+
+A integração entre o **ActiveCampaign** e a Amplifique.me permite disparar pesquisas automaticamente quando um lead atinge um gatilho definido nas automações do ActiveCampaign — por e-mail, SMS ou WhatsApp.
+
+**Exemplos de gatilho:** lead movido de etapa, abertura de e-mail, conclusão de sequência, tag aplicada.
+
+---
+
+## Dados integrados
+
+| Campo | Origem no ActiveCampaign |
+|---|---|
+| Nome | Primeiro nome + último nome do Contato |
+| E-mail | E-mail do Contato |
+| Telefone | Telefone do Contato |
+| Campos customizados | Todos os campos customizados do contato |
+
+---
+
+## Como configurar
+
+<Steps>
+
+<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
+  Crie a pesquisa que deseja enviar e ative o canal (E-mail, SMS ou WhatsApp) em **Configurações da pesquisa → Canais**.
+</Step>
+
+<Step title="Gere um token de API na Amplifique.me">
+  Acesse o menu **`⋯` → Integrações → API** e crie um token. Sugestão de nome:
+
+  `ActiveCampaign - [Gatilho] - [Pesquisa]`
+
+  Ex: `ActiveCampaign - Novo Lead - Pesquisa CSAT`
+
+  Selecione a pesquisa e o canal desejado. Configure atraso se necessário.
+</Step>
+
+<Step title="Configure o webhook no ActiveCampaign">
+  No ActiveCampaign, acesse:
+
+  **Automação → Condições e Fluxos** → escolha o gatilho → **Webhooks → URL**
+
+  No campo URL, insira:
+
+  ```
+  https://integration.services.amplifique.me/activeCampaign/cf/webhook?access_token=Bearer+SEU_TOKEN
+  ```
+
+  <Callout kind="tip">
+    Substitua `SEU_TOKEN` pelo token gerado na etapa anterior. O token fica disponível após salvar a configuração na plataforma.
+  </Callout>
+</Step>
+
+<Step title="Teste a integração">
+  Faça um contato de teste atingir os critérios do gatilho e verifique se a pesquisa foi disparada corretamente.
+
+  <Callout kind="success">
+    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me. Se não aparecer em alguns minutos, revise a URL do webhook no ActiveCampaign.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Veja como criar e gerenciar tokens de API para cada integração.
+</Card>

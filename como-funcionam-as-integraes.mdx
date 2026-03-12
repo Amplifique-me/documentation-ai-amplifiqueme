@@ -1,0 +1,101 @@
+---
+title: "Como funcionam as integrações?"
+description: "Entenda como configurar integrações na Amplifique.me para disparar pesquisas automaticamente a partir de gatilhos externos de CRMs, ERPs e outras ferramentas via webhook ou API."
+---
+
+## Visão geral
+
+As integrações da Amplifique.me permitem que pesquisas sejam **disparadas automaticamente** a partir de gatilhos em sistemas externos — sem necessidade de envio manual. Quando um evento ocorre no sistema parceiro (mudança de etapa em um CRM, fechamento de ticket, checkout de hóspede), a pesquisa é enviada automaticamente para o contato correspondente.
+
+<Callout kind="info">
+  Apenas usuários com perfil de **Proprietário ou Administrador** conseguem acessar o menu de integrações. Se essa opção não aparecer no seu perfil, consulte o responsável técnico da conta.
+</Callout>
+
+---
+
+## Como acessar
+
+No menu lateral, clique nos **três pontos (`⋯`)** → **Integrações**.
+
+Nessa área você encontra:
+- Lista de integrações disponíveis na plataforma
+- Acesso à documentação da API e Webhooks
+- Gerenciamento de tokens de integração criados
+
+---
+
+## Como funciona o disparo automático
+
+Todas as integrações seguem o mesmo padrão: um **token de API** é gerado na Amplifique.me e configurado como webhook no sistema parceiro. Quando o gatilho é acionado no sistema parceiro, ele envia os dados do contato para a URL do token, e a Amplifique.me dispara a pesquisa configurada.
+
+**Passos gerais:**
+1. Crie a pesquisa na Amplifique.me e ative o canal desejado (E-mail, SMS ou WhatsApp)
+2. Gere um token de API em **Integrações → API**, vinculando-o à pesquisa e canal
+3. Configure o webhook no sistema parceiro com a URL gerada
+4. Teste o gatilho com um contato de teste antes de ativar para a base
+
+<Callout kind="alert">
+  O envio automático via integração **exige envolvimento técnico**. Conte com o apoio da sua equipe de desenvolvimento para configurar e testar os gatilhos.
+</Callout>
+
+---
+
+## Exemplos de gatilhos comuns
+
+| Situação | Gatilho |
+|---|---|
+| Lead movido de etapa no CRM | Mudança de estágio no pipeline |
+| Ticket de suporte encerrado | Fechamento de ticket |
+| Compra concluída no ERP | Pedido faturado |
+| Checkout de hóspede no PMS | Saída registrada no sistema hoteleiro |
+| Candidato aprovado no RH | Mudança de fase no ATS |
+
+---
+
+## Integrações disponíveis
+
+Integrações nativas com configuração guiada na plataforma:
+
+**CRM e Vendas:** ActiveCampaign, RD Station Marketing, PipeRun, Pipedrive, Construtor de Vendas
+
+**Suporte e CS:** Movidesk, Zendesk, Customer X
+
+**RH e Recrutamento:** Gupy.io
+
+**Hotelaria e Turismo:** Simples Hotel, Bitz Hotel, PMS TDF (Tô de Férias), Desbravador
+
+**ERP:** Tiny ERP
+
+**Customizadas:** Qualquer sistema via API ou Webhook genérico
+
+<Callout kind="tip">
+  Integrações personalizadas com sistemas não listados são possíveis mediante análise e orçamento. Entre em contato com a equipe da Amplifique.me para avaliar o seu caso.
+</Callout>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Posso configurar mais de uma pesquisa para o mesmo sistema?">
+  Sim. Crie um token de API separado para cada pesquisa e gatilho. Por exemplo: um token para pesquisa de CSAT pós-atendimento e outro para NPS pós-onboarding, ambos disparados a partir do mesmo CRM em etapas diferentes.
+</Expandable>
+
+<Expandable title="É possível agendar o envio com um atraso após o gatilho?">
+  Sim. Ao criar o token de API, você pode configurar um **atraso em minutos ou horas** antes do envio, ou agendar para um horário específico do dia.
+</Expandable>
+
+<Expandable title="O que acontece se a integração falhar?">
+  Erros na requisição ficam registrados no painel de tokens da plataforma. Acesse **Integrações → API → Ver integrações → Ir ao painel** e clique no ícone de olho ao lado do token para ver os erros de cada requisição.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Aprenda a criar tokens de API vinculados a pesquisas específicas para configurar integrações e webhooks.
+</Card>

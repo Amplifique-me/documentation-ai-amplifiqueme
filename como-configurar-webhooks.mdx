@@ -1,0 +1,176 @@
+---
+title: "Como configurar Webhooks?"
+description: "Webhooks permitem que a Amplifique.me notifique seu sistema automaticamente quando uma resposta de pesquisa é recebida. Veja os eventos disponíveis, o payload completo e como configurar o endpoint receptor."
+---
+
+## Visão geral
+
+Os **Webhooks** da Amplifique.me funcionam na direção inversa das integrações: ao invés de sistemas externos enviarem dados para a Amplifique.me, **a Amplifique.me envia dados para o seu sistema** quando um evento ocorre dentro da plataforma.
+
+Use Webhooks para:
+- Registrar respostas de pesquisa no seu CRM ou ERP em tempo real
+- Disparar automações internas quando um Detrator responde
+- Alimentar dashboards e ferramentas de BI com dados de CX ao vivo
+
+---
+
+## Eventos disponíveis
+
+| Evento | Quando é disparado |
+|---|---|
+| `cf_response` | Nova resposta de pesquisa de experiência do cliente recebida |
+
+---
+
+## Payload do evento `cf_response`
+
+```json
+{
+  "event": {
+    "event_type": "cf_response",
+    "customer": {
+      "name": "Nome do Respondente",
+      "email": "email@respondente.com",
+      "phone": "Telefone do Respondente",
+      "custom_fields": {
+        "cpf": "Campo Customizado CPF"
+      },
+      "_business": "ID_DA_CONTA"
+    },
+    "cf_response": {
+      "responses": [
+        {
+          "answer": "10",
+          "question": "Em uma escala de 0 a 10, qual é a probabilidade de você recomendar a Empresa para um amigo?",
+          "type": "nps",
+          "internal_name": "nps_1"
+        },
+        {
+          "answer": "7",
+          "question": "A empresa facilitou a resolução do meu problema?",
+          "type": "ces",
+          "internal_name": "ces_3"
+        },
+        {
+          "answer": "4",
+          "question": "O quão satisfeito você está com o serviço prestado?",
+          "type": "csat",
+          "internal_name": "csat_2"
+        },
+        {
+          "answer": "Opção 1",
+          "question": "Texto da pergunta",
+          "type": "unique",
+          "internal_name": "unique_4"
+        },
+        {
+          "answer": "Opção 1,Opção 2",
+          "question": "Texto da pergunta",
+          "type": "multiple",
+          "internal_name": "multiple_5"
+        },
+        {
+          "answer": "texto livre",
+          "question": "Texto da pergunta",
+          "type": "text",
+          "internal_name": "text_6"
+        },
+        {
+          "answer": "Opção 1",
+          "question": "Texto da pergunta",
+          "type": "select",
+          "internal_name": "select_7"
+        }
+      ],
+      "channel": "Link",
+      "origin": "Link1",
+      "created_at": "2021-09-16T17:48:50.035Z",
+      "sent_at": "2021-09-16T17:48:50.033Z",
+      "opened_at": "2021-09-16T17:48:50.667Z",
+      "finalized_at": "2021-09-16T17:49:07.410Z",
+      "_survey": "ID_DA_PESQUISA"
+    }
+  }
+}
+```
+
+---
+
+## Tipos de pergunta no payload
+
+| `type` | Tipo de pergunta |
+|---|---|
+| `nps` | Net Promoter Score (0–10) |
+| `csat` | Customer Satisfaction Score |
+| `ces` | Customer Effort Score |
+| `text` | Pergunta aberta de texto |
+| `unique` | Escolha única |
+| `multiple` | Múltipla escolha |
+| `select` | Lista suspensa |
+
+---
+
+## Campos de data/hora
+
+| Campo | Descrição |
+|---|---|
+| `created_at` | Quando a solicitação foi criada |
+| `sent_at` | Quando a pesquisa foi enviada ao respondente |
+| `opened_at` | Quando o respondente abriu a pesquisa |
+| `finalized_at` | Quando a resposta foi finalizada |
+
+---
+
+## Como configurar
+
+<Steps>
+
+<Step title="Prepare seu endpoint receptor">
+  Crie um endpoint na sua aplicação que aceite requisições `POST` com body em JSON. O endpoint deve retornar `HTTP 200` para confirmar o recebimento.
+</Step>
+
+<Step title="Acesse Configurações → Webhooks na plataforma">
+  No menu lateral, vá em **Configurações** → **Webhooks** e adicione a URL do seu endpoint.
+</Step>
+
+<Step title="Selecione os eventos e salve">
+  Selecione o evento `cf_response` e salve. A Amplifique.me começará a notificar seu endpoint a cada nova resposta recebida.
+</Step>
+
+<Step title="Teste com uma resposta real">
+  Envie uma resposta de teste para a pesquisa configurada e verifique se seu endpoint recebeu o payload corretamente.
+
+  <Callout kind="tip">
+    Use ferramentas como [webhook.site](https://webhook.site) ou [RequestBin](https://requestbin.com) para inspecionar o payload recebido durante o desenvolvimento.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Webhooks são disparados para respostas parciais (não finalizadas)?">
+  Não. O evento `cf_response` é disparado apenas quando a resposta é **finalizada** — quando o respondente conclui e envia a pesquisa. Respostas parciais ou interrompidas não geram webhook.
+</Expandable>
+
+<Expandable title="Há retry automático se meu endpoint retornar erro?">
+  Sim. A Amplifique.me realiza tentativas de reenvio em caso de falha. Para detalhes sobre a política de retry, consulte a documentação da API em [amplifiqueme.readme.io](https://amplifiqueme.readme.io/).
+</Expandable>
+
+<Expandable title="Posso filtrar webhooks por pesquisa específica?">
+  Consulte as opções disponíveis nas configurações de Webhook dentro da plataforma ou na documentação da API para verificar as opções de filtragem disponíveis na sua versão.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Documentação da API Amplifique.me" icon="code" href="/integracoes/api" cta="Ver documentação">
+  Acesse a referência completa de endpoints para integrações programáticas avançadas.
+</Card>

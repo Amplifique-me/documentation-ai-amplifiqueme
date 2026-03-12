@@ -1,0 +1,85 @@
+---
+title: "Integração com Pipedrive"
+description: "Dispare pesquisas automaticamente quando uma negociação mudar de estágio no Pipedrive. Configure via webhook (v1 ou v2) com dados do contato e da negociação passados automaticamente."
+---
+
+## Visão geral
+
+A integração entre o **Pipedrive** e a Amplifique.me permite disparar pesquisas automaticamente quando uma negociação é movida para um estágio específico de um Pipeline — por e-mail, SMS ou WhatsApp.
+
+---
+
+## Dados integrados
+
+| Campo | Origem no Pipedrive |
+|---|---|
+| Nome | Nome da pessoa associada à negociação |
+| E-mail | E-mail da pessoa associada à negociação |
+| Telefone | Telefone da pessoa associada à negociação |
+| Empresa | Nome da empresa associada à negociação |
+| `owner_name` | Nome do responsável pela negociação |
+| `deal_title` | Nome da negociação |
+| `user_id` | ID do responsável por mover a negociação |
+| `deal_id` | ID da negociação |
+
+---
+
+## Como configurar
+
+<Steps>
+
+<Step title="Copie seu token de API pessoal no Pipedrive">
+  No Pipedrive, acesse **Preferências pessoais → API** e copie o **Token de API Pessoal**.
+</Step>
+
+<Step title="Acesse Integrações → Pipedrive na Amplifique.me">
+  No menu lateral, vá em **`⋯` → Integrações → Pipedrive**.
+
+  Cole o **Token de API Pessoal** do Pipedrive no campo **Chave de API do Pipedrive**.
+</Step>
+
+<Step title="Crie ou selecione um token de integração">
+  Selecione um token de integração existente ou crie um novo vinculando a pesquisa que deseja enviar.
+</Step>
+
+<Step title="Selecione o estágio de disparo">
+  Escolha o estágio do Pipedrive que acionará o envio da pesquisa. Quando uma negociação chegar a esse estágio, a pesquisa será disparada.
+</Step>
+
+<Step title="Copie a URL do Ponto de Extremidade gerada">
+  A URL estará disponível no último campo da configuração na Amplifique.me.
+</Step>
+
+<Step title="Crie o webhook no Pipedrive">
+  No Pipedrive, acesse **Configurações da Empresa → Ferramentas e Aplicativos → Webhooks**.
+
+  Escolha uma das versões de webhook disponíveis:
+
+  **Webhooks v1:**
+  - Ação do Evento: `Updated`
+  - Objeto do Evento: `Deal`
+  - URL: URL copiada da Amplifique.me
+
+  **Webhooks v2:**
+  - Ação do Evento: `Changed`
+  - Objeto do Evento: `Deal`
+  - URL: URL copiada da Amplifique.me
+</Step>
+
+<Step title="Teste o gatilho">
+  Mova uma negociação para o estágio configurado e verifique se a pesquisa foi disparada.
+
+  <Callout kind="success">
+    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Veja como criar e gerenciar tokens de API para cada integração.
+</Card>

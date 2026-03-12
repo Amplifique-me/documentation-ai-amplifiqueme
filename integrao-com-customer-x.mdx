@@ -1,0 +1,76 @@
+---
+title: "Integração com Customer X"
+description: "Dispare pesquisas automaticamente a partir de mudanças de etapa nas jornadas CSM do Customer X. Envie NPS ou CSAT em momentos-chave do ciclo de vida do cliente."
+---
+
+## Visão geral
+
+A integração entre o **Customer X** e a Amplifique.me permite disparar pesquisas automaticamente quando um cliente avança ou muda de etapa em uma jornada CSM — por e-mail, SMS ou WhatsApp.
+
+**Exemplo de gatilho:** conclusão do onboarding, renovação de contrato, churn em risco.
+
+<Callout kind="info">
+  O único evento compatível com a integração Amplifique.me no Customer X é o **Jornada CSM**.
+</Callout>
+
+---
+
+## Dados integrados
+
+| Campo | Origem no Customer X |
+|---|---|
+| Nome | Primeiro nome + último nome do contato |
+| E-mail | E-mail do contato |
+| Telefone | Telefone do contato |
+
+---
+
+## Como configurar
+
+<Steps>
+
+<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
+  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
+</Step>
+
+<Step title="Acesse Integrações → Customer X na Amplifique.me">
+  No menu lateral, vá em **`⋯` → Integrações → Customer X**.
+
+  Selecione o evento **Jornada CSM** (único compatível).
+</Step>
+
+<Step title="Gere um token de API e configure os filtros">
+  Crie um token para a pesquisa desejada. Sugestão de nome:
+
+  `Customer X - [Gatilho] - [Pesquisa]`
+
+  Ex: `Customer X - Fim do Onboarding - Pesquisa CSAT`
+
+  Opcionalmente, adicione filtro por **tag** ou **jornada específica** para segmentar o disparo.
+</Step>
+
+<Step title="Copie a URL do webhook gerada">
+  Clique em **Gerar URL do Webhook**. A URL estará disponível para configuração no próximo passo.
+</Step>
+
+<Step title="Configure o webhook no Customer X">
+  No Customer X, crie um webhook inserindo a URL gerada na etapa anterior.
+</Step>
+
+<Step title="Teste o gatilho">
+  Faça um cliente atingir os critérios definidos e verifique se a pesquisa foi disparada.
+
+  <Callout kind="success">
+    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Veja como criar e gerenciar tokens de API para cada integração.
+</Card>

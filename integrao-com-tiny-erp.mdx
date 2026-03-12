@@ -1,0 +1,64 @@
+---
+title: "Integração com Tiny ERP"
+description: "Dispare pesquisas automaticamente quando um pedido for faturado no Tiny ERP. Meça a satisfação pós-compra por e-mail, SMS ou WhatsApp."
+---
+
+## Visão geral
+
+A integração entre o **Tiny ERP** e a Amplifique.me permite disparar pesquisas automaticamente quando um pedido tiver uma atualização ou inclusão com a situação **Faturado** — por e-mail, SMS ou WhatsApp.
+
+---
+
+## Dados integrados
+
+| Campo | Origem no Tiny ERP |
+|---|---|
+| Nome | Primeiro nome + último nome do contato |
+| E-mail | E-mail do contato |
+| Telefone | Telefone do contato |
+
+---
+
+## Como configurar
+
+<Steps>
+
+<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
+  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
+</Step>
+
+<Step title="Acesse Integrações → Tiny na Amplifique.me">
+  No menu lateral, vá em **`⋯` → Integrações → Tiny**.
+
+  Crie um token de API. Sugestão de nome:
+
+  `Tiny - Novo Pedido - Pesquisa CSAT`
+</Step>
+
+<Step title="Insira a chave de API do Tiny na Amplifique.me">
+  No Tiny ERP, localize o **Token (Chave) de API** e insira no campo **Chave de API** na configuração de integração da Amplifique.me.
+
+  Após salvar, a **URL do Ponto de Extremidade** será exibida.
+</Step>
+
+<Step title="Configure o webhook no Tiny ERP">
+  No painel do Tiny ERP, acesse os **Webhooks** e configure a URL do Ponto de Extremidade gerada na etapa anterior.
+</Step>
+
+<Step title="Teste o gatilho">
+  Faça um pedido ser faturado e verifique se a pesquisa foi disparada.
+
+  <Callout kind="success">
+    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
+  </Callout>
+</Step>
+
+</Steps>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Veja como criar e gerenciar tokens de API para cada integração.
+</Card>

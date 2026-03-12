@@ -1,0 +1,48 @@
+---
+title: "Documentação da API Amplifique.me"
+description: "Acesse a documentação completa da API REST da Amplifique.me para envio de pesquisas, gerenciamento de contatos e integrações programáticas com qualquer sistema."
+---
+
+## Visão geral
+
+A Amplifique.me disponibiliza uma **API REST** completa para integração programática com qualquer sistema — ERPs, CRMs, plataformas customizadas ou qualquer outra aplicação que precise disparar pesquisas ou gerenciar dados sem passar pela interface da plataforma.
+
+---
+
+## Acesso à documentação
+
+A documentação completa e interativa da API está disponível em:
+
+<Card title="API Reference — Amplifique.me" icon="book-open" href="https://amplifiqueme.readme.io/" cta="Acessar documentação">
+  Documentação completa com referência de endpoints, exemplos de requisição e ambiente de teste interativo.
+</Card>
+
+---
+
+## Acesso pela plataforma
+
+Você também pode acessar a documentação diretamente pelo menu da plataforma:
+
+No menu lateral, clique nos **três pontos (`⋯`)** → **Integrações** → botão **Ver Integração** ao lado de qualquer integração listada.
+
+---
+
+## Como autenticar
+
+Todas as requisições à API utilizam um **token de API** gerado dentro da plataforma em **Integrações → API**. O token é passado como parâmetro na URL no formato:
+
+```
+?access_token=Bearer+SEU_TOKEN_AQUI
+```
+
+<Callout kind="alert">
+  Trate o token como uma senha. Não o exponha em repositórios públicos, logs ou URLs acessíveis publicamente.
+</Callout>
+
+---
+
+## Próximo passo
+
+<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
+  Aprenda a criar tokens de API vinculados a pesquisas específicas para uso nas requisições.
+</Card>

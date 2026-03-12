@@ -1,0 +1,142 @@
+---
+title: "Implementação técnica de pesquisas In-App"
+description: "Guia técnico para implementar pesquisas In-App 2.0 em aplicações web, frameworks híbridos e apps nativos. Inclui parâmetros de configuração, exemplo de script e comportamento de solicitações."
+---
+
+## Visão geral
+
+A funcionalidade **In-App** exibe pesquisas como pop-up diretamente dentro da sua plataforma web ou mobile, sem redirecionar o usuário para uma página externa. A implementação varia conforme o tipo de aplicação.
+
+- **Documentação da API (sistemas legados e In-App v1.0):** [amplifiqueme.docs.apiary.io](https://amplifiqueme.docs.apiary.io/)
+- **Documentação completa (In-App 2.0):** [amplifiqueme.readme.io](https://amplifiqueme.readme.io/reference/definicao-in-app-novo)
+
+---
+
+## Formas de integração
+
+### 1. Aplicações web (recomendado)
+
+Use a **biblioteca JS** da Amplifique.me. O script é gerado dentro da plataforma (Passo 4 do construtor de pesquisas → canal In-App) e inserido uma única vez no HTML da sua aplicação.
+
+**Vantagens:**
+- Todas as regras de elegibilidade e exibição são gerenciadas na plataforma, sem necessidade de múltiplas implementações por pesquisa
+- Cada unidade de negócio recebe um único `identifier`
+- Novos scripts não precisam ser gerados a cada nova pesquisa
+
+**Exemplo de implementação:**
+
+```javascript
+(() => {
+  return new Promise((resolve, reject) => {
+    const tag = document.createElement("ampl-survey");
+    tag.identifier = 'SEU_IDENTIFICADOR_AQUI';
+    tag.debug = true;
+    tag.force = false;
+    tag.anonymous = false;
+    document.body.appendChild(tag);
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://cdn.amplifique.me/amplifiqueme-inapp-survey.js";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    window["Amplifiqueme"] = {};
+    window["Amplifiqueme"].onLoad = () => {
+      console.log('!LOADED');
+      if (window["Amplifiqueme"]?.loaded) {
+        window["Amplifiqueme"].identify({
+          name: 'Nome do Usuário',
+          email: 'email@exemplo.com',
+          custom_fields: {
+            versao: '1.0',
+            nivel: 'administrador'
+          }
+        }, true);
+      }
+      return resolve(true);
+    };
+  });
+})();
+```
+
+### 2. Frameworks híbridos (Xamarin, Ionic etc.)
+
+Se o app aceitar importação de bibliotecas JS e tiver acesso ao DOM, a implementação é igual à web — use a mesma biblioteca JS e documentação acima.
+
+### 3. Apps nativos ou desktop (sem acesso ao DOM)
+
+Use a **API de In-App para sistemas legados** (v1.0). Documentação: [amplifiqueme.docs.apiary.io](https://amplifiqueme.docs.apiary.io/)
+
+<Callout kind="alert">
+  A versão 1.0 (legado) tem **limitações significativas**:
+  - Apenas 1 pergunta de métrica + 1 pergunta de texto
+  - Condicionais de "mostrar pergunta" não funcionam
+  - Condicionais de agradecimento não funcionam
+  - Automações que realizam ações na tela do usuário não funcionam
+  - Customizações de escala (carinhas, cores, emojis) não são configuráveis pela plataforma
+
+  Para todas as funcionalidades completas, use a biblioteca JS com WebView.
+</Callout>
+
+---
+
+## Funcionamento do In-App
+
+A exibição segue uma lógica de solicitação contínua, respeitando as regras de elegibilidade configuradas em cada pesquisa:
+
+1. Toda vez que o script é carregado, a plataforma verifica se o usuário atende às regras de exibição (tags, URL, campos customizados)
+2. Se elegível e sem solicitação ativa: cria uma nova solicitação
+3. Se já existe solicitação ativa: a mesma é reaproveitada até o usuário responder ou rejeitar
+4. Se o usuário clicou no "X" (rejeitar): inicia o contador de "reperguntar após rejeição"
+5. Se o usuário respondeu parcialmente e saiu: o sistema tenta complementar a cada 12h durante o prazo de "solicitar finalização durante"
+6. Quando o prazo expira: a solicitação é marcada como expirada, a resposta fica como incompleta, e o usuário entra no intervalo de fadiga
+
+---
+
+## Parâmetros de configuração
+
+| Parâmetro | O que define |
+|---|---|
+| **Mostrar pela primeira vez em** | Dias após o `created_at` do usuário para exibir a pesquisa pela primeira vez. Se `created_at` não for enviado, conta a partir do primeiro acesso após instalação |
+| **Intervalo para pesquisar novamente** | Período mínimo (dias) entre uma pesquisa e outra após resposta ou expiração |
+| **Solicitar finalização durante** | Quantos dias o sistema tenta reexibir uma pesquisa iniciada e não concluída (tentativas a cada 12h) |
+| **Quando rejeitada, perguntar novamente em** | Dias para reexibir após o usuário clicar no "X" |
+| **Amostragem** | Percentual diário de usuários elegíveis que receberão a pesquisa naquele dia |
+
+**Exemplo de amostragem:** configurada a 50% → de 100 usuários elegíveis, aproximadamente 50 verão a pesquisa naquele dia. A precisão aumenta conforme o volume diário de acessos.
+
+---
+
+## Sincronização de dados
+
+- Novos usuários que carregam o script são criados automaticamente na Amplifique.me (identificados por e-mail ou telefone)
+- Campos customizados são atualizados em **tempo real** sempre que o script é carregado com novos dados
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Preciso criar um novo script para cada pesquisa In-App?">
+  Não. O script é implementado uma única vez por unidade de negócio. As regras de qual pesquisa aparece para qual usuário são gerenciadas diretamente nas configurações de cada pesquisa dentro da plataforma.
+</Expandable>
+
+<Expandable title="Como exibir pesquisas diferentes para usuários em idiomas diferentes?">
+  Crie uma pesquisa separada para cada idioma e use um campo customizado (ex: `idioma` com valores `PT`, `EN`, `ES`). Configure na plataforma para que cada pesquisa seja exibida apenas para o idioma correspondente, passando o campo no script de identificação.
+</Expandable>
+
+<Expandable title="O In-App 2.0 funciona com WebView em apps nativos?">
+  Sim. Se o app utilizar WebView, tanto a versão 1.0 quanto a 2.0 funcionam. O WebView permite acesso ao DOM, viabilizando o uso da biblioteca JS completa.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como personalizar links com parâmetros?" icon="link" href="/integracoes/parametros-link" cta="Ver artigo">
+  Passe dados de identificação e campos customizados diretamente na URL da pesquisa para pesquisas via Link ou QR Code.
+</Card>
