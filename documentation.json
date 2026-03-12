@@ -238,5 +238,6 @@
   },
   "ai": {
     "page-actions": []
-  }
+  },
+  "initialRoute": ""
 }
