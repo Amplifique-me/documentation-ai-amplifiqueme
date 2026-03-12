@@ -1,0 +1,111 @@
+---
+title: "Como funcionam os créditos de IA?"
+description: "Entenda como os créditos de IA são consumidos por recurso, como acompanhar o saldo, o que acontece quando acabam e como solicitar análise de respostas pendentes."
+---
+
+## Visão geral
+
+Os **créditos de IA** são a moeda de consumo dos recursos de inteligência artificial da Amplifique.me. Cada ação que envolve processamento de IA consome uma quantidade específica de créditos, que são renovados mensalmente conforme o plano contratado.
+
+<Callout kind="info">
+  Créditos não utilizados **expiram ao final do mês** e não são acumulados para o ciclo seguinte. O saldo é renovado no início de cada mês.
+</Callout>
+
+---
+
+## Quanto cada recurso consome
+
+| Recurso de IA | Consumo por uso |
+|---|---|
+| **Análise por IA (categorização)** | 1 crédito por resposta analisada |
+| **Fechamento de Loop — Gerar Resposta** | 1 crédito por resposta gerada |
+| **Resumos com IA** | 1 crédito por resposta resumida |
+
+<Callout kind="tip">
+  Se uma pesquisa tiver **mais de uma pergunta de texto**, o consumo ainda é de **1 crédito por resposta** — não por pergunta de texto. Uma resposta com 3 campos de texto abertos consome apenas 1 crédito.
+</Callout>
+
+---
+
+## Regras importantes sobre os créditos
+
+**Créditos são globais da organização**
+O saldo é compartilhado por toda a conta — não é possível distribuir ou limitar créditos por unidade. Porém, é possível habilitar ou desabilitar o uso de IA por unidade ou por pesquisa específica para controlar o consumo.
+
+**Sem acúmulo entre meses**
+Créditos não usados no mês expiram. O saldo volta ao valor do plano no início do próximo ciclo, independentemente do quanto foi consumido.
+
+---
+
+## Como verificar o saldo de créditos
+
+Acesse em `Configurações (⚙️) → Organização → Créditos de IA`.
+
+---
+
+## O que fazer quando os créditos acabam
+
+Se o saldo se esgotar antes do final do mês, você tem três opções:
+
+<Columns cols={3}>
+  <Card title="Comprar créditos adicionais" icon="plus-circle">
+    Adquira créditos avulsos no mesmo mês pelo custo unitário do seu plano atual.
+  </Card>
+  <Card title="Fazer upgrade de plano" icon="arrow-up-circle">
+    Mude para um plano com maior volume de créditos e custo unitário reduzido.
+  </Card>
+  <Card title="Aguardar a renovação" icon="calendar">
+    Sem ação, novas respostas ficam não analisadas. A análise retoma no início do próximo mês para as novas respostas.
+  </Card>
+</Columns>
+
+<Callout kind="alert">
+  Respostas recebidas enquanto o saldo estava zerado **não são analisadas retroativamente** de forma automática. Após adquirir mais créditos ou fazer upgrade, é necessário solicitar ao suporte o processamento das respostas pendentes.
+</Callout>
+
+---
+
+## Requisitos para gerar resumos com IA
+
+A funcionalidade de **resumo com IA** tem critérios mínimos e máximos para funcionar:
+
+- **Mínimo:** 30 respostas
+- **Máximo:** 2.000 respostas
+- **Volume de texto:** mais de 1.000 caracteres e mais de 500 tokens (máximo de 100.000 tokens)
+- 1 token ≈ 1 palavra (algumas palavras consomem 2 tokens)
+
+<Callout kind="info">
+  Você precisa ter créditos disponíveis no momento de gerar o resumo. Se não houver saldo suficiente, a ação será bloqueada.
+</Callout>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Os créditos são acumulativos entre meses?">
+  Não. Créditos não utilizados expiram ao final de cada mês e não são transferidos para o ciclo seguinte.
+</Expandable>
+
+<Expandable title="Como solicitar a análise de respostas pendentes após adquirir créditos?">
+  Entre em contato com o suporte da Amplifique.me pelo WhatsApp. A equipe processará manualmente as respostas que ficaram sem análise durante o período sem saldo.
+</Expandable>
+
+<Expandable title="Posso desativar a IA para uma pesquisa específica e economizar créditos?">
+  Sim. No construtor de pesquisas, é possível habilitar ou desabilitar a análise por IA por pesquisa. Pesquisas com análise desativada não consomem créditos mesmo ao receber respostas com texto.
+</Expandable>
+
+<Expandable title="Uma pesquisa com 3 perguntas de texto consome 3 créditos por resposta?">
+  Não. O consumo é de **1 crédito por resposta**, independentemente de quantas perguntas de texto ela contém.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como funciona o Amplifique.me Insights?" icon="brain" href="/insights/visao-geral" cta="Ver artigo">
+  Veja todos os dados e gráficos disponíveis no dashboard de Insights e como interpretar cada análise.
+</Card>

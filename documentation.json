@@ -127,7 +127,11 @@
             "group": "Amplifique.me Insights",
             "pages": [
               {
-                "title": "Analise de sentimentos",
+                "title": "Como funcionam os créditos de IA?",
+                "path": "como-funcionam-os-crditos-de-ia"
+              },
+              {
+                "title": "Como funciona o Amplifique.me Insights?",
                 "path": "analise-de-sentimentos"
               }
             ]
