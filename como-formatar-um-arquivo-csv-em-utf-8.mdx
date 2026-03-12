@@ -1,0 +1,102 @@
+---
+title: "Como formatar um arquivo CSV em UTF-8?"
+description: "Para importar contatos ou respostas na Amplifique.me, o arquivo precisa estar no formato CSV UTF-8. Veja como salvar corretamente no Excel, Google Sheets e LibreOffice Calc."
+---
+
+## Visão geral
+
+A Amplifique.me exige que arquivos de importação estejam no formato **CSV UTF-8 (delimitado por vírgulas)**. Esse formato garante que caracteres especiais — como acentos, cedilhas e símbolos — sejam preservados corretamente durante o upload.
+
+<Callout kind="alert">
+  Arquivos salvos em outros formatos CSV (sem UTF-8) ou como `.xlsx` não são aceitos na importação e podem gerar erros ou dados corrompidos.
+</Callout>
+
+---
+
+## Como salvar em CSV UTF-8
+
+### No Excel
+
+<Steps>
+
+<Step title="Abra o arquivo no Excel">
+  Abra sua planilha `.xls`, `.xlsx` ou `.csv` normalmente no Excel.
+</Step>
+
+<Step title="Acesse Arquivo → Salvar como">
+  Clique em `Arquivo` no menu superior e selecione `Salvar como`.
+</Step>
+
+<Step title="Escolha o formato correto">
+  Na lista de tipos de arquivo, selecione **CSV UTF-8 (Delimitado por vírgulas) (*.csv)** e clique em `Salvar`.
+
+  <Callout kind="tip">
+    Se não encontrar a opção CSV UTF-8, verifique se o Excel está atualizado. Versões anteriores ao Excel 2016 podem não ter essa opção — nesse caso, use o Google Sheets como alternativa.
+  </Callout>
+</Step>
+
+</Steps>
+
+### No Google Sheets
+
+<Steps>
+
+<Step title="Abra ou importe a planilha no Google Sheets">
+  Acesse [sheets.google.com](https://sheets.google.com) e abra ou importe o arquivo desejado.
+</Step>
+
+<Step title="Faça o download no formato correto">
+  No menu superior, clique em `Arquivo` → `Fazer download` → **Valores separados por vírgula (.csv)`.
+
+  <Callout kind="success">
+    O Google Sheets exporta automaticamente em UTF-8. Não é necessária nenhuma configuração adicional.
+  </Callout>
+</Step>
+
+</Steps>
+
+### No LibreOffice Calc
+
+<Steps>
+
+<Step title="Abra o arquivo no LibreOffice Calc">
+  Abra sua planilha normalmente.
+</Step>
+
+<Step title="Acesse Arquivo → Salvar como">
+  Clique em `Arquivo` → `Salvar como`. Na lista de tipos de arquivo, selecione **Texto CSV (.csv)**.
+</Step>
+
+<Step title="Configure a codificação">
+  Na janela de opções de exportação que aparecer, certifique-se de que o campo **Conjunto de caracteres** está definido como **Unicode (UTF-8)** e o **Separador de campo** como vírgula (`,`). Clique em `OK`.
+</Step>
+
+</Steps>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Como saber se meu arquivo já está em UTF-8?">
+  A forma mais simples é abrir o arquivo em um editor de texto (como o Bloco de Notas no Windows) e verificar se acentos e caracteres especiais aparecem corretamente. Se aparecerem símbolos estranhos no lugar de letras acentuadas, o arquivo provavelmente não está em UTF-8.
+</Expandable>
+
+<Expandable title="Por que o Excel às vezes não mostra a opção CSV UTF-8?">
+  A opção CSV UTF-8 foi introduzida no Excel 2016. Versões anteriores não a incluem. Nesse caso, use o Google Sheets como alternativa — ele exporta em UTF-8 por padrão.
+</Expandable>
+
+<Expandable title="Posso usar ponto e vírgula como separador em vez de vírgula?">
+  Não. A Amplifique.me aceita apenas arquivos delimitados por **vírgula**. Se o seu arquivo usa ponto e vírgula (comum em configurações regionais do Brasil no Excel), salve novamente escolhendo explicitamente a opção **CSV UTF-8 (Delimitado por vírgulas)**.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Como importar contatos em massa via planilha" icon="upload" href="/contatos/como-importar-contatos-em-massa" cta="Ver artigo">
+  Com o arquivo formatado corretamente, siga o passo a passo completo para importar seus contatos.
+</Card>

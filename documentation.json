@@ -37,6 +37,10 @@
             "group": "Modulo contatos",
             "pages": [
               {
+                "title": "Como formatar um arquivo CSV em UTF-8?",
+                "path": "como-formatar-um-arquivo-csv-em-utf-8"
+              },
+              {
                 "title": "Como exportar contatos",
                 "path": "como-exportar-contatos"
               },
