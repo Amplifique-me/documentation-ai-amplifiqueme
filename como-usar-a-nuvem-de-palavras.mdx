@@ -1,8 +1,10 @@
 ---
-title: "Como usar a nuvem de palavras?"
-description: "A nuvem de palavras exibe os termos mais citados nas respostas abertas das pesquisas. Clique em qualquer palavra para filtrar as respostas. Bloqueie termos irrelevantes para manter a visualização limpa e focada."
+title: Como usar a nuvem de palavras?
+description: >-
+  A nuvem de palavras exibe os termos mais citados nas respostas abertas das
+  pesquisas. Clique em qualquer palavra para filtrar as respostas. Bloqueie
+  termos irrelevantes para manter a visualização limpa e focada.
 ---
-
 ## Visão geral
 
 A **Nuvem de Palavras** é um card do painel que identifica e exibe os termos mais frequentes nas respostas abertas de texto. O tamanho de cada palavra é proporcional à quantidade de vezes em que foi mencionada. É a forma mais rápida de enxergar padrões e temas recorrentes sem precisar ler resposta por resposta.
@@ -12,27 +14,27 @@ A **Nuvem de Palavras** é um card do painel que identifica e exibe os termos ma
 ## Como adicionar um card de Nuvem de Palavras
 
 <Steps>
+  <Step title="Acesse o painel e clique em Adicionar pesquisa" title-type="p">
+    No menu lateral, vá em **Painéis** e abra o painel desejado.
+  </Step>
 
-<Step title="Acesse o painel e clique em Adicionar pesquisa">
-  No menu lateral, vá em **Painéis** e abra o painel desejado.
-</Step>
+  <Step title="Selecione o tipo de card: Nuvem de Palavras" title-type="p">
+    Escolha **Nuvem de Palavras** na lista de tipos disponíveis.
+  </Step>
 
-<Step title="Selecione o tipo de card: Nuvem de Palavras">
-  Escolha **Nuvem de Palavras** na lista de tipos disponíveis.
-</Step>
+  <Step title="Selecione a pesquisa e nomeie o card" title-type="p">
+    Escolha a pesquisa cujas respostas abertas você quer analisar. Dê um nome descritivo ao card (ex: "Nuvem — NPS Suporte").
+  </Step>
 
-<Step title="Selecione a pesquisa e nomeie o card">
-  Escolha a pesquisa cujas respostas abertas você quer analisar. Dê um nome descritivo ao card (ex: "Nuvem — NPS Suporte").
-</Step>
+  <Step title="Clique em Criar Métrica" title-type="p">
+    O card será adicionado ao painel com as palavras mais citadas nas respostas abertas de todas as perguntas de texto daquela pesquisa.
 
-<Step title="Clique em Criar Métrica">
-  O card será adicionado ao painel com as palavras mais citadas nas respostas abertas de todas as perguntas de texto daquela pesquisa.
+    <Callout kind="success" collapsed="false">
+      A nuvem é gerada a partir de **todas as perguntas de texto** da pesquisa selecionada — não é necessário escolher uma pergunta específica.
+    </Callout>
 
-  <Callout kind="success">
-    A nuvem é gerada a partir de **todas as perguntas de texto** da pesquisa selecionada — não é necessário escolher uma pergunta específica.
-  </Callout>
-</Step>
-
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/fb5847556076af08108987893ddf2475.gif" width="695" height="328" style="width: 695px; height: auto; cursor: pointer; margin: 0 auto;" />
+  </Step>
 </Steps>
 
 ---
@@ -40,9 +42,10 @@ A **Nuvem de Palavras** é um card do painel que identifica e exibe os termos ma
 ## Interações com a nuvem
 
 - **Passar o mouse sobre uma palavra** — exibe a contagem de menções daquele termo
+
 - **Clicar em uma palavra** — redireciona para a aba de **Respostas** com o filtro daquele termo aplicado automaticamente, exibindo apenas as respostas que o mencionam
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Use o clique na palavra para ir diretamente para as respostas relacionadas a um tema específico — sem precisar criar filtros manualmente. É especialmente útil para investigar temas críticos rapidamente.
 </Callout>
 
@@ -53,23 +56,23 @@ A **Nuvem de Palavras** é um card do painel que identifica e exibe os termos ma
 Palavras muito genéricas (ex: "cliente", "oi", "teste", "obrigado") aparecem com alta frequência mas não agregam valor à análise. Você pode bloqueá-las permanentemente da nuvem:
 
 <Steps>
+  <Step title="Acesse Configurações → Nuvem de Palavras" title-type="p">
+    No menu lateral, vá em **Configurações** e localize a seção **Nuvem de Palavras**.
+  </Step>
 
-<Step title="Acesse Configurações → Nuvem de Palavras">
-  No menu lateral, vá em **Configurações** e localize a seção **Nuvem de Palavras**.
-</Step>
+  <Step title="Digite a palavra a bloquear e pressione Enter" title-type="p">
+    Insira o termo que deseja remover. Repita para cada palavra que quiser bloquear.
 
-<Step title="Digite a palavra a bloquear e pressione Enter">
-  Insira o termo que deseja remover. Repita para cada palavra que quiser bloquear.
+    <Callout kind="tip" collapsed="false">
+      Bloqueie variações do mesmo termo para garantir que todas as formas sejam excluídas: "cliente", "Cliente" e "CLIENTE" são tratadas como palavras diferentes.
+    </Callout>
+  </Step>
 
-  <Callout kind="tip">
-    Bloqueie variações do mesmo termo para garantir que todas as formas sejam excluídas: "cliente", "Cliente" e "CLIENTE" são tratadas como palavras diferentes.
-  </Callout>
-</Step>
+  <Step title="Clique em Salvar" title-type="p">
+    Após salvar, atualize o painel — a palavra será removida da nuvem.
+  </Step>
 
-<Step title="Clique em Salvar">
-  Após salvar, atualize o painel — a palavra será removida da nuvem.
-</Step>
-
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/fb8427d42e0832490483efe29080fc6f.gif" width="1002" height="836" />
 </Steps>
 
 ---
@@ -77,19 +80,17 @@ Palavras muito genéricas (ex: "cliente", "oi", "teste", "obrigado") aparecem co
 ## Como restaurar uma palavra bloqueada
 
 <Steps>
+  <Step title="Acesse Configurações → Nuvem de Palavras" title-type="p">
+    Localize a lista de palavras bloqueadas.
+  </Step>
 
-<Step title="Acesse Configurações → Nuvem de Palavras">
-  Localize a lista de palavras bloqueadas.
-</Step>
+  <Step title="Clique no ícone X ao lado da palavra" title-type="p">
+    A palavra será removida da lista de bloqueadas.
+  </Step>
 
-<Step title="Clique no ícone X ao lado da palavra">
-  A palavra será removida da lista de bloqueadas.
-</Step>
-
-<Step title="Clique em Salvar">
-  A palavra voltará a aparecer na nuvem após alguns minutos.
-</Step>
-
+  <Step title="Clique em Salvar" title-type="p">
+    A palavra voltará a aparecer na nuvem após alguns minutos.
+  </Step>
 </Steps>
 
 ---
@@ -99,8 +100,11 @@ Palavras muito genéricas (ex: "cliente", "oi", "teste", "obrigado") aparecem co
 A nuvem de palavras é especialmente útil para:
 
 - Identificar temas emergentes nas respostas abertas sem leitura manual
+
 - Detectar rapidamente assuntos críticos ou recorrentes (ex: "prazo", "entrega", "cancelar")
+
 - Criar filtros de resposta com um clique para investigar um tema específico
+
 - Manter a visualização limpa bloqueando termos genéricos irrelevantes
 
 ---
@@ -108,29 +112,28 @@ A nuvem de palavras é especialmente útil para:
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="A nuvem analisa perguntas abertas de toda a pesquisa ou apenas uma específica?" default-open="false">
+    A nuvem é gerada a partir de **todas as perguntas de texto** da pesquisa selecionada. Não é possível limitar a análise a uma única pergunta de texto.
+  </Expandable>
 
-<Expandable title="A nuvem analisa perguntas abertas de toda a pesquisa ou apenas uma específica?">
-  A nuvem é gerada a partir de **todas as perguntas de texto** da pesquisa selecionada. Não é possível limitar a análise a uma única pergunta de texto no momento.
-</Expandable>
+  <Expandable title="Palavras bloqueadas se aplicam a todos os painéis ou apenas ao painel atual?" default-open="false">
+    As palavras bloqueadas são configuradas a nível de conta (em Configurações → Nuvem de Palavras) e se aplicam a todas as nuvens de todas as pesquisas e painéis.
+  </Expandable>
 
-<Expandable title="Palavras bloqueadas se aplicam a todos os painéis ou apenas ao painel atual?">
-  As palavras bloqueadas são configuradas a nível de conta (em Configurações → Nuvem de Palavras) e se aplicam a todas as nuvens de todas as pesquisas e painéis.
-</Expandable>
+  <Expandable title="A nuvem é atualizada em tempo real à medida que chegam novas respostas?" default-open="false">
+    Sim. A nuvem reflete as respostas disponíveis no momento da visualização. Não é necessário recriar o card para ver as palavras mais recentes.
+  </Expandable>
 
-<Expandable title="A nuvem é atualizada em tempo real à medida que chegam novas respostas?">
-  Sim. A nuvem reflete as respostas disponíveis no momento da visualização. Não é necessário recriar o card para ver as palavras mais recentes.
-</Expandable>
-
-<Expandable title="Posso aplicar filtros (como por loja ou canal) na nuvem de palavras?">
-  Sim. Use a opção **Filtrar resultados** nos três pontos do card de nuvem para segmentar os dados por campo customizado, tag ou empresa — da mesma forma que em outros tipos de card.
-</Expandable>
-
+  <Expandable title="Posso aplicar filtros (como por loja ou canal) na nuvem de palavras?" default-open="false">
+    Sim. Use a opção **Filtrar resultados** nos três pontos do card de nuvem para segmentar os dados por campo customizado, etiqueta ou empresa — da mesma forma que em outros tipos de card.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
 ## Próximo passo
 
-<Card title="Como criar e gerenciar painéis?" icon="layout" href="/paineis/criar-gerenciar" cta="Ver artigo">
+<Card title="Como criar e gerenciar painéis?" href="/como-criar-e-gerenciar-painis-de-resultados" icon="layout" cta="Ver artigo" horizontal="false" target="_self">
   Veja todos os tipos de cards disponíveis e como organizar múltiplos painéis por área, unidade ou produto.
 </Card>
+
