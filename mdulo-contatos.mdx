@@ -1,56 +1,70 @@
 ---
-title: "Como criar um contato na Amplifique.me?"
-description: "Adicione contatos individualmente pelo formulário ou em massa via planilha CSV. Inclui campos customizados, etiquetas, ações pós-importação e dicas para evitar erros."
+title: Como criar um contato na Amplifique.me?
+description: >-
+  Adicione contatos individualmente pelo formulário ou em massa via planilha
+  CSV. Inclui campos customizados, etiquetas, ações pós-importação e dicas para
+  evitar erros.
 ---
-
 ## Visão geral
 
 Você pode adicionar contatos de duas formas: **manualmente** pelo formulário, para um contato por vez, ou via **importação de planilha**, para adicionar múltiplos contatos de uma só vez.
 
-<Columns cols={2}>
-  <Card title="Criar contato manualmente" icon="user-plus" href="#criar-contato-manualmente" />
-  <Card title="Importar contatos por planilha" icon="upload" href="#importar-contatos-por-planilha" />
+<Columns cols="2">
+  <Card title="Criar contato manualmente" href="#criar-contato-manualmente" icon="user-plus" horizontal="false">
+
+  </Card>
+
+  <Card title="Importar contatos por planilha" href="#importar-contatos-por-planilha" icon="upload" horizontal="false">
+
+  </Card>
 </Columns>
 
 ---
 
 ## Criar contato manualmente
 
+<Image src="https://cdn.amplifique.me/central-de-ajuda/17c2f22d46c01ed349f11addf430d5c6.png" width="1002" height="836" />
+
 <Steps>
+  <Step title="Acesse o módulo Contatos" title-type="p">
+    No menu lateral esquerdo, clique em `👤 Contatos`.
+  </Step>
 
-<Step title="Acesse o módulo Contatos">
-  No menu lateral esquerdo, clique em `👤 Contatos`.
-</Step>
+  <Step title="Inicie a criação" title-type="p">
+    No canto superior direito, clique em `Criar Contato`.
+  </Step>
 
-<Step title="Inicie a criação">
-  No canto superior direito, clique em `Criar Contato`.
-</Step>
+  <Step title="Preencha os dados do contato" title-type="p">
+    Será exibido um formulário com os seguintes campos:
 
-<Step title="Preencha os dados do contato">
-  Será exibido um formulário com os seguintes campos:
+    - **Nome** — obrigatório
 
-  - **Nome** — obrigatório
-  - **E-mail** — obrigatório
-  - **Telefone** — obrigatório
-  - **Empresa** — opcional
+    - **E-mail** — obrigatório
 
-  Após preencher, clique em `Criar Contato` para salvar.
+    - **Telefone** — obrigatório
 
-  <Callout kind="alert">
-    E-mail e telefone são campos-chave na Amplifique.me e **não devem ser duplicados**. O sistema usa esses dados para identificar o contato em importações e disparos.
-  </Callout>
-</Step>
+    - **Empresa** — opcional
 
-<Step title="Visualize e edite o contato criado">
-  Após salvo, você pode acessar o contato para:
+    Após preencher, clique em `Criar Contato` para salvar.
 
-  - Ver quem criou e a data de criação
-  - Editar nome, e-mail, telefone ou empresa
-  - Preencher **campos customizados** criados pela sua organização
-  - Adicionar **tags** para segmentação
-  - Acionar automações: envio de pesquisa ou solicitação de avaliação online
-</Step>
+    <Callout kind="alert" collapsed="false">
+      E-mail e telefone são campos-chave na Amplifique.me e **não devem ser duplicados**. O sistema usa esses dados para identificar o contato em importações e disparos.
+    </Callout>
+  </Step>
 
+  <Step title="Visualize e edite o contato criado" title-type="p">
+    Após salvo, você pode acessar o contato para:
+
+    - Ver quem criou e a data de criação
+
+    - Editar nome, e-mail, telefone ou empresa
+
+    - Preencher **campos customizados** criados pela sua organização
+
+    - Adicionar **etiquetas** para segmentação
+
+    - Acionar automações: envio de pesquisa ou solicitação de avaliação online
+  </Step>
 </Steps>
 
 ### Desativar comunicação com um contato
@@ -58,19 +72,17 @@ Você pode adicionar contatos de duas formas: **manualmente** pelo formulário, 
 Se precisar pausar o envio de comunicações para um contato específico:
 
 <Steps>
+  <Step title="Abra o contato" title-type="p">
+    Localize e clique no contato desejado na lista.
+  </Step>
 
-<Step title="Abra o contato">
-  Localize e clique no contato desejado na lista.
-</Step>
+  <Step title="Clique em Desativar Comunicação" title-type="p">
+    O contato não receberá mais e-mails, pesquisas ou mensagens enquanto essa configuração estiver ativa.
 
-<Step title="Clique em Desativar Comunicação">
-  O contato não receberá mais e-mails, pesquisas ou mensagens enquanto essa configuração estiver ativa.
-
-  <Callout kind="info">
-    Você pode reativar a comunicação a qualquer momento acessando o mesmo contato e revertendo a configuração.
-  </Callout>
-</Step>
-
+    <Callout kind="info" collapsed="false">
+      Você pode reativar a comunicação a qualquer momento acessando o mesmo contato e revertendo a configuração.
+    </Callout>
+  </Step>
 </Steps>
 
 ### Ações disponíveis no menu de três pontos (⋮)
@@ -78,8 +90,11 @@ Se precisar pausar o envio de comunicações para um contato específico:
 Dentro de um contato, clique no menu `⋮` para acessar ações rápidas:
 
 - **Enviar Pesquisa**
+
 - **Solicitar Avaliação Online**
-- **Adicionar Tag**
+
+- **Adicionar etiqueta**
+
 - **Desativar Comunicação**
 
 ---
@@ -88,86 +103,88 @@ Dentro de um contato, clique no menu `⋮` para acessar ações rápidas:
 
 Use a importação em massa para adicionar múltiplos contatos de uma só vez via arquivo CSV.
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   **Limite por arquivo:** 5.000 linhas. Para bases maiores, divida em múltiplos arquivos e importe em sequência. **Formato obrigatório:** CSV UTF-8 (delimitado por vírgulas).
 </Callout>
 
 <Steps>
+  <Step title="Acesse a opção de importação" title-type="p">
+    No módulo `👤 Contatos`, clique nos três pontos `⋮` no canto superior direito e selecione `Importar Contatos`.
+  </Step>
 
-<Step title="Acesse a opção de importação">
-  No módulo `👤 Contatos`, clique nos três pontos `⋮` no canto superior direito e selecione `Importar Contatos`.
-</Step>
+  <Step title="Baixe e preencha o modelo" title-type="p">
+    Clique em `Baixar modelo`. O arquivo virá com as seguintes colunas:
 
-<Step title="Baixe e preencha o modelo">
-  Clique em `Baixar modelo`. O arquivo virá com as seguintes colunas:
+    - `nome`
 
-  - `nome`
-  - `telefone`
-  - `email`
-  - `empresa` (opcional)
+    - `telefone`
 
-  Preencha a partir da linha 2, mantendo os nomes dos cabeçalhos exatamente como estão.
+    - `email`
 
-  <Callout kind="tip">
-    Não renomeie as colunas do modelo. O sistema usa os cabeçalhos para reconhecer automaticamente os campos na hora da importação.
-  </Callout>
-</Step>
+    - `empresa` (opcional)
 
-<Step title="Adicione campos customizados (se necessário)">
-  Se sua organização usa campos customizados (ex: cargo, filial, setor), adicione-os como colunas extras na planilha.
+    Preencha a partir da linha 2, mantendo os nomes dos cabeçalhos exatamente como estão.
 
-  <Callout kind="alert">
-    O campo customizado precisa estar **criado na plataforma antes da importação** em `Configurações → Campos Customizados`. Durante o upload, você fará o mapeamento manual de cada coluna com o campo correspondente no sistema.
-  </Callout>
-</Step>
+    <Callout kind="tip" collapsed="false">
+      Não renomeie as colunas do modelo. O sistema usa os cabeçalhos para reconhecer automaticamente os campos na hora da importação.
+    </Callout>
+  </Step>
 
-<Step title="Salve o arquivo no formato correto">
-  - No **Excel**: `Arquivo → Salvar como → CSV UTF-8 (delimitado por vírgulas)`
-  - No **Google Sheets**: `Arquivo → Fazer download → Valores separados por vírgula (.csv)`
-</Step>
+  <Step title="Adicione campos customizados (se necessário)" title-type="p">
+    Se sua organização usa campos customizados (ex: cargo, filial, setor), adicione-os como colunas extras na planilha.
 
-<Step title="Faça o upload do arquivo">
-  Clique em `Selecionar Arquivo` ou arraste o arquivo para a área indicada. A plataforma reconhecerá automaticamente as colunas padrão.
+    <Callout kind="alert" collapsed="false">
+      O campo customizado precisa estar **criado na plataforma antes da importação** em `Configurações → Campos Customizados`. Durante o upload, você fará o mapeamento manual de cada coluna com o campo correspondente no sistema.
+    </Callout>
+  </Step>
 
-  Após o upload, o sistema exibirá um resumo com:
+  <Step title="Salve o arquivo no formato correto" title-type="p">
+    - No **Excel**: `Arquivo → Salvar como → CSV UTF-8 (delimitado por vírgulas)`
 
-  - Total de contatos válidos
-  - Contatos duplicados (identificados por e-mail ou telefone)
-  - Contatos com erro — será gerado um relatório detalhado
-</Step>
+    - No **Google Sheets**: `Arquivo → Fazer download → Valores separados por vírgula (.csv)`
+  </Step>
 
-<Step title="Adicione uma tag à importação (opcional)">
-  Antes de confirmar, você pode aplicar uma tag personalizada a todos os contatos do arquivo — ex: `treinamento01` ou `Lead evento`.
+  <Step title="Faça o upload do arquivo" title-type="p">
+    Clique em `Selecionar Arquivo` ou arraste o arquivo para a área indicada. A plataforma reconhecerá automaticamente as colunas padrão.
 
-  <Callout kind="tip">
-    Tags de importação facilitam a filtragem e permitem ações em massa logo após a importação, sem precisar selecionar contato por contato.
-  </Callout>
-</Step>
+    Após o upload, o sistema exibirá um resumo com:
 
-<Step title="Confirme e acompanhe">
-  Clique em `Importar`. Os contatos entram em uma fila de processamento e, ao finalizar, você será redirecionado para a tela de Contatos com os registros recém-importados já filtrados.
+    - Total de contatos válidos
 
-  <Callout kind="success">
-    Contatos importados! Você pode realizar ações em massa imediatamente: selecione os contatos → `Ações` → escolha, por exemplo, `Enviar Pesquisa`.
-  </Callout>
-</Step>
+    - Contatos duplicados (identificados por e-mail ou telefone)
 
+    - Contatos com erro — será gerado um relatório detalhado
+  </Step>
+
+  <Step title="Adicione uma etiqueta à importação (opcional)" title-type="p">
+    Antes de confirmar, você pode aplicar uma etiqueta personalizada a todos os contatos do arquivo — ex: `treinamento01` ou `Lead evento`.
+
+    <Callout kind="tip" collapsed="false">
+      Etiquetas de importação facilitam a filtragem e permitem ações em massa logo após a importação, sem precisar selecionar contato por contato.
+    </Callout>
+  </Step>
+
+  <Step title="Confirme e acompanhe" title-type="p">
+    Clique em `Importar`. Os contatos entram em uma fila de processamento e, ao finalizar, você será redirecionado para a tela de Contatos com os registros recém-importados já filtrados.
+
+    <Callout kind="success" collapsed="false">
+      Contatos importados! Você pode realizar ações em massa imediatamente: selecione os contatos → `Ações` → escolha, por exemplo, `Enviar Pesquisa`.
+    </Callout>
+  </Step>
 </Steps>
 
 <ExpandableGroup>
+  <Expandable title="O que acontece se um contato já existir na base?" default-open="false">
+    O sistema identifica duplicatas por **e-mail ou telefone** e atualiza os dados do contato existente — não cria um novo registro.&#x20;
+  </Expandable>
 
-<Expandable title="O que acontece se um contato já existir na base?">
-  O sistema identifica duplicatas por **e-mail ou telefone** e atualiza os dados do contato existente — não cria um novo registro. Campos em branco no arquivo não sobrescrevem dados já cadastrados.
-</Expandable>
+  <Expandable title="O que significa &#x22;Contatos com erro&#x22; no resumo de importação?" default-open="false">
+    Significa que algumas linhas tinham dados inválidos: e-mail mal formatado, telefone fora do padrão ou campo obrigatório vazio.
+  </Expandable>
 
-<Expandable title='O que significa "Contatos com erro" no resumo de importação?'>
-  Significa que algumas linhas tinham dados inválidos: e-mail mal formatado, telefone fora do padrão ou campo obrigatório vazio. Os contatos válidos são importados normalmente. Baixe o **relatório de erros**, corrija as linhas indicadas e reimporte apenas esse arquivo corrigido.
-</Expandable>
-
-<Expandable title="Posso importar campos customizados na planilha?">
-  Sim. Adicione os campos customizados como colunas extras no arquivo. Durante o upload, você fará o mapeamento manual de cada coluna com o campo correspondente criado em `Configurações → Campos Customizados`.
-</Expandable>
-
+  <Expandable title="Posso importar campos customizados na planilha?" default-open="false">
+    Sim. Adicione os campos customizados como colunas extras no arquivo. Durante o upload, você fará o mapeamento manual de cada coluna com o campo correspondente criado em `Configurações → Campos Customizados`.
+  </Expandable>
 </ExpandableGroup>
 
 ---
@@ -175,14 +192,18 @@ Use a importação em massa para adicionar múltiplos contatos de uma só vez vi
 ## Dicas para evitar erros
 
 - Não use e-mails ou telefones duplicados na planilha
+
 - Mantenha o formato exato dos cabeçalhos do modelo
+
 - Salve sempre no formato **CSV UTF-8**
+
 - Crie os campos customizados na plataforma **antes** de importar
 
 ---
 
 ## Próximo passo
 
-<Card title="Como disparar uma pesquisa para múltiplos contatos" icon="send" href="/contatos/disparar-pesquisa-em-massa" cta="Ver artigo">
+<Card title="Como disparar uma pesquisa para múltiplos contatos" href="/contatos/disparar-pesquisa-em-massa" icon="send" cta="Ver artigo" horizontal="false">
   Agora que sua base está importada, aprenda a criar e enviar uma pesquisa em massa usando os contatos importados.
 </Card>
+
