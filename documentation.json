@@ -2,7 +2,7 @@
   "name": "Amplifique.me",
   "colors": {
     "light": {
-      "brand": "#5885f7",
+      "brand": "#FFCA00",
       "heading": "#000000",
       "text": "undefined"
     },
@@ -37,16 +37,16 @@
             "group": "Painéis",
             "pages": [
               {
-                "title": "Como usar a nuvem de palavras?",
-                "path": "como-usar-a-nuvem-de-palavras"
+                "title": "Como criar e gerenciar painéis de resultados?",
+                "path": "como-criar-e-gerenciar-painis-de-resultados"
               },
               {
                 "title": "O que significam as métricas do painel?",
                 "path": "o-que-significam-as-mtricas-do-painel"
               },
               {
-                "title": "Como criar e gerenciar painéis de resultados?",
-                "path": "como-criar-e-gerenciar-painis-de-resultados"
+                "title": "Como usar a nuvem de palavras?",
+                "path": "como-usar-a-nuvem-de-palavras"
               }
             ]
           },
@@ -485,8 +485,5 @@
   "ai": {
     "page-actions": []
   },
-  "initialRoute": "",
-  "favicon": "https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1773349388755-157xpryvhl4-favicon.png?q=85&fm=auto&auto=compress%2Cformat",
-  "logo-dark": "https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1773349457302-eewvc2r74u7-logo_amplifiqueme.svg?q=85&fm=auto&auto=compress%2Cformat",
-  "logo-light": "https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1773349457302-eewvc2r74u7-logo_amplifiqueme.svg?q=85&fm=auto&auto=compress%2Cformat"
+  "initialRoute": ""
 }
