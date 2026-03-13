@@ -1,0 +1,64 @@
+---
+title: "O que é o erro #131049 no WhatsApp?"
+description: "O erro 131049 indica que a Meta optou por não entregar a mensagem para preservar a experiência do usuário. Entenda o que causa esse bloqueio, por quanto tempo dura e o que fazer."
+---
+
+## O que significa
+
+O erro **#131049** ocorre quando uma mensagem — geralmente um template de marketing — não é entregue porque o WhatsApp aplicou uma **limitação de envio por destinatário** para preservar a experiência do usuário na plataforma.
+
+<Callout kind="info">
+  Esse erro **não indica falha técnica, erro de configuração ou problema na integração** com a Amplifique.me. Trata-se de uma política de proteção aplicada diretamente pela Meta.
+</Callout>
+
+---
+
+## Por que acontece
+
+A Meta limita dinamicamente a quantidade de mensagens de marketing que um usuário pode receber em um determinado período, com base em:
+
+- Volume recente de mensagens de marketing recebidas pelo usuário
+- Nível de interação do usuário com mensagens anteriores
+- Probabilidade estimada de engajamento com novas mensagens
+
+Esses limites são **aplicados por destinatário**, são **dinâmicos** e não são divulgados publicamente pela Meta.
+
+---
+
+## Como resolver
+
+Não existe ação técnica para remover ou contornar o erro. O comportamento recomendado é **aguardar e tentar novamente**.
+
+O bloqueio pode durar de **algumas horas a alguns dias**, dependendo do histórico de envio e do engajamento do usuário específico.
+
+<Callout kind="tip">
+  Para reduzir a incidência desse erro a longo prazo, use templates do tipo **Utility** ao invés de Marketing sempre que possível. Templates Utility têm limites por usuário mais permissivos, pois são classificados como mensagens transacionais esperadas.
+</Callout>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="A Amplifique.me pode remover esse bloqueio?">
+  Não. O erro 131049 é gerado e controlado inteiramente pela Meta. A Amplifique.me não tem mecanismo para remover ou contornar esse bloqueio — é necessário aguardar a liberação automática.
+</Expandable>
+
+<Expandable title="Esse erro afeta todos os destinatários ou apenas alguns?">
+  O bloqueio é aplicado **por destinatário individualmente**. Um usuário que recebeu muitas mensagens de marketing recentemente pode ser bloqueado enquanto outros do mesmo envio recebem normalmente.
+</Expandable>
+
+<Expandable title="Onde posso ver mais detalhes sobre esse erro na documentação da Meta?">
+  A referência oficial está na documentação de limites por usuário da Meta para templates de marketing: [developers.facebook.com — per-user-limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits#how-we-notify-via-error-code)
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Boas práticas: templates de pesquisa aprovados pela Meta" icon="check-circle" href="/whatsapp-oficial/boas-praticas-templates" cta="Ver artigo">
+  Veja como estruturar templates Utility para reduzir rejeições e limites de entrega.
+</Card>

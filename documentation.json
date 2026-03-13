@@ -347,6 +347,35 @@
             "icon": "help-circle",
             "expandable": false,
             "pages": []
+          },
+          {
+            "group": "WhatsApp Oficial",
+            "pages": [
+              {
+                "title": "FAQ: WhatsApp Oficial na Amplifique.me",
+                "path": "faq-whatsapp-oficial-na-amplifiqueme"
+              },
+              {
+                "title": "O que é o erro #131049 no WhatsApp?",
+                "path": "o-que-o-erro-131049-no-whatsapp"
+              },
+              {
+                "title": "Como verificar o Meta Business Manager?",
+                "path": "como-verificar-o-meta-business-manager"
+              },
+              {
+                "title": "Como editar o perfil do WhatsApp Oficial?",
+                "path": "como-editar-o-perfil-do-whatsapp-oficial"
+              },
+              {
+                "title": "Boas práticas: templates de pesquisa aprovados pela Meta",
+                "path": "boas-prticas-templates-de-pesquisa-aprovados-pela-meta"
+              },
+              {
+                "title": "Como criar e vincular um template?",
+                "path": "como-criar-e-vincular-um-template"
+              }
+            ]
           }
         ]
       },
