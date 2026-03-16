@@ -2,33 +2,143 @@
 title: Notas de Atualização
 ---
 <Update label="2026.1" description="Janeiro a Março" tags={["Lançamento"]}>
-  ## Fim do Identificador de Perguntas
+  ## 🪦 Fim do Identificador de Perguntas
 
-  A
+  Na verdade, ele ainda existe, mas **você não precisa mais defini-lo manualmente** ao criar perguntas em uma pesquisa.
 
-  ## Mover Tickets entre Fluxos
+  Esse identificador era usado principalmente para **somar perguntas de diferentes pesquisas nos cards do painel**. Agora, ele **é gerado automaticamente pela plataforma**, mantendo essa funcionalidade sem exigir configuração manual.
 
-  A
+  **O que muda na prática:**
 
-  ## Clonar Painéis
+  - O **criador de cards foi ajustado**, facilitando encontrar e combinar perguntas de diferentes pesquisas.
 
-  a
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/af1637be1dacff30c7f536d7ef6f4130.png" width="1011" height="615" />
 
-  ## Reiniciar Fluxo
+  - Para **integrações**, o identificador da pergunta **continua disponível no Criador de Pesquisas** para ser copiado quando necessário.
 
-  a
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/b4b0cd372964e810b8f236bba764a7e8.png" width="481" height="146" />
 
-  ## Pré-visualizar Modelos de Pesquisa
+  - **Não é mais possível filtrar cards com base em respostas de outras perguntas.**
 
-  a
+  - Ao **exportar um card que combina mais de uma pesquisa**, o arquivo a ser baixado será u&#x6D;**&#x20;.zip contendo uma planilha separada para cada pesquisa**.
+
+  - **Grupos de Pesquisas** na tela de **Análise e Resultados** agora exigem que as pesquisas tenham **a mesma estrutura de perguntas**.
+
+    - Perguntas do tipo **matriz** precisam ter as mesmas **linhas e colunas**.
+
+    - Perguntas de **seleção, única escolha e múltipla escolha** precisam ter as **mesmas opções**.
+
+  * Agora, **perguntas excluídas de uma pesquisa vão para uma lixeira dentro do Criador de Pesquisas**, permitindo que sejam **restauradas posteriormente junto com suas respostas**.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/dff38defba94931b49b2b98dce49a9cd.png" width="1104" height="652" />
+
+  ## 🔀 Mover Tickets Entre Fluxos
+
+  Se você utiliza fluxos diferentes para tratar demandas distintas e percebeu que um ticket deveria ser atendido por outra área, agora ficou fácil corrigir isso.
+
+  Agora é possível **mover um ticket de um fluxo para outro**. Basta clicar no botão no canto superior da tela do ticket, escolher o **novo fluxo** e definir o **responsável** que irá assumir o atendimento.
+
+  Após a migração, o **ticket original será permanentemente arquivado**.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/c313f8742682f2d7f1aa3a18152aef26.png" width="2556" height="1250" />
+
+  Vale ressaltar que o novo ticket começará **desde a primeira etapa do fluxo**, seguindo todas as regras e requisitos definidos para esse processo.
+
+  ## 📑 Clonar Painéis
+
+  Criar novas visualizações ficou muito mais rápido. Agora você pode **clonar um painel existente**, incluindo todos os cards que já estão configurados nele.
+
+  Assim, fica fácil criar variações do mesmo painel aplicando **filtros diferentes**, sem precisar adicionar e configurar cada card novamente.
+
+  Para clonar, acesse **Gerenciar Painéis** dentro de qualquer painel, selecione o painel que deseja duplicar e clique no botão disponível na parte inferior da tela.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/61b68891d86beeaec6fedc9152ba9746.png" width="1876" height="1396" />
+
+  ## 🔄 Reiniciar Limite de Respostas
+
+  Agora você pode ativar a opção de **reiniciar automaticamente o limite de respostas a cada mês**. Quando um novo mês começar, o contador será zerado, permitindo que a pesquisa receba novas respostas até atingir o limite definido novamente.
+
+  **Atenção:** se a pesquisa for **desativada manualmente** antes de atingir o limite de respostas, o contador também será zerado no próximo ciclo, porém **a pesquisa continuará desativada.**
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/8ad8dea580da8676170b2ab28506db92.png" width="1548" height="404" />
+
+  ## ⏫ Melhorias nos Importadores
+
+  - Agora você pode **criar novos Campos Customizados diretamente durante a importação**, sem precisar sair do importador para configurá-los antes.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/9e07739e5a51c090e2dc9f6fa78db836.png" width="960" height="706" />
+
+  - A plataforma agora tenta **mapear automaticamente os campos do arquivo importado** com os campos existentes na plataforma, usando como base o **título de cada campo**.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/dd447eac90ec14c503cb66f1d2ef19c1.png" width="1954" height="400" />
+
+  - Agora, ao importar um arquivo que possui **as mesmas colunas de um arquivo importado anteriormente**, a plataforma poderá **sugerir automaticamente o mesmo mapeamento de campos** utilizado antes.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/2711d517e8f8cdf04c74b87c9fdb2582.png" width="1012" height="404" />
+
+  - Agora não é mais possível **concluir uma importação quando não houver saldo suficiente** disponível.\\
+
+    Se isso acontecer, basta realizar uma **recarga de saldo** para continuar o processo. A importação **não será perdida** e poderá ser concluída normalmente após a recarga.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/e0feb7f72f42c4a560bd33c439cf7400.png" width="1440" height="756" />
+
+  - Por fim, agora também é possível **importar o CNPJ da empresa vinculada ao contato** durante o processo de importação, facilitando o cadastro e a organização das informações das empresas no sistema.
+
+  ## 👀 Pré-visualizar Modelos de Pesquisa
+
+  Agora você pode **visualizar a estrutura de um modelo de pesquisa** sem precisar abrir o Criador de Pesquisas.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/712dcf459d9b7b1d7e5c2a243efe366c.png" width="1880" height="1090" />
+
+  ## 🧑🏻‍💻 Exibição Customizada de Pesquisas In-App
+
+  Agora você pode **controlar manualmente quando uma pesquisa In-App será exibida**. Para isso, basta chamar o método `Amplifiqueme.showSurvey()` no código do seu site ou aplicação.
+
+  Para saber mais detalhes de como utilizar este método, consulte a documentação técnica clicando <a href="https://google.com" target="_blank" rel="noopener noreferrer">aqui</a>.
+
+  <Image src="https://cdn.amplifique.me/central-de-ajuda/7f8f5244bf1774a9efb102f5aec33f80.png" width="1882" height="944" />
+
+  **Atenção:** ao utilizar essa opção, **as regras automáticas de exibição e a fadiga de pesquisa serão desativadas**, deixando o controle da exibição totalmente por conta do seu código.
 
   ## 🚀 Outras melhorias...
 
-  - Adicionamos um campo para filtrar os resumos gerados pelo nome.
+  - **Fechamento de Loop**
 
-  - Adicionamos um botão na tela de pesquisas para alternar a visualização entre visualizar todas as pesquisas ou apenas as ativas.
+    - Agora, ao **mencionar um usuário em uma nota**, ele será automaticamente **adicionado como seguidor do ticket**, passando a receber as próximas atualizações.
 
-  - Agora, é possível visualizar o uso das respostas dos meses anteriores.
+    - Também adicionamos a opção de **reiniciar um fluxo**, removendo todos os tickets existentes dentro dele.
+
+  * **Campos Customizados**
+
+    - O **Texto de Ajuda** agora é **opcional** ao criar um Campo Customizado.
+
+    - Adicionamos um **botão para criar Campos Customizados diretamente no Criador de Pesquisas**.
+
+    - Melhoramos os **textos da tela de Configurações de Campos Customizados e do Criador de Pesquisas**.
+
+    - Atualizamos e aprimoramos o **artigo sobre Campos Customizados na Central de Ajuda**.
+
+  * **Amplifique.me Insights**
+
+    - Melhoramos a categorização da IA para **agrupar automaticamente termos no singular e no plural**.
+
+    - Adicionamos um **campo de busca para filtrar os resumos gerados pelo nome**.
+
+  - **Tela de Pesquisas**
+
+    - Adicionamos um **botão para alternar entre visualizar todas as pesquisas ou apenas as pesquisas ativas**.
+
+  - **Tela de Contatos**
+
+    - Agora, **Campos Customizados preenchidos aparecem primeiro** nas informações do contato. **Campos vazios passam a ficar ocultos**, deixando a visualização mais limpa.
+
+  * **Tela de Uso de Respostas**
+
+    - Adicionamos um **gráfico com o consumo de respostas dos meses anteriores**, facilitando o acompanhamento do uso.
+
+  - **Tela de Solicitações**
+
+    - Adicionamos um **filtro para exibir apenas solicitações cujas pesquisas receberam respostas**.
 </Update>
 
 ---
