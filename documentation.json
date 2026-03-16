@@ -490,7 +490,7 @@
         "icon": "clock",
         "pages": [
           {
-            "title": "Release History",
+            "title": "Notas de Atualização",
             "path": "changelog",
             "icon": "history"
           }
