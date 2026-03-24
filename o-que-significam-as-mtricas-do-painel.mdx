@@ -30,19 +30,6 @@ Os cards de métrica dos painéis exibem além da nota (NPS, CSAT, etc.) uma sé
 
 ---
 
-## Exemplo prático
-
-Imagine uma pesquisa enviada para 500 pessoas, onde 50 pessoas receberam 2 disparos cada (Smart Follow-up):
-
-| Métrica                    | Valor | Por quê                           |
-| -------------------------- | ----- | --------------------------------- |
-| Total de Solicitações      | 550   | 500 + 50 reenvios                 |
-| Total de Pessoas Abordadas | 500   | 50 contatos deduplicados          |
-| Respostas Recebidas        | 180   | 180 respostas finalizadas         |
-| Respondentes Únicos        | 170   | 10 pessoas responderam duas vezes |
-| Taxa de Respostas          | 32,7% | 180 ÷ 550                         |
-| Taxa de Engajamento        | 34%   | 170 ÷ 500                         |
-
 ---
 
 ## Painéis disponíveis por módulo
@@ -66,10 +53,6 @@ A Amplifique.me oferece visões de painel em diferentes módulos além do Painel
 ## Perguntas frequentes
 
 <ExpandableGroup>
-  <Expandable title="Por que minha Taxa de Engajamento é maior que minha Taxa de Respostas?" default-open="false">
-    Isso acontece quando há muitos reenvios (via Smart Follow-up) para os mesmos contatos. O Total de Solicitações cresce com os reenvios, aumentando o denominador da Taxa de Respostas. Já o Total de Pessoas Abordadas mantém a deduplicação, resultando em uma Taxa de Engajamento proporcionalmente maior.
-  </Expandable>
-
   <Expandable title="Uma pessoa que abriu o e-mail mas não respondeu entra no Total de Solicitações?" default-open="false">
     Sim —  Entra no Total de Solicitações mesmo sem finalizar a resposta.
   </Expandable>
@@ -83,7 +66,7 @@ A Amplifique.me oferece visões de painel em diferentes módulos além do Painel
 
 ## Próximo passo
 
-<Card title="Como usar a nuvem de palavras?" href="/como-usar-a-nuvem-de-palavras" icon="cloud" cta="Ver artigo" horizontal={false} target="_self">
+<Card title="Como usar a nuvem de palavras?" href="/como-usar-a-nuvem-de-palavras" icon="cloud" cta="Ver artigo" horizontal="false" target="_self">
   Identifique os termos mais recorrentes nas respostas abertas e filtre as respostas diretamente pela nuvem.
 </Card>
 
