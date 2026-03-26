@@ -116,6 +116,10 @@
             "group": "Pesquisas e Respostas",
             "pages": [
               {
+                "title": "Como criar uma pesquisa?",
+                "path": "criar-pesquisa"
+              },
+              {
                 "title": "O que é o AmpliScore?",
                 "path": "o-que-o-ampliscore"
               },
@@ -154,10 +158,6 @@
               {
                 "title": "Como visualizar e filtrar respostas?",
                 "path": "como-visualizar-e-filtrar-respostas"
-              },
-              {
-                "title": "Como criar uma pesquisa?",
-                "path": "criar-pesquisa"
               }
             ]
           },
