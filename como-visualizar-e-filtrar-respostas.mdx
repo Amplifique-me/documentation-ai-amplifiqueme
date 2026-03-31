@@ -1,57 +1,73 @@
 ---
-title: "Como visualizar e filtrar respostas?"
-description: "Acesse respostas individuais com dados completos do contato, use filtros avançados por campo customizado, acompanhe solicitações e entenda as taxas de envio e erro na aba Solicitações."
+title: Como visualizar e filtrar respostas?
+description: >-
+  Acesse respostas individuais com dados completos do contato, use filtros
+  avançados por campo customizado, acompanhe solicitações e entenda as taxas de
+  envio e erro na aba Solicitações.
 ---
-
 ## Visão geral
 
 O módulo **Pesquisas e Respostas** tem três abas principais no topo da tela:
 
 - **Pesquisas** — onde você cria e gerencia as pesquisas
+
 - **Respostas** — onde ficam registradas todas as respostas recebidas
+
 - **Solicitações** — onde ficam os registros de envios (manuais e automáticos)
 
 ---
 
 ## Aba Respostas
 
+<Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774987898991-g3wk759i9uc-pasted-image-1774987896361.png?q=85&fm=auto&auto=compress%2Cformat" width="1582" height="745" alt="" style="width: 1582px; height: auto; cursor: pointer;" />
+
 ### Visualizando uma resposta individual
 
 Clique em qualquer linha da aba Respostas para abrir os detalhes completos. Cada resposta exibe:
 
 - Notas e justificativas (NPS, CSAT, Like/Dislike)
+
 - Respostas abertas de texto
+
 - Dados técnicos e metadados (navegador, plataforma, tempo de resposta)
+
 - Campos customizados da resposta e do contato
+
 - Status da resposta (enviada, em fadiga, erro)
+
 - Análise por IA (se habilitada) — sentimento, tipo de feedback, tópicos e resumo
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   Os dados do contato são gravados **no momento do envio**. Alterações futuras no cadastro do contato não afetam os dados já registrados na resposta.
 </Callout>
 
 ### Ações disponíveis em cada resposta
 
 - **Marcar como resolvido** — indica que a tratativa foi concluída
-- **Criar ticket** — abre um ticket no Fechamento de Loop diretamente da resposta (preencha assunto, fluxo, descrição e responsável)
-- **Encaminhar** — compartilha a resposta com outro usuário
-- **Anonimizar** — remove os dados de identificação da resposta
-- **Excluir** — remove permanentemente a resposta
 
-<Callout kind="danger">
-  A exclusão de uma resposta é irreversível. Ela também será removida dos relatórios e análises.
-</Callout>
+- **Criar ticket** — abre um ticket no Fechamento de Loop diretamente da resposta (preencha assunto, fluxo, descrição e responsável)
+
+- **Encaminhar** — compartilha a resposta com outro usuário
+
+- **Anonimizar** — remove os dados de identificação da resposta
+
+- **Excluir** — remove permanentemente a resposta
 
 ### Filtros disponíveis
 
 Filtre as respostas por:
 
 - Nome da pesquisa
+
 - Nome do contato
+
 - Campos customizados (da resposta ou do contato)
-- Tags
+
+- Etiquetas
+
 - Data de envio ou data de resposta
-- Status (respondido, pendente, erro, em fadiga, etc.)
+
+- Status (respondido, pendente, erro)
 
 **Exemplo:** filtrar respostas com o campo `Loja = Filial SP` ou buscar pelo nome `João da Silva`.
 
@@ -59,33 +75,29 @@ Filtre as respostas por:
 
 ## Aba Solicitações
 
-A aba Solicitações exibe todos os disparos realizados — manuais, automáticos e por Smart Follow-up — com o status de cada envio.
+A aba Solicitações exibe todos os disparos realizados — manuais, automáticos e por lembre automático — com o status de cada envio.
+
+<Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774988207827-huzutgk6mfe-pasted-image-1774988205111.png?q=85&fm=auto&auto=compress%2Cformat" width="1580" height="755" alt="" />
 
 ### Status dos envios
 
-| Status | Ícone | Significado |
-|---|---|---|
-| **Sucesso** | 🟢 Verde | Disparo confirmado como entregue |
-| **Pendente** | 🟡 Amarelo | Aguardando confirmação de entrega |
-| **Erro** | 🔴 Vermelho | Falha durante o envio |
+| Status       | Ícone       | Significado                       |
+| ------------ | ----------- | --------------------------------- |
+| **Sucesso**  | 🟢 Verde    | Disparo confirmado como entregue  |
+| **Pendente** | 🟡 Amarelo  | Aguardando confirmação de entrega |
+| **Erro**     | 🔴 Vermelho | Falha durante o envio             |
 
 ### Taxas de envio
 
-| Taxa | Fórmula | O que indica |
-|---|---|---|
-| **Taxa de Enviados** | Enviados ÷ (Enviados + Pendentes + Erros) | % confirmados como entregues |
-| **Taxa de Pendentes** | Pendentes ÷ (Enviados + Pendentes + Erros) | % aguardando confirmação |
-| **Taxa de Erros** | Erros ÷ (Enviados + Pendentes + Erros) | % com falha de envio |
+| Taxa                  | Fórmula                                    | O que indica                 |
+| --------------------- | ------------------------------------------ | ---------------------------- |
+| **Taxa de Enviados**  | Enviados ÷ (Enviados + Pendentes + Erros)  | % confirmados como entregues |
+| **Taxa de Pendentes** | Pendentes ÷ (Enviados + Pendentes + Erros) | % aguardando confirmação     |
+| **Taxa de Erros**     | Erros ÷ (Enviados + Pendentes + Erros)     | % com falha de envio         |
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   Alguns servidores de e-mail não retornam confirmação de entrega — esses envios ficam como "Pendentes" mesmo que tenham chegado ao destinatário. Se a taxa de pendentes for alta, verifique com o suporte.
 </Callout>
-
-### Outros registros na aba Solicitações
-
-- Registros de reenvio automático pelo **Smart Follow-up**
-- Segunda tentativa automática de envios com falha
-- Filtro por tipo de solicitação (manual, Smart Follow-up, etc.)
 
 ---
 
@@ -100,16 +112,26 @@ Acesse `Pesquisas e Respostas → Solicitações` e verifique o status de cada d
 Para envios com muitos contatos simultaneamente:
 
 1. No menu lateral, clique nos três pontos (`⋯`)
+
 2. Selecione **Fila de envios**
-3. Clique sobre um envio específico para ver: contatos enviados, sucessos, erros e contatos em fadiga
+
+3. Clique sobre um envio específico para ver: contatos enviados, sucessos, erros e contatos em fadiga\
+
+
+   <Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774988487429-qy2gjouk02m-pasted-image-1774988484858.png?q=85&fm=auto&auto=compress%2Cformat" width="330" height="578" alt="" style="width: 330px; height: auto; cursor: pointer;" />
+
+   <Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774988535612-39zcpcjc9k-pasted-image-1774988533374.png?q=85&fm=auto&auto=compress%2Cformat" width="1529" height="567" alt="" style="width: 1529px; height: auto; cursor: pointer;" />
 
 ### Via painel de Integrações (envios por API)
 
 Se o envio foi feito por integração:
 
 1. No menu lateral, clique nos três pontos (`⋯`) → **Integrações → API**
+
 2. Acesse **Ver integrações → Ir ao painel**
+
 3. Clique no ícone de olho ao lado do token para verificar erros na requisição
+
 4. Clique no nome de um contato para abrir os dados completos da requisição e identificar falhas
 
 ---
@@ -117,29 +139,28 @@ Se o envio foi feito por integração:
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Posso filtrar respostas por mais de um campo customizado ao mesmo tempo?" default-open="false">
+    Sim. Os filtros são acumulativos — você pode combinar campo customizado, data de resposta e status para uma segmentação precisa.
+  </Expandable>
 
-<Expandable title="Posso filtrar respostas por mais de um campo customizado ao mesmo tempo?">
-  Sim. Os filtros são acumulativos — você pode combinar campo customizado, data de resposta e status para uma segmentação precisa.
-</Expandable>
+  <Expandable title="O que significa uma resposta com status 'em fadiga'?" default-open="false">
+    Fadiga indica que o contato recebeu a pesquisa mas está no período de intervalo configurado nas regras de fadiga da pesquisa, impedindo um novo envio por enquanto.
+  </Expandable>
 
-<Expandable title="O que significa uma resposta com status 'em fadiga'?">
-  Fadiga indica que o contato recebeu a pesquisa mas está no período de intervalo configurado nas regras de fadiga da pesquisa, impedindo um novo envio por enquanto.
-</Expandable>
+  <Expandable title="Como sei se a IA analisou uma resposta?" default-open="false">
+    Respostas analisadas pela IA exibem a aba **Insights com AI** ao serem abertas individualmente, com tipo de feedback, sentimento, severidade, tópicos e resumo. Se a aba não aparecer, a análise pode não ter sido habilitada na pesquisa ou não havia créditos disponíveis.
+  </Expandable>
 
-<Expandable title="Como sei se a IA analisou uma resposta?">
-  Respostas analisadas pela IA exibem a aba **Insights com AI** ao serem abertas individualmente, com tipo de feedback, sentimento, severidade, tópicos e resumo. Se a aba não aparecer, a análise pode não ter sido habilitada na pesquisa ou não havia créditos disponíveis.
-</Expandable>
-
-<Expandable title="Posso criar um ticket do Fechamento de Loop sem sair da tela de Respostas?">
-  Sim. Ao abrir uma resposta, clique em **Criar ticket** e preencha os campos diretamente. O ticket será criado no fluxo selecionado sem necessidade de ir ao módulo Fechamento de Loop.
-</Expandable>
-
+  <Expandable title="Posso criar um ticket do Fechamento de Loop sem sair da tela de Respostas?" default-open="false">
+    Sim. Ao abrir uma resposta, clique em **Criar ticket** e preencha os campos diretamente. O ticket será criado no fluxo selecionado sem necessidade de ir ao módulo Fechamento de Loop.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
 ## Próximo passo
 
-<Card title="Como exportar respostas de pesquisas?" icon="download" href="/pesquisas/exportar-respostas" cta="Ver artigo">
+<Card title="Como exportar respostas de pesquisas?" href="/pesquisas/exportar-respostas" icon="download" cta="Ver artigo" horizontal="false">
   Exporte todas as respostas em planilha Excel para análise externa, com filtros por tipo (finalizadas, não finalizadas, solicitações).
 </Card>
+
