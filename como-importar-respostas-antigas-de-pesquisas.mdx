@@ -1,13 +1,18 @@
 ---
-title: "Como importar respostas antigas de pesquisas?"
-description: "Importe histórico de respostas de outras ferramentas para a Amplifique.me usando o importador de respostas. Veja os formatos aceitos por tipo de pergunta e as regras para manter compatibilidade com seus relatórios."
+title: Como importar respostas antigas de pesquisas?
+description: >-
+  Importe histórico de respostas de outras ferramentas para a Amplifique.me
+  usando o importador de respostas. Veja os formatos aceitos por tipo de
+  pergunta e as regras para manter compatibilidade com seus relatórios.
 ---
-
 ## Visão geral
 
-O **importador de respostas** permite trazer respostas de outras fontes — sistemas legados, planilhas históricas ou outras plataformas de pesquisa — para dentro da Amplifique.me. As respostas importadas aparecem nos relatórios junto com as demais respostas da pesquisa.
+O **importador de respostas** permite trazer respostas de outras fontes — sistemas legados, planilhas históricas ou outras plataformas de pesquisa — para dentro da Amplifique.me. As respostas importadas aparecem nos relatórios junto com as demais respostas da pesquisa.\
 
-<Callout kind="alert">
+
+<Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774986754906-5gm38oovz6-pasted-image-1774986752471.png?q=85&fm=auto&auto=compress%2Cformat" width="3014" height="1508" alt="" style="width: 3014px; height: auto; cursor: pointer;" />
+
+<Callout kind="alert" collapsed="false">
   Respostas importadas **consomem saldo de respostas** da sua conta, da mesma forma que respostas recebidas organicamente.
 </Callout>
 
@@ -18,9 +23,15 @@ O **importador de respostas** permite trazer respostas de outras fontes — sist
 Existem duas formas de acessar:
 
 - Na tela de **Pesquisas**, clique nos três pontos (`⋯`) ao lado da pesquisa desejada → **Importar respostas**
-- Pelo menu lateral → três pontos (`⋯`) → **Importações → Importar respostas**
 
-<Callout kind="tip">
+  <Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774986780116-kboh1mkwbdc-pasted-image-1774986777344.png?q=85&fm=auto&auto=compress%2Cformat" width="306" height="425" alt="" style="width: 306px; height: auto; cursor: pointer;" />
+
+- Pelo menu lateral → três pontos (`⋯`) → **Importações → Importar respostas**\
+
+
+  <Image src="https://blob-cdn.documentation.ai/org-228168c3-baff-41c0-9e3d-a927017afd0f/doc-dc08e65a-c672-46a6-8e86-3eb57bb5df19/1774986796992-rfvy1le3zke-pasted-image-1774986794592.png?q=85&fm=auto&auto=compress%2Cformat" width="1156" height="546" alt="" />
+
+<Callout kind="tip" collapsed="false">
   Recomendamos criar uma **pesquisa separada exclusiva para importação**, para manter o histórico isolado das respostas recentes. Se quiser somar as respostas no futuro, use os **mesmos nomes internos de perguntas** da pesquisa principal — caso contrário, não será possível consolidar as perguntas nos relatórios.
 </Callout>
 
@@ -28,53 +39,58 @@ Existem duas formas de acessar:
 
 ## Formatos aceitos por tipo de dado
 
-| Campo | Regras de formato |
-|---|---|
-| **NPS** | Número inteiro de 0 a 10 |
-| **CSAT** | Número inteiro de 1 a 5 |
-| **CES** | Número inteiro de 1 a 7 |
-| **Única Escolha** | Texto com o valor exato da opção |
-| **Múltipla Escolha** | Texto separado por delimitador (escolhido no 2º passo da importação) |
-| **Pergunta Aberta** | Texto livre |
-| **Caixa de Seleção** | Texto |
-| **Like/Dislike** | Aceita: `true`, `1`, `like`, `up` para positivo; `false`, `-1`, `0`, `dislike`, `down` para negativo |
-| **Matriz de Opções** | Texto com o valor exato das colunas da matriz |
-| **Escala Likert** | Número inteiro conforme a escala configurada na pesquisa |
-| **Nome do Contato** | Texto |
-| **E-mail do Contato** | Texto com e-mail válido |
-| **Telefone do Contato** | Texto com telefone válido (com DDD) |
-| **Data de Envio** | `DD/MM/YYYY`, `YYYY-MM-DD` ou ISO 8601 |
-| **Data de Resposta** | Mesmo formato da Data de Envio |
-| **Campos Customizados** | Texto |
+| Campo                   | Regras de formato                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- |
+| **NPS**                 | Número inteiro de 0 a 10                                                                             |
+| **CSAT**                | Número inteiro de 1 a 5                                                                              |
+| **CES**                 | Número inteiro de 1 a 7                                                                              |
+| **Única Escolha**       | Texto com o valor exato da opção                                                                     |
+| **Múltipla Escolha**    | Texto separado por delimitador (escolhido no 2º passo da importação)                                 |
+| **Pergunta Aberta**     | Texto livre                                                                                          |
+| **Caixa de Seleção**    | Texto                                                                                                |
+| **Like/Dislike**        | Aceita: `true`, `1`, `like`, `up` para positivo; `false`, `-1`, `0`, `dislike`, `down` para negativo |
+| **Matriz de Opções**    | Texto com o valor exato das colunas da matriz                                                        |
+| **Escala Likert**       | Número inteiro conforme a escala configurada na pesquisa                                             |
+| **Nome do Contato**     | Texto                                                                                                |
+| **E-mail do Contato**   | Texto com e-mail válido                                                                              |
+| **Telefone do Contato** | Texto com telefone válido (com DDD)                                                                  |
+| **Data de Envio**       | `DD/MM/YYYY`, `YYYY-MM-DD` ou ISO 8601                                                               |
+| **Data de Resposta**    | Mesmo formato da Data de Envio                                                                       |
+| **Campos Customizados** | Texto                                                                                                |
 
 ---
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Preciso usar a mesma pesquisa para importar ou posso criar uma nova?" default-open="false">
+    Você pode usar qualquer pesquisa existente ou criar uma nova. A recomendação é criar uma pesquisa separada para a importação.
+  </Expandable>
 
-<Expandable title="Preciso usar a mesma pesquisa para importar ou posso criar uma nova?">
-  Você pode usar qualquer pesquisa existente ou criar uma nova. A recomendação é criar uma pesquisa separada para a importação. Se quiser que os dados se somem aos relatórios da pesquisa principal no futuro, use os mesmos nomes internos de perguntas nas duas pesquisas.
-</Expandable>
+  <Expandable title="O importador funciona para qualquer tipo de pergunta?" default-open="false">
+    Sim, para todos os tipos suportados na plataforma. Verifique a tabela de formatos aceitos — especialmente para Like/Dislike e Múltipla Escolha, que têm regras específicas de formato.
+  </Expandable>
 
-<Expandable title="O que acontece se eu usar nomes internos diferentes dos da pesquisa original?">
-  As respostas serão importadas normalmente, mas não será possível cruzar ou somar os dados com as perguntas da outra pesquisa nos relatórios de grupo. Cada pergunta é identificada pelo seu nome interno — se os nomes diferem, são tratadas como perguntas distintas.
-</Expandable>
-
-<Expandable title="O importador funciona para qualquer tipo de pergunta?">
-  Sim, para todos os tipos suportados na plataforma. Verifique a tabela de formatos aceitos — especialmente para Like/Dislike e Múltipla Escolha, que têm regras específicas de formato.
-</Expandable>
-
-<Expandable title="Respostas importadas aparecem nos relatórios junto com as demais?">
-  Sim. Após a importação, as respostas ficam visíveis na aba Respostas e são contabilizadas nos painéis e relatórios, incluindo NPS, CSAT e AmpliScore.
-</Expandable>
-
+  <Expandable title="Respostas importadas aparecem nos relatórios junto com as demais?" default-open="false">
+    Sim. Após a importação, as respostas ficam visíveis na aba Respostas e são contabilizadas nos painéis e relatórios, incluindo NPS, CSAT e AmpliScore.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
+## Tutorial em vídeo
+
+### Parte 1
+
+<Video uid="9843c5e4-492b-49c3-8662-f6797cad750d" src="https://www.loom.com/embed/3a5560456e774774bb9fe694a3386e45" render-type="iframe" width="672" height="378" controls="true" allow-full-screen="true" style="width: 672px; height: auto; cursor: pointer;" />
+
+### Parte 2
+
+<Video uid="f38b8830-0378-4922-8994-5955a581cc8c" src="https://www.loom.com/embed/845983c63c1646fea606d1465dcf33cc" render-type="iframe" width="672" height="378" controls="true" allow-full-screen="true" style="width: 672px; height: auto; cursor: pointer;" />
+
 ## Próximo passo
 
-<Card title="Como criar uma pesquisa?" icon="plus-circle" href="/pesquisas/como-criar" cta="Ver artigo">
+<Card title="Como criar uma pesquisa?" href="/pesquisas/como-criar" icon="plus-circle" cta="Ver artigo" horizontal="false">
   Veja o guia completo para criar pesquisas do zero, configurar canais e publicar.
 </Card>
+
