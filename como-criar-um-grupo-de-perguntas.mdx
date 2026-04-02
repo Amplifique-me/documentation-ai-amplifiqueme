@@ -1,15 +1,16 @@
 ---
-title: "Como criar um grupo de perguntas?"
-description: "Some perguntas de métricas iguais (NPS, CSAT, CES, Likert) dentro de uma pesquisa para analisá-las como um único indicador na aba de Detalhamento."
+title: Como criar um grupo de perguntas?
+description: >-
+  Some perguntas de métricas iguais (NPS, CSAT, CES, Likert) dentro de uma
+  pesquisa para analisá-las como um único indicador na aba de Detalhamento.
 ---
-
 ## Visão geral
 
 O **Grupo de Perguntas** permite somar múltiplas perguntas de métricas iguais dentro de uma mesma pesquisa e analisá-las como um único indicador consolidado. Funciona para NPS, CSAT, CES, Like/Dislike e Escala Likert.
 
 **Exemplo:** sua pesquisa tem 4 perguntas CSAT — uma para cada etapa do atendimento. Com um Grupo de Perguntas, você visualiza o CSAT geral somado como se fosse uma única métrica.
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   O Grupo de Perguntas é criado dentro de uma pesquisa específica, na aba `Análise e Resultados → Detalhamento`. Não confundir com Grupo de Pesquisas, que agrupa pesquisas diferentes.
 </Callout>
 
@@ -18,27 +19,31 @@ O **Grupo de Perguntas** permite somar múltiplas perguntas de métricas iguais 
 ## Como criar um grupo de perguntas
 
 <Steps>
+  <Step title="Acesse Análise e Resultados → Detalhamento" title-type="p">
+    No menu lateral, acesse `📊 Análise e Resultados` da pesquisa desejada e clique na aba `Detalhamento`.
 
-<Step title="Acesse Análise e Resultados → Detalhamento">
-  No menu lateral, acesse `📊 Análise e Resultados` da pesquisa desejada e clique na aba `Detalhamento`.
-</Step>
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/98c4e4d1f4f86fa87fa58655f946ac19.png" width="3460" height="1032" style="width: 3460px; height: auto; cursor: pointer;" />
+  </Step>
 
-<Step title="Crie o grupo de perguntas">
-  Dentro do Detalhamento, localize a opção para criar um Grupo de Perguntas. Selecione as perguntas de mesma métrica que deseja somar e nomeie o grupo.
+  <Step title="Crie o grupo de perguntas" title-type="p">
+    Dentro do Detalhamento, localize a opção para criar um Grupo de Perguntas. Selecione as perguntas de mesma métrica que deseja somar e nomeie o grupo.
 
-  <Callout kind="alert">
-    Só é possível agrupar perguntas com a **mesma métrica**. Não é possível misturar NPS com CSAT no mesmo grupo, por exemplo.
-  </Callout>
-</Step>
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/4a5deb482f14d133dce7e6d788098331.gif" width="1714" height="1392" />
 
-<Step title="Visualize o grupo criado">
-  O grupo aparecerá no menu **Pergunta para Visualização**, ao final da lista, dentro da aba Detalhamento. Clique nele para ver os resultados consolidados.
+    <Callout kind="alert" collapsed="false">
+      Só é possível agrupar perguntas com a **mesma métrica**. Não é possível misturar NPS com CSAT no mesmo grupo, por exemplo.
+    </Callout>
+  </Step>
 
-  <Callout kind="success">
-    Grupo criado! As perguntas agrupadas agora são analisadas como um único indicador.
-  </Callout>
-</Step>
+  <Step title="Visualize o grupo criado" title-type="p">
+    O grupo aparecerá no menu **Pergunta para Visualização**, ao final da lista, dentro da aba Detalhamento. Clique nele para ver os resultados consolidados.
 
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/88577330eebc1da035834f7662d1589f.png" width="2406" height="1040" />
+
+    <Callout kind="success" collapsed="false">
+      Grupo criado! As perguntas agrupadas agora são analisadas como um único indicador.
+    </Callout>
+  </Step>
 </Steps>
 
 ---
@@ -47,12 +52,14 @@ O **Grupo de Perguntas** permite somar múltiplas perguntas de métricas iguais 
 
 Ao visualizar um Grupo de Perguntas, você verá dois contadores de respostas:
 
-| Valor | O que representa | Exemplo |
-|---|---|---|
-| **Respostas** | Soma de todas as respostas das perguntas agrupadas | 4 perguntas CSAT × 4 respostas cada = 16 |
+| Valor                | O que representa                                              | Exemplo                                            |
+| -------------------- | ------------------------------------------------------------- | -------------------------------------------------- |
+| **Respostas**        | Soma de todas as respostas das perguntas agrupadas            | 4 perguntas CSAT × 4 respostas cada = 16           |
 | **Respostas Únicas** | Quantidade de respondentes únicos em um campo de detalhamento | 4 respondentes com o campo "Cliente Pessoa Física" |
 
-<Callout kind="tip">
+<Image src="https://cdn.amplifique.me/central-de-ajuda/6061d3c5bed48464062605c0c9ab4495.png" width="384" height="268" />
+
+<Callout kind="tip" collapsed="false">
   Use **Respostas Únicas** quando quiser saber quantos clientes distintos responderam a um determinado segmento — evita contar o mesmo respondente múltiplas vezes por ter respondido perguntas diferentes do grupo.
 </Callout>
 
@@ -61,25 +68,26 @@ Ao visualizar um Grupo de Perguntas, você verá dois contadores de respostas:
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Posso criar mais de um grupo de perguntas na mesma pesquisa?" default-open="false">
+    Sim. Você pode criar múltiplos grupos dentro de uma mesma pesquisa, desde que cada grupo reúna perguntas de mesma métrica.
+  </Expandable>
 
-<Expandable title="Posso criar mais de um grupo de perguntas na mesma pesquisa?">
-  Sim. Você pode criar múltiplos grupos dentro de uma mesma pesquisa, desde que cada grupo reúna perguntas de mesma métrica.
-</Expandable>
+  <Expandable title="O grupo de perguntas afeta a pesquisa original?" default-open="false">
+    Não. O agrupamento é apenas uma camada de visualização analítica. As perguntas individuais continuam existindo e podem ser analisadas separadamente.
+  </Expandable>
 
-<Expandable title="O grupo de perguntas afeta a pesquisa original?">
-  Não. O agrupamento é apenas uma camada de visualização analítica. As perguntas individuais continuam existindo e podem ser analisadas separadamente.
-</Expandable>
-
-<Expandable title="Posso excluir um grupo de perguntas depois de criado?">
-  Sim. O grupo pode ser removido a qualquer momento sem afetar as perguntas originais da pesquisa.
-</Expandable>
-
+  <Expandable title="Posso excluir um grupo de perguntas depois de criado?" default-open="false">
+    Sim. O grupo pode ser removido a qualquer momento sem afetar as perguntas originais da pesquisa.
+  </Expandable>
 </ExpandableGroup>
 
----
+## Tutorial em vídeo
+
+<Video uid="0fb67bdd-e964-451e-b62b-45cf6daca840" src="https://www.loom.com/embed/04da67b746a044d1a50ab908b2bfa8af" render-type="iframe" width="663" height="373" controls="true" allow-full-screen="true" style="width: 663px; height: auto; cursor: pointer;" />
 
 ## Próximo passo
 
-<Card title="Como criar um grupo de pesquisas?" icon="layers" href="/analise-e-resultados/grupo-de-pesquisas" cta="Ver artigo">
+<Card title="Como criar um grupo de pesquisas?" href="/analise-e-resultados/grupo-de-pesquisas" icon="layers" cta="Ver artigo" horizontal="false">
   Junte pesquisas com a mesma estrutura para analisá-las em conjunto como um único painel.
 </Card>
+
