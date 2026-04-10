@@ -1,13 +1,15 @@
 ---
-title: "O que é o Fechamento de Loop?"
-description: "Entenda como o módulo Fechamento de Loop organiza a tratativa de feedbacks em fluxos, tickets, fases e checklists — com automação, dashboard e comunicação com o cliente por e-mail."
+title: O que é o Fechamento de Loop?
+description: >-
+  Entenda como o módulo Fechamento de Loop organiza a tratativa de feedbacks em
+  fluxos, tickets, fases e checklists — com automação, dashboard e comunicação
+  com o cliente por e-mail.
 ---
-
 ## Visão geral
 
 O **Fechamento de Loop** é o módulo da Amplifique.me dedicado a transformar feedbacks de pesquisas em ações concretas. Quando um cliente responde uma pesquisa — positivamente ou negativamente — o módulo permite abrir tickets, atribuir responsáveis, definir prazos e acompanhar a resolução até o fechamento.
 
-<Callout kind="info">
+<Callout kind="info" collapsed="false">
   O Fechamento de Loop ocorre **depois** que seus clientes respondem uma pesquisa. A tratativa e o acompanhamento dos respondentes são tão importantes quanto a coleta do feedback em si.
 </Callout>
 
@@ -15,17 +17,20 @@ O **Fechamento de Loop** é o módulo da Amplifique.me dedicado a transformar fe
 
 ## Conceitos principais
 
-<Columns cols={2}>
-  <Card title="Fluxos" icon="git-branch" href="/fechamento-de-loop/como-criar-fluxo" cta="Saiba mais">
+<Columns cols="2">
+  <Card title="Fluxos" href="/fechamento-de-loop/como-criar-fluxo" icon="git-branch" cta="Saiba mais" horizontal="false">
     Estruturas que organizam as tratativas. Cada fluxo tem seus usuários, responsável padrão, prazo e fases.
   </Card>
-  <Card title="Tickets" icon="ticket" href="/fechamento-de-loop/tickets-manuais" cta="Saiba mais">
+
+  <Card title="Tickets" href="/fechamento-de-loop/tickets-manuais" icon="ticket" cta="Saiba mais" horizontal="false">
     Cada feedback tratado vira um ticket, com histórico completo de ações, e-mails e anotações.
   </Card>
-  <Card title="Fases" icon="columns" href="/fechamento-de-loop/como-criar-fluxo" cta="Saiba mais">
+
+  <Card title="Fases" href="/fechamento-de-loop/como-criar-fluxo" icon="columns" cta="Saiba mais" horizontal="false">
     Etapas que o ticket percorre até ser fechado: Pendente, Em Progresso e Fechado.
   </Card>
-  <Card title="Automação" icon="zap" href="/fechamento-de-loop/automatizar-tickets" cta="Saiba mais">
+
+  <Card title="Automação" href="/fechamento-de-loop/automatizar-tickets" icon="zap" cta="Saiba mais" horizontal="false">
     Tickets criados automaticamente a partir de respostas de pesquisa com base em regras definidas.
   </Card>
 </Columns>
@@ -37,7 +42,9 @@ O **Fechamento de Loop** é o módulo da Amplifique.me dedicado a transformar fe
 Cada fluxo é uma forma de organizar tratativas por tipo de feedback, segmento de cliente ou equipe responsável. Exemplos comuns:
 
 - **Fluxo de Detratores NPS** — para clientes com notas 0 a 6
+
 - **Fluxo de Promotores** — para ativação e indicação
+
 - **Fluxo regional** — para clientes de uma carteira ou loja específica
 
 Cada fluxo define: quem tem acesso, quem é o responsável padrão, qual o prazo de vencimento dos tickets e quais fases o ticket deve percorrer.
@@ -49,9 +56,13 @@ Cada fluxo define: quem tem acesso, quem é o responsável padrão, qual o prazo
 Dentro de cada ticket, a equipe tem acesso a:
 
 - **Anotações internas** — visíveis apenas para o responsável e seguidores, com possibilidade de marcar usuários para notificação
+
 - **Envio de e-mail** — contato direto com o cliente, com suporte a variáveis, modelos prontos e as respostas do cliente vinculadas automaticamente ao ticket
+
 - **WhatsApp** — abertura de conversa com o contato diretamente pelo app
+
 - **Ligação** — discagem direta, se houver ferramenta de ligação configurada
+
 - **Histórico completo** — registro de todas as ações: mudança de fase, e-mails, anotações, alterações de status e vencimento
 
 ---
@@ -60,43 +71,46 @@ Dentro de cada ticket, a equipe tem acesso a:
 
 Ao redigir um e-mail dentro do ticket, clique no ícone de **varinha** para acessar recursos de IA:
 
-| Opção | O que faz |
-|---|---|
-| **Gerar Resposta** | Cria uma mensagem com base na resposta de texto do cliente (consome 1 crédito de IA) |
-| **Reescrever Formalmente / Amigavelmente** | Ajusta o tom da mensagem |
-| **Traduzir para...** | Traduz o texto para outro idioma |
-| **Reformular** | Reescreve com outras palavras |
-| **Corrigir Gramática e Ortografia** | Corrige erros sem alterar o conteúdo |
-| **Expandir Resposta** | Amplia o texto com mais detalhes |
+| Opção                                      | O que faz                                                                            |
+| ------------------------------------------ | ------------------------------------------------------------------------------------ |
+| **Gerar Resposta**                         | Cria uma mensagem com base na resposta de texto do cliente (consome 1 crédito de IA) |
+| **Reescrever Formalmente / Amigavelmente** | Ajusta o tom da mensagem                                                             |
+| **Traduzir para...**                       | Traduz o texto para outro idioma                                                     |
+| **Reformular**                             | Reescreve com outras palavras                                                        |
+| **Corrigir Gramática e Ortografia**        | Corrige erros sem alterar o conteúdo                                                 |
+| **Expandir Resposta**                      | Amplia o texto com mais detalhes                                                     |
 
 ---
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="O Fechamento de Loop funciona para qualquer tipo de pesquisa?" default-open="false">
+    Sim. O módulo funciona com NPS, CSAT, CES e pesquisas customizadas. A automação de tickets pode ser configurada com base em qualquer pergunta e faixa de resposta.
+  </Expandable>
 
-<Expandable title="O Fechamento de Loop funciona para qualquer tipo de pesquisa?">
-  Sim. O módulo funciona com NPS, CSAT, CES e pesquisas customizadas. A automação de tickets pode ser configurada com base em qualquer pergunta e faixa de resposta.
-</Expandable>
+  <Expandable title="Preciso criar tickets manualmente ou pode ser automático?" default-open="false">
+    As duas formas são possíveis. Você pode criar tickets manualmente a qualquer momento ou configurar automações para que o sistema crie tickets automaticamente quando uma resposta satisfizer os critérios definidos.
+  </Expandable>
 
-<Expandable title="Preciso criar tickets manualmente ou pode ser automático?">
-  As duas formas são possíveis. Você pode criar tickets manualmente a qualquer momento ou configurar automações para que o sistema crie tickets automaticamente quando uma resposta satisfizer os critérios definidos.
-</Expandable>
+  <Expandable title="O cliente sabe que existe um ticket aberto para ele?" default-open="false">
+    Não automaticamente. O cliente só é contactado se a equipe enviar um e-mail, WhatsApp ou ligar pelo ticket. O ticket é uma ferramenta interna de gestão.
+  </Expandable>
 
-<Expandable title="O cliente sabe que existe um ticket aberto para ele?">
-  Não automaticamente. O cliente só é contactado se a equipe enviar um e-mail, WhatsApp ou ligar pelo ticket. O ticket é uma ferramenta interna de gestão.
-</Expandable>
-
-<Expandable title="O módulo Fechamento de Loop está disponível em todos os planos?">
-  Depende do plano contratado. Se a opção não aparecer no menu, entre em contato com o time da Amplifique.me para verificar a disponibilidade.
-</Expandable>
-
+  <Expandable title="O módulo Fechamento de Loop está disponível em todos os planos?" default-open="false">
+    Depende do plano contratado. Se a opção não aparecer no menu, entre em contato com o time da Amplifique.me para verificar a disponibilidade.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
+## Tutorial em Vídeo
+
+<Video uid="d4b4a5fb-05d2-4a2b-8ad3-3b427eb39841" src="https://www.youtube.com/embed/L9ShhpNK_0U" render-type="iframe" width="672" height="378" controls="true" allow-full-screen="true" style="width: 672px; height: auto; cursor: pointer;" />
+
 ## Próximo passo
 
-<Card title="Como criar e configurar um fluxo?" icon="git-branch" href="/fechamento-de-loop/como-criar-fluxo" cta="Ver artigo">
+<Card title="Como criar e configurar um fluxo?" href="/fechamento-de-loop/como-criar-fluxo" icon="git-branch" cta="Ver artigo" horizontal="false">
   Crie seu primeiro fluxo de atendimento com fases, checklists e responsáveis definidos.
 </Card>
+
