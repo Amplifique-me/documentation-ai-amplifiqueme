@@ -1,8 +1,10 @@
 ---
-title: "Como gerenciar múltiplas unidades?"
-description: "Alterne entre unidades (filiais), renomeie cada uma, copie IDs para integração e redistribua saldos de respostas entre unidades para controlar o uso por área ou filial."
+title: Como gerenciar múltiplas unidades?
+description: >-
+  Alterne entre unidades (filiais), renomeie cada uma, copie IDs para integração
+  e redistribua saldos de respostas entre unidades para controlar o uso por área
+  ou filial.
 ---
-
 ## Visão geral
 
 A funcionalidade de **multiunidades** permite administrar filiais ou áreas separadas dentro da mesma conta da Amplifique.me — cada uma com seus próprios dados, contatos e pesquisas, mas compartilhando o mesmo contrato e saldo global.
@@ -12,19 +14,19 @@ A funcionalidade de **multiunidades** permite administrar filiais ou áreas sepa
 ## Como alternar entre unidades
 
 <Steps>
+  <Step title="Acesse o seletor de unidades" title-type="p">
+    No canto superior direito da tela, ao lado do seu nome, clique no **menu de unidades**.
 
-<Step title="Acesse o seletor de unidades">
-  No canto superior direito da tela, ao lado do seu nome, clique no **menu de unidades**.
-</Step>
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/41b388085677c67bf5e5a8fd8ed424cf.gif" width="635" height="302" style="width: 635px; height: auto; cursor: pointer;" />
+  </Step>
 
-<Step title="Selecione a unidade desejada">
-  Clique na unidade que deseja visualizar. A tela carregará os dados daquela unidade automaticamente.
+  <Step title="Selecione a unidade desejada" title-type="p">
+    Clique na unidade que deseja visualizar. A tela carregará os dados daquela unidade automaticamente.
 
-  <Callout kind="info">
-    Você só verá as unidades às quais seu usuário tem acesso. Se estiver vendo menos unidades do que esperado, peça a um administrador que verifique suas permissões em `Configurações → Usuários`.
-  </Callout>
-</Step>
-
+    <Callout kind="info" collapsed="false">
+      Você só verá as unidades às quais seu usuário tem acesso. Se estiver vendo menos unidades do que esperado, peça a um administrador que verifique suas permissões em `Configurações → Usuários`.
+    </Callout>
+  </Step>
 </Steps>
 
 ---
@@ -32,15 +34,15 @@ A funcionalidade de **multiunidades** permite administrar filiais ou áreas sepa
 ## Como renomear uma unidade
 
 <Steps>
+  <Step title="Acesse Configurações → Unidade" title-type="p">
+    Clique no ícone de engrenagem e vá em `Unidade → Dados da unidade`.
 
-<Step title="Acesse Configurações → Unidade">
-  Clique no ícone de engrenagem e vá em `Unidade → Dados da unidade`.
-</Step>
+    <Image src="https://cdn.amplifique.me/central-de-ajuda/bb18156127bb2ef8a217e9b8de3a2eef.gif" width="732" height="346" style="width: 732px; height: auto; cursor: pointer;" />
+  </Step>
 
-<Step title="Altere o nome e salve">
-  Edite o nome da unidade conforme desejado (ex: de "Filial B" para "Filial Norte") e clique em **Salvar**.
-</Step>
-
+  <Step title="Altere o nome e salve" title-type="p">
+    Edite o nome da unidade conforme desejado (ex: de "Filial B" para "Filial Norte") e clique em **Salvar**.
+  </Step>
 </Steps>
 
 ---
@@ -49,35 +51,36 @@ A funcionalidade de **multiunidades** permite administrar filiais ou áreas sepa
 
 O saldo de respostas é global da conta, mas pode ser distribuído entre as unidades para controlar o uso de cada filial ou área.
 
-<Callout kind="alert">
+<Callout kind="alert" collapsed="false">
   A gestão de saldos é acessível apenas para usuários com permissão de **Proprietário** (ou mediante liberação pelo suporte da Amplifique.me). Acesse em `Configurações → Saldo Padrão`.
 </Callout>
 
 <Steps>
+  <Step title="Acesse Configurações → Saldo Padrão" title-type="p">
+    Você verá a lista de todas as unidades e seus respectivos saldos atuais.
+  </Step>
 
-<Step title="Acesse Configurações → Saldo Padrão">
-  Você verá a lista de todas as unidades e seus respectivos saldos atuais.
-</Step>
+  <Step title="Redistribua o saldo" title-type="p">
+    Para transferir saldo entre unidades:
 
-<Step title="Redistribua o saldo">
-  Para transferir saldo entre unidades:
-  1. Reduza o saldo da unidade de origem (ex: remova 200 créditos da "Filial C")
-  2. Aumente o saldo da unidade de destino (ex: adicione 200 créditos à "Filial A")
-  3. O campo **Saldo distribuído** deve totalizar **zero** ao final do ajuste
+    1. Reduza o saldo da unidade de origem (ex: remova 200 créditos da "Filial C")
 
-  <Callout kind="danger">
-    Nenhuma unidade pode ficar com **saldo negativo**. O sistema bloqueará o salvamento se isso ocorrer. Ajuste os valores até que todas as unidades fiquem com saldo positivo e o saldo distribuído seja zero.
-  </Callout>
-</Step>
+    2. Aumente o saldo da unidade de destino (ex: adicione 200 créditos à "Filial A")
 
-<Step title="Clique em Salvar">
-  As alterações só são aplicadas após clicar em **Salvar**. Antes disso, nenhuma mudança é efetiva.
+    3. O campo **Saldo distribuído** deve totalizar **zero** ao final do ajuste
 
-  <Callout kind="success">
-    Saldo redistribuído! As unidades já operam com os novos limites.
-  </Callout>
-</Step>
+    <Callout kind="danger" collapsed="false">
+      Nenhuma unidade pode ficar com **saldo negativo**. O sistema bloqueará o salvamento se isso ocorrer. Ajuste os valores até que todas as unidades fiquem com saldo positivo e o saldo distribuído seja zero.
+    </Callout>
+  </Step>
 
+  <Step title="Clique em Salvar" title-type="p">
+    As alterações só são aplicadas após clicar em **Salvar**. Antes disso, nenhuma mudança é efetiva.
+
+    <Callout kind="success" collapsed="false">
+      Saldo redistribuído! As unidades já operam com os novos limites.
+    </Callout>
+  </Step>
 </Steps>
 
 ---
@@ -85,37 +88,42 @@ O saldo de respostas é global da conta, mas pode ser distribuído entre as unid
 ## Regras importantes sobre saldos
 
 - O saldo total da conta não pode ser ultrapassado
+
 - Créditos removidos de uma unidade sem serem redistribuídos ficam listados como **saldo "a distribuir"**
+
 - Alterações indevidas podem impedir o envio de pesquisas de uma unidade — recomenda-se que apenas o Proprietário ou um responsável centralizado faça a gestão de saldos
 
 ---
 
+## Tutorial em Vídeo
+
+<Video uid="21ee5587-a589-4b7d-b004-83e8c457d6c1" src="https://www.loom.com/embed/3a7dd282b2a24c35b9dfabcb24e38e59" render-type="iframe" width="672" height="378" controls="true" allow-full-screen="true" style="width: 672px; height: auto; cursor: pointer;" />
+
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Como adicionar uma nova unidade à conta?" default-open="false">
+    A criação de novas unidades é feita pelo time da Amplifique.me. Entre em contato com o suporte para solicitar a adição de unidades ao seu contrato.
+  </Expandable>
 
-<Expandable title="Como adicionar uma nova unidade à conta?">
-  A criação de novas unidades é feita pelo time da Amplifique.me. Entre em contato com o suporte para solicitar a adição de unidades ao seu contrato.
-</Expandable>
+  <Expandable title="O ID da unidade serve para quê?" default-open="false">
+    O ID da unidade é usado em integrações e na API para identificar para qual unidade os dados devem ser enviados ou lidos. Você encontra o ID em `Configurações → Unidade → Dados da unidade`.
+  </Expandable>
 
-<Expandable title="O ID da unidade serve para quê?">
-  O ID da unidade é usado em integrações e na API para identificar para qual unidade os dados devem ser enviados ou lidos. Você encontra o ID em `Configurações → Unidade → Dados da unidade`.
-</Expandable>
+  <Expandable title="Posso configurar domínios de e-mail diferentes por unidade?" default-open="false">
+    Sim. A configuração de domínio customizado pode ser feita individualmente por unidade em `Configurações → Unidade → Domínio de E-mail Customizado`.
+  </Expandable>
 
-<Expandable title="Posso configurar domínios de e-mail diferentes por unidade?">
-  Sim. A configuração de domínio customizado pode ser feita individualmente por unidade em `Configurações → Unidade → Domínio de E-mail Customizado`.
-</Expandable>
-
-<Expandable title="O saldo de SMS também pode ser redistribuído entre unidades?">
-  Sim. O processo é o mesmo do saldo de respostas. Acesse `Configurações → Saldo Padrão` para visualizar e ajustar os saldos de SMS por unidade.
-</Expandable>
-
+  <Expandable title="O saldo de SMS também pode ser redistribuído entre unidades?" default-open="false">
+    Sim. O processo é o mesmo do saldo de respostas. Acesse `Configurações → Saldo Padrão` para visualizar e ajustar os saldos de SMS por unidade.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
 ## Próximo passo
 
-<Card title="Como monitorar o limite de respostas mensais?" icon="gauge" href="/configuracoes/limite-respostas" cta="Ver artigo">
+<Card title="Como monitorar o limite de respostas mensais?" href="/configuracoes/limite-respostas" icon="gauge" cta="Ver artigo" horizontal="false">
   Acompanhe o consumo de cada unidade e configure alertas para evitar paralisação automática das pesquisas.
 </Card>
+
