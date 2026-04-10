@@ -224,6 +224,10 @@
             "group": "Configurações",
             "pages": [
               {
+                "title": "O que tem no módulo de Configurações?",
+                "path": "domnio-customizado"
+              },
+              {
                 "title": "Como acessar boletos, faturas e notas fiscais?",
                 "path": "como-acessar-boletos-faturas-e-notas-fiscais"
               },
@@ -250,10 +254,6 @@
               {
                 "title": "Como convidar e gerenciar usuários?",
                 "path": "como-convidar-e-gerenciar-usurios"
-              },
-              {
-                "title": "O que tem no módulo de Configurações?",
-                "path": "domnio-customizado"
               }
             ]
           },
