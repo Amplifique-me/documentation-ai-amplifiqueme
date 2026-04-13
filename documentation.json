@@ -277,10 +277,6 @@
                 "path": "como-configurar-webhooks"
               },
               {
-                "title": "FAQ técnico: In-App e sincronização de dados",
-                "path": "faq-tcnico-in-app-e-sincronizao-de-dados"
-              },
-              {
                 "title": "Documentação da API Amplifique.me",
                 "path": "documentao-da-api-amplifiqueme"
               },
@@ -294,15 +290,20 @@
             "group": "FAQs",
             "icon": "help-circle",
             "expandable": false,
-            "pages": []
+            "pages": [
+              {
+                "title": "FAQ técnico: In-App e sincronização de dados",
+                "path": "faq-tcnico-in-app-e-sincronizao-de-dados"
+              },
+              {
+                "title": "FAQ: WhatsApp Oficial na Amplifique.me",
+                "path": "faq-whatsapp-oficial-na-amplifiqueme"
+              }
+            ]
           },
           {
             "group": "WhatsApp Oficial",
             "pages": [
-              {
-                "title": "FAQ: WhatsApp Oficial na Amplifique.me",
-                "path": "faq-whatsapp-oficial-na-amplifiqueme"
-              },
               {
                 "title": "O que é o erro #131049 no WhatsApp?",
                 "path": "o-que-o-erro-131049-no-whatsapp"
