@@ -258,7 +258,7 @@
             ]
           },
           {
-            "group": "Integrações",
+            "group": "Técnicos e Devs",
             "pages": [
               {
                 "title": "Como funcionam as integrações?",
@@ -287,62 +287,6 @@
               {
                 "title": "Implementação técnica de pesquisas In-App",
                 "path": "implementao-tcnica-de-pesquisas-in-app"
-              },
-              {
-                "title": "Integração com Desbravador",
-                "path": "integrao-com-desbravador"
-              },
-              {
-                "title": "Integração com PMS TDF (Tô de Férias)",
-                "path": "integrao-com-pms-tdf-t-de-frias"
-              },
-              {
-                "title": "Integração com Bitz Hotel",
-                "path": "integrao-com-bitz-hotel"
-              },
-              {
-                "title": "Integração com Simples Hotel",
-                "path": "integrao-com-simples-hotel"
-              },
-              {
-                "title": "Integração com Pipedrive",
-                "path": "integrao-com-pipedrive"
-              },
-              {
-                "title": "Integração com Tiny ERP",
-                "path": "integrao-com-tiny-erp"
-              },
-              {
-                "title": "Integração com RD Station Marketing",
-                "path": "integrao-com-rd-station-marketing"
-              },
-              {
-                "title": "Integração com Gupy.io",
-                "path": "integrao-com-gupyio"
-              },
-              {
-                "title": "Integração com Customer X",
-                "path": "integrao-com-customer-x"
-              },
-              {
-                "title": "Integração com Construtor de Vendas",
-                "path": "integrao-com-construtor-de-vendas"
-              },
-              {
-                "title": "Integração com PipeRun",
-                "path": "integrao-com-piperun"
-              },
-              {
-                "title": "Integração com Zendesk",
-                "path": "integrao-com-zendesk"
-              },
-              {
-                "title": "Integração com Movidesk",
-                "path": "integrao-com-movidesk"
-              },
-              {
-                "title": "Integração com ActiveCampaign",
-                "path": "integrao-com-activecampaign"
               }
             ]
           },
@@ -499,6 +443,68 @@
             "icon": "history"
           }
         ]
+      },
+      {
+        "tab": " Integrações com Parceiros",
+        "pages": [
+          {
+            "title": "Integração com ActiveCampaign",
+            "path": "integrao-com-activecampaign"
+          },
+          {
+            "title": "Integração com Movidesk",
+            "path": "integrao-com-movidesk"
+          },
+          {
+            "title": "Integração com Zendesk",
+            "path": "integrao-com-zendesk"
+          },
+          {
+            "title": "Integração com PipeRun",
+            "path": "integrao-com-piperun"
+          },
+          {
+            "title": "Integração com Construtor de Vendas",
+            "path": "integrao-com-construtor-de-vendas"
+          },
+          {
+            "title": "Integração com Tiny ERP",
+            "path": "integrao-com-tiny-erp"
+          },
+          {
+            "title": "Integração com RD Station Marketing",
+            "path": "integrao-com-rd-station-marketing"
+          },
+          {
+            "title": "Integração com Pipedrive",
+            "path": "integrao-com-pipedrive"
+          },
+          {
+            "title": "Integração com Simples Hotel",
+            "path": "integrao-com-simples-hotel"
+          },
+          {
+            "title": "Integração com Bitz Hotel",
+            "path": "integrao-com-bitz-hotel"
+          },
+          {
+            "title": "Integração com PMS TDF (Tô de Férias)",
+            "path": "integrao-com-pms-tdf-t-de-frias"
+          },
+          {
+            "title": "Integração com Desbravador",
+            "path": "integrao-com-desbravador"
+          },
+          {
+            "title": "Integração com Gupy.io",
+            "path": "integrao-com-gupyio"
+          },
+          {
+            "title": "Integração com Customer X",
+            "path": "integrao-com-customer-x"
+          }
+        ],
+        "icon": "lucide-grid2-x2-check"
       }
     ]
   },
