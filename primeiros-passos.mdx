@@ -22,15 +22,15 @@ Este guia cobre as 6 etapas essenciais para começar a usar a Amplifique.me. Sig
 
   </Card>
 
-  <Card title="4. Envie a pesquisa" href="#4-envie-a-pesquisa" icon="send" horizontal="false">
+  <Card title="4. Ative Fechamento de Loop" href="#4-ative-o-fechamento-de-loop" icon="refresh-cw" horizontal="false">
 
   </Card>
 
-  <Card title="5. Leia os resultados" href="#5-leia-os-primeiros-resultados" icon="bar-chart-2" horizontal="false">
+  <Card title="5. Envie a pesquisa" href="#5-envie-a-pesquisa" icon="send" horizontal="false">
 
   </Card>
 
-  <Card title="6. Ative Fechamento de Loop" href="#6-ative-o-fechamento-de-loop" icon="refresh-cw" horizontal="false">
+  <Card title="6. Leia os resultados" href="#6-leia-os-primeiros-resultados" icon="bar-chart-2" horizontal="false">
 
   </Card>
 </Columns>
@@ -121,7 +121,7 @@ Escolha o tipo de pesquisa adequado ao seu objetivo. O NPS é o ponto de partida
   </Step>
 
   <Step title="Personalize o conteúdo" title-type="p">
-    Edite o texto das pergunta pergunguntas e a mensagem de agradecimento.
+    Edite o texto das perguntas e a mensagem de agradecimento.
   </Step>
 
   <Step title="Configure a identidade visual" title-type="p">
@@ -132,14 +132,42 @@ Escolha o tipo de pesquisa adequado ao seu objetivo. O NPS é o ponto de partida
     Clique em `Salvar`. A pesquisa fica em rascunho — o disparo acontece na próxima etapa.
 
     <Callout kind="success" collapsed="false">
-      Pesquisa criada e salva. Pronto para configurar o envio.
+      Pesquisa criada e salva. Pronto para configurar o Fechamento de Loop.
     </Callout>
   </Step>
 </Steps>
 
 ---
 
-## 4. Envie a pesquisa
+## 4. Ative o Fechamento de Loop
+
+Configure respostas automáticas para detratores e passivos. Isso demonstra ao cliente que a empresa recebeu o feedback — aumenta a confiança e reduz o churn.
+
+<Steps>
+  <Step title="Acesse Fechamento de Loop" title-type="p">
+    No menu lateral, clique em `🔄 Fechamento de Loop`.
+  </Step>
+
+  <Step title="Crie uma regra para detratores" title-type="p">
+    Clique em `+ Nova regra`. Selecione o gatilho: **Nota de 0 a 6**. Defina a ação: enviar e-mail automático agradecendo e informando que a equipe entrará em contato.
+
+    <Callout kind="tip" collapsed="false">
+      Personalize a mensagem com o nome do cliente usando a variável `{nome}`. Respostas personalizadas têm taxa de abertura significativamente maior.
+    </Callout>
+  </Step>
+
+  <Step title="Ative a regra" title-type="p">
+    Clique em `Salvar e ativar`. A partir de agora, todo detrator recebe a resposta automática imediatamente após enviar a avaliação.
+
+    <Callout kind="success" collapsed="false">
+      Fechamento de Loop ativo. Pronto para disparar a pesquisa.
+    </Callout>
+  </Step>
+</Steps>
+
+---
+
+## 5. Envie a pesquisa
 
 Escolha o canal de disparo e selecione os contatos que vão receber. Você pode enviar para toda a base ou para um segmento usando etiquetas.
 
@@ -171,7 +199,7 @@ Escolha o canal de disparo e selecione os contatos que vão receber. Você pode 
 
 ---
 
-## 5. Leia os primeiros resultados
+## 6. Leia os primeiros resultados
 
 Assim que as respostas chegarem, o painel atualiza automaticamente. Veja onde encontrar cada métrica.
 
@@ -190,6 +218,10 @@ Assim que as respostas chegarem, o painel atualiza automaticamente. Veja onde en
 
   <Step title="Leia os comentários" title-type="p">
     Em `Pesquisas → Respostas`, filtre por nota para ler o que os detratores estão dizendo. Esses são os contatos prioritários para o Fechamento de Loop.
+
+    <Callout kind="success" collapsed="false">
+      Jornada concluída! Você tem pesquisa rodando, resultados sendo coletados e Fechamento de Loop ativo.
+    </Callout>
   </Step>
 </Steps>
 
@@ -202,34 +234,6 @@ Assim que as respostas chegarem, o painel atualiza automaticamente. Veja onde en
     Sim. Cada nova resposta atualiza o painel automaticamente, sem precisar recarregar a página.
   </Expandable>
 </ExpandableGroup>
-
----
-
-## 6. Ative o Fechamento de Loop
-
-Configure respostas automáticas para detratores e passivos. Isso demonstra ao cliente que a empresa recebeu o feedback — aumenta a confiança e reduz o churn.
-
-<Steps>
-  <Step title="Acesse Fechamento de Loop" title-type="p">
-    No menu lateral, clique em `🔄 Fechamento de Loop`.
-  </Step>
-
-  <Step title="Crie uma regra para detratores" title-type="p">
-    Clique em `+ Nova regra`. Selecione o gatilho: **Nota de 0 a 6**. Defina a ação: enviar e-mail automático agradecendo e informando que a equipe entrará em contato.
-
-    <Callout kind="tip" collapsed="false">
-      Personalize a mensagem com o nome do cliente usando a variável `{nome}`. Respostas personalizadas têm taxa de abertura significativamente maior.
-    </Callout>
-  </Step>
-
-  <Step title="Ative a regra" title-type="p">
-    Clique em `Salvar e ativar`. A partir de agora, todo detrator recebe a resposta automática imediatamente após enviar a avaliação.
-
-    <Callout kind="success" collapsed="false">
-      Jornada concluída! Você tem pesquisa rodando, resultados sendo coletados e Fechamento de Loop ativo.
-    </Callout>
-  </Step>
-</Steps>
 
 ---
 
