@@ -1,76 +1,62 @@
 ---
 title: "Integração com Movidesk"
-description: "Dispare pesquisas automaticamente a partir de gatilhos do Movidesk — como fechamento de ticket — via webhook. Envie NPS, CSAT ou CES por e-mail, SMS ou WhatsApp para o cliente criador do ticket."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos do sistema Movidesk via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **Movidesk** e a Amplifique.me permite disparar pesquisas automaticamente quando um ticket atinge um critério definido nos gatilhos do Movidesk — por e-mail, SMS ou WhatsApp.
+A integração entre a Movidesk e a Amplifique.me tem como objetivo, a partir de gatilhos do sistema Movidesk, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp.
 
-**Exemplo de gatilho:** ticket encerrado, mudança de status, resolução de chamado.
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Obtenha as credenciais de API da Movidesk">
+    Obtenha as credenciais de API dentro da ferramenta da Movidesk e envie-as para a equipe técnica da Amplifique.me pelo e-mail `dev@amplifique.me`.
+  </Step>
+
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Crie um Token de API">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **API**. Crie um Token de API para cada pesquisa/gatilho que deseja enviar utilizando um gatilho da Movidesk. Dê um nome para o Token que remeta ao que essa integração faz (exemplo: `Movidesk - Fechamento de Ticket - Pesquisa CSAT`), escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, você pode configurar nessa etapa.
+  </Step>
+
+  <Step title="Crie os gatilhos na Movidesk">
+    Após possuir o(s) Token(s) de API da Amplifique.me, crie os gatilhos dentro da ferramenta da Movidesk. Escolha os critérios desejados para o disparo da pesquisa, coloque como ação **Acionar Webhook** e no campo URL defina a seguinte URL:
+
+    ```
+    https://integration.services.amplifique.me/movidesk/cf?access_token=Bearer+INSIRA AQUI O SEU TOKEN
+    ```
+
+    Exemplo:
+
+    ```
+    https://integration.services.amplifique.me/movidesk/cf?access_token=Bearer+eyJhbGciOiJIuz
+    ```
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um ticket atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Movidesk |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome de negócio do cliente |
-| E-mail | E-mail do cliente criador do ticket |
-| Telefone | Telefone do cliente criador do ticket |
-| `status` | Status do ticket |
-| `owner` | Nome do proprietário do ticket |
-| `owner_email` | E-mail do proprietário do ticket |
-| `ticket` | ID do ticket |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Obtenha as credenciais de API do Movidesk">
-  Acesse as credenciais de API dentro da ferramenta do Movidesk (ou solicite ao suporte do Movidesk) e **envie para a equipe técnica da Amplifique.me** (devs@amplifique.me) para ativação.
-
-  <Callout kind="alert">
-    Esta integração requer um passo de ativação pela equipe da Amplifique.me. Entre em contato antes de prosseguir.
-  </Callout>
-</Step>
-
-<Step title="Gere um token de API na Amplifique.me">
-  Acesse **`⋯` → Integrações → API** e crie um token. Sugestão de nome:
-
-  `Movidesk - [Gatilho] - [Pesquisa]`
-
-  Ex: `Movidesk - Fechamento de Ticket - Pesquisa CSAT`
-</Step>
-
-<Step title="Configure o gatilho no Movidesk">
-  No Movidesk, defina os critérios de disparo desejados e configure a ação **Acionar Webhook**, inserindo no campo URL:
-
-  ```
-  https://integration.services.amplifique.me/movidesk/cf?access_token=Bearer+SEU_TOKEN
-  ```
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça um ticket atingir os critérios configurados e verifique se a pesquisa foi disparada corretamente.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome de Negócio do Cliente |
+| **Email** | Email do Cliente criador do Ticket |
+| **Telefone** | Telefone do Cliente criador do Ticket |
+| **status** | Status do Ticket |
+| **owner** | Nome do proprietário do Ticket |
+| **owner_email** | E-mail do proprietário do Ticket |
+| **ticket** | ID do Ticket |
