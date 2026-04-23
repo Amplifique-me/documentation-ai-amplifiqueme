@@ -1,61 +1,45 @@
 ---
 title: "Integração com RD Station Marketing"
-description: "Dispare pesquisas automaticamente a partir de gatilhos nas automações do RD Station Marketing. Envie NPS, CSAT ou CES quando um lead atingir uma etapa específica da jornada."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos das automações do RD Station."
 ---
 
 ## Visão geral
 
-A integração entre o **RD Station Marketing** e a Amplifique.me permite disparar pesquisas automaticamente a partir de gatilhos configurados nas automações do RD Station — por e-mail, SMS ou WhatsApp.
+A integração entre o RD Station e a Amplifique.me tem como objetivo, a partir de gatilhos das automações do sistema RD Station, realizar o disparo de pesquisas na plataforma da Amplifique.me.
 
-**Exemplo de gatilho:** lead entra em determinada etapa, tag aplicada, formulário preenchido.
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Gere a URL de integração">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **RD Station**. Selecione a pesquisa que deseja enviar e copie a URL fornecida pela plataforma.
+  </Step>
+
+  <Step title="Configure a automação no RD Station">
+    Na ferramenta do RD Station, crie uma automação, escolha os critérios desejados para o disparo da pesquisa (gatilho) e coloque como ação **Enviar Lead para Integração**. No campo **URL**, insira a URL gerada na plataforma da Amplifique.me.
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um contato atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no RD Station |
+| Dado | Descrição |
 |---|---|
-| Nome | Primeiro nome + último nome do contato |
-| E-mail | E-mail do contato |
-| Telefone | Telefone do contato |
-| Campos customizados | Todos os campos customizados do contato |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Acesse Integrações → RD Station na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → RD Station**.
-
-  Selecione a pesquisa que deseja enviar e **copie a URL fornecida**.
-</Step>
-
-<Step title="Configure a automação no RD Station">
-  No RD Station, crie uma automação e defina os critérios de disparo (gatilho).
-
-  Como ação, selecione **Enviar Lead para Integração** e no campo **URL** insira a URL copiada na etapa anterior.
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça um contato atingir os critérios definidos e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Primeiro nome e último nome do Contato |
+| **Email** | E-mail do Contato |
+| **Telefone** | Telefone do Contato |
+| **Campos Customizados** | Todos os campos customizados serão sincronizados |

@@ -1,76 +1,56 @@
 ---
 title: "Integração com Customer X"
-description: "Dispare pesquisas automaticamente a partir de mudanças de etapa nas jornadas CSM do Customer X. Envie NPS ou CSAT em momentos-chave do ciclo de vida do cliente."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de mudança de etapas do sistema Customer X via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **Customer X** e a Amplifique.me permite disparar pesquisas automaticamente quando um cliente avança ou muda de etapa em uma jornada CSM — por e-mail, SMS ou WhatsApp.
+A integração entre o Customer X e a Amplifique.me tem como objetivo, a partir de mudança de etapas do sistema Customer X, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp.
 
-**Exemplo de gatilho:** conclusão do onboarding, renovação de contrato, churn em risco.
+---
 
-<Callout kind="info">
-  O único evento compatível com a integração Amplifique.me no Customer X é o **Jornada CSM**.
-</Callout>
+## Processo de integração
+
+<Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Configure a integração na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **Customer X**. Escolha o evento **Jornada CSM** (único compatível com a Amplifique.me).
+  </Step>
+
+  <Step title="Crie um Token de API">
+    Crie um Token de API para cada pesquisa/gatilho que deseja enviar. Dê um nome que remeta ao que essa integração faz (exemplo: `Customer X - Fim do Onboarding - Pesquisa CSAT`), escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, você pode configurar nessa etapa.
+  </Step>
+
+  <Step title="Aplique filtros (opcional)">
+    Você pode adicionar o filtro por uma **Tag** ou **Jornada** específica.
+  </Step>
+
+  <Step title="Gere a URL do Webhook">
+    No final, clique no botão **Gerar URL do Webhook**.
+  </Step>
+
+  <Step title="Configure o webhook no Customer X">
+    Na ferramenta do Customer X, crie um webhook e insira a URL que foi criada na Amplifique.me.
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um cliente atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Customer X |
+| Dado | Descrição |
 |---|---|
-| Nome | Primeiro nome + último nome do contato |
-| E-mail | E-mail do contato |
-| Telefone | Telefone do contato |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Acesse Integrações → Customer X na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → Customer X**.
-
-  Selecione o evento **Jornada CSM** (único compatível).
-</Step>
-
-<Step title="Gere um token de API e configure os filtros">
-  Crie um token para a pesquisa desejada. Sugestão de nome:
-
-  `Customer X - [Gatilho] - [Pesquisa]`
-
-  Ex: `Customer X - Fim do Onboarding - Pesquisa CSAT`
-
-  Opcionalmente, adicione filtro por **tag** ou **jornada específica** para segmentar o disparo.
-</Step>
-
-<Step title="Copie a URL do webhook gerada">
-  Clique em **Gerar URL do Webhook**. A URL estará disponível para configuração no próximo passo.
-</Step>
-
-<Step title="Configure o webhook no Customer X">
-  No Customer X, crie um webhook inserindo a URL gerada na etapa anterior.
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça um cliente atingir os critérios definidos e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Primeiro nome e último nome do Contato |
+| **Email** | E-mail do Contato |
+| **Telefone** | Telefone do Contato |

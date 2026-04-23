@@ -1,77 +1,49 @@
 ---
 title: "Integração com Gupy.io"
-description: "Dispare pesquisas automaticamente quando um candidato avança para uma fase específica no processo seletivo da Gupy.io. Meça a experiência do candidato em momentos-chave do recrutamento."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir do gatilho de mudança de fase do sistema Gupy.io via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre a **Gupy.io** e a Amplifique.me permite disparar pesquisas automaticamente quando um candidato é movido para uma determinada fase do processo seletivo — por e-mail, SMS ou WhatsApp.
+A integração entre a Gupy.io e a Amplifique.me tem como objetivo, a partir do gatilho de mudança de fase do sistema Gupy.io, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp.
 
-**Exemplo de gatilho:** candidato aprovado para entrevista, admitido, reprovado em fase final.
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Configure a integração na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **Gupy.io**. Insira a **Chave da API da Gupy.io**, a qual pode ser encontrada na ferramenta da Gupy.io ou solicitada para a equipe de suporte Gupy.
+  </Step>
+
+  <Step title="Configure o primeiro gatilho">
+    Configure o primeiro gatilho, baseado no nome da fase (ao candidato chegar a determinada fase, realizar o disparo da pesquisa). Crie um Token de API com a pesquisa que deseja enviar. Dê um nome que remeta ao que essa integração faz (exemplo: `Gupy - Aprovação - Pesquisa CSAT`), escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, você pode configurar nessa etapa.
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um candidato seja movido para a fase configurada.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem na Gupy.io |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome do candidato |
-| E-mail | E-mail do candidato |
-| Telefone | Telefone do candidato |
-| `job_name` | Nome da vaga |
-| `departament` | Departamento |
-| `role` | Nível da vaga |
-| `partner` | Parceiro |
-| `user` | Usuário responsável |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Acesse Integrações → Gupy.io na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → Gupy.io**.
-</Step>
-
-<Step title="Insira a chave de API da Gupy.io">
-  Informe a **Chave de API** da Gupy.io, disponível no painel da ferramenta ou via suporte da Gupy.
-
-  <Callout kind="tip">
-    Se não souber onde encontrar a chave, solicite ao suporte da Gupy.io.
-  </Callout>
-</Step>
-
-<Step title="Configure o gatilho de fase">
-  Defina o nome da fase que acionará o disparo. Quando um candidato atingir aquela fase, a pesquisa será enviada automaticamente.
-</Step>
-
-<Step title="Gere o token de API">
-  Crie um token para a pesquisa desejada. Sugestão de nome:
-
-  `Gupy - [Fase] - [Pesquisa]`
-
-  Ex: `Gupy - Aprovação - Pesquisa CSAT`
-</Step>
-
-<Step title="Teste o gatilho">
-  Mova um candidato para a fase configurada e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome de Negócio do Cliente |
+| **Email** | Email do Cliente criador do Ticket |
+| **Telefone** | Telefone do Cliente criador do Ticket |
+| **job_name** | Nome da vaga |
+| **departament** | Departamento |
+| **role** | Nível |
+| **partner** | Parceiro |
+| **user** | Usuário |

@@ -1,73 +1,57 @@
 ---
 title: "Integração com PipeRun"
-description: "Dispare pesquisas automaticamente quando uma negociação atingir critérios definidos nas ações automáticas do PipeRun. Envie por e-mail, SMS ou WhatsApp com dados do contato e da negociação."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos do sistema PipeRun via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **PipeRun** e a Amplifique.me permite disparar pesquisas automaticamente a partir de ações automáticas configuradas no PipeRun, com base em movimentações de negociações.
+A integração entre a PipeRun e a Amplifique.me tem como objetivo, a partir de gatilhos do sistema PipeRun, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp.
 
-**Exemplo de gatilho:** negociação movida para determinado estágio, negociação ganha ou perdida.
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie um Token de API na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione **PipeRun**. Você pode criar um Token para cada pesquisa/gatilho que deseje enviar.
+  </Step>
+
+  <Step title="Acesse as Ações automáticas no PipeRun">
+    Após possuir as URLs de integração da Amplifique.me, acesse dentro da ferramenta do PipeRun: **Ajustes e Configurações → Ferramentas → Ações automáticas → Adicionar ação**.
+  </Step>
+
+  <Step title="Configure a ação">
+    Escolha a ação a ser realizada com: **Enviar Oportunidade para URL**. Preencha os campos conforme solicitado e que atendam os requisitos do gatilho que você deseja.
+  </Step>
+
+  <Step title="Insira a URL da Amplifique.me">
+    No segundo passo, você terá 3 campos (header, valor, url). Deixe os 2 primeiros em branco e preencha o URL com o que você gerou na plataforma da Amplifique.me:
+
+    ```
+    https://integration.services.amplifique.me/piperun/webhook?access_token=Bearer+INSIRA AQUI O SEU TOKEN
+    ```
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que uma negociação atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no PipeRun |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome da pessoa associada à negociação |
-| E-mail | E-mail da pessoa associada à negociação |
-| Telefone | Telefone da pessoa associada à negociação |
-| Empresa | Nome da empresa associada à negociação |
-| `pipeline` | Nome do pipeline |
-| `stage` | Nome do estágio |
-| `origin` | Nome da origem |
-| `user` | Nome do usuário responsável |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Gere um token de API na Amplifique.me">
-  Acesse **`⋯` → Integrações → PipeRun** na plataforma. Crie um token de integração para a pesquisa desejada.
-</Step>
-
-<Step title="Configure a ação automática no PipeRun">
-  No PipeRun, acesse:
-
-  **Ajustes e Configurações → Ferramentas → Ações automáticas → Adicionar ação**
-
-  Escolha a ação: **Enviar Oportunidade para URL**
-
-  Preencha os critérios do gatilho. No segundo passo, você verá 3 campos (header, valor, URL):
-  - **Header:** deixe em branco
-  - **Valor:** deixe em branco
-  - **URL:**
-    ```
-    https://integration.services.amplifique.me/piperun/webhook?access_token=Bearer+SEU_TOKEN
-    ```
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça uma negociação atingir os critérios configurados e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome da Pessoa associada à negociação |
+| **Email** | Email da Pessoa associada à negociação |
+| **Telefone** | Telefone da Pessoa associada à negociação |
+| **Empresa** | Nome da Empresa associada à negociação |
+| **pipeline** | Nome do Pipeline |
+| **stage** | Nome do estágio |
+| **origin** | Nome da Origem |
+| **user** | Nome do Usuário Responsável |

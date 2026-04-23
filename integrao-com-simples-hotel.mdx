@@ -1,58 +1,40 @@
 ---
 title: "Integração com Simples Hotel"
-description: "Dispare pesquisas automaticamente quando um hóspede realizar o checkout no Simples Hotel. Envie por e-mail, SMS ou WhatsApp para medir a experiência da estadia."
+description: "Realize o disparo de pesquisas na Amplifique.me via SMS, E-mail ou WhatsApp quando um hóspede realiza o checkout no Simples Hotel."
 ---
 
 ## Visão geral
 
-A integração entre o **Simples Hotel** e a Amplifique.me permite disparar pesquisas automaticamente quando um hóspede realiza o checkout — por e-mail, SMS ou WhatsApp.
+A integração entre a Simples Hotel e a Amplifique.me tem como objetivo o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp quando um hóspede realiza o checkout.
+
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie um Token de API na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione **API**. Você pode criar um Token para a pesquisa que deseja enviar no checkout (canais: SMS, E-mail ou WhatsApp).
+  </Step>
+
+  <Step title="Compartilhe o token com a equipe do Simples Hotel">
+    Após possuir o token da Amplifique.me, compartilhe-o com a equipe do Simples Hotel para que eles ativem a integração.
+  </Step>
+
+  <Step title="Teste a integração">
+    Realize o teste da integração, fazendo com que um hóspede realize o checkout.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Simples Hotel |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome do hóspede |
-| E-mail | E-mail do hóspede |
-| Telefone | Telefone do hóspede |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa de pós-checkout e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Gere um token de API na Amplifique.me">
-  Acesse **`⋯` → Integrações → API** e crie um token vinculado à pesquisa de checkout.
-</Step>
-
-<Step title="Compartilhe o token com a equipe do Simples Hotel">
-  Envie o token gerado para a equipe do Simples Hotel para que eles ativem a integração no lado deles.
-
-  <Callout kind="info">
-    A ativação da integração é realizada pela equipe técnica do Simples Hotel — não é necessário configurar webhook manualmente.
-  </Callout>
-</Step>
-
-<Step title="Teste a integração">
-  Realize um checkout de teste e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome da Pessoa associada à negociação |
+| **Email** | Email da Pessoa associada à negociação |
+| **Telefone** | Telefone da Pessoa associada à negociação |

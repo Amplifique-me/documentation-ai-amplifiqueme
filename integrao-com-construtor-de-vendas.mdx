@@ -1,78 +1,68 @@
 ---
 title: "Integração com Construtor de Vendas"
-description: "Dispare pesquisas automaticamente a partir de gatilhos (webhooks) do Construtor de Vendas, como conclusão de atendimento ou mudança de situação de um empreendimento."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos (Webhooks) do sistema Construtor de Vendas via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **Construtor de Vendas** e a Amplifique.me permite disparar pesquisas automaticamente a partir de webhooks configurados no Construtor de Vendas — por e-mail, SMS ou WhatsApp.
-
-**Exemplo de gatilho:** situação do empreendimento alterada para "Finalizado", conclusão de atendimento de suporte.
+A integração entre o Construtor de Vendas e a Amplifique.me tem como objetivo realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp, a partir de gatilhos (Webhooks) do sistema Construtor de Vendas.
 
 ---
 
-## Dados integrados
-
-| Campo | Origem no Construtor de Vendas |
-|---|---|
-| Nome | Nome do contato/lead/cliente |
-| E-mail | E-mail do contato/lead/cliente |
-| Telefone | Telefone do contato/lead/cliente |
-| `corretor` | Nome do corretor |
-| `empreendimento` | Nome do empreendimento |
-| `imobiliaria` | Nome da imobiliária |
-| `chamado` | ID do chamado |
-| `assunto` | Assunto do atendimento |
-
----
-
-## Como configurar
+## Configuração: etapas necessárias
 
 <Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelos quais você deseja realizar os envios.
+  </Step>
 
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
+  <Step title="Acesse o menu de Integrações">
+    Ainda na plataforma da Amplifique.me, acesse o menu lateral esquerdo na função chamada **Integrações** e selecione a opção **API**.
+  </Step>
 
-<Step title="Gere um token de API na Amplifique.me">
-  Acesse **`⋯` → Integrações → API** e crie um token. Sugestão de nome:
+  <Step title="Crie um Token de API">
+    Crie um Token de API para cada pesquisa que deseja enviar utilizando um gatilho do Construtor de Vendas. Dê um nome para o Token que remeta ao objetivo dessa integração (exemplo: `Construtor de Vendas - Pesquisa do Atendimento do Suporte ao Cliente`). Escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, configure essa opção também nessa etapa.
+  </Step>
 
-  `Construtor de Vendas - [Gatilho] - [Pesquisa]`
+  <Step title="Crie os gatilhos no Construtor de Vendas">
+    Após possuir o(s) Token(s) de API da Amplifique.me, crie os gatilhos na plataforma do Construtor de Vendas. Dentro do Construtor de Vendas (acesso como **GESTOR**), acesse o menu **Integrações → Webhooks → Criar novo Webhook** e escolha os critérios desejados para o disparo da pesquisa (gatilho):
 
-  Ex: `Construtor de Vendas - Pesquisa do Atendimento do Suporte ao Cliente`
-</Step>
-
-<Step title="Configure o webhook no Construtor de Vendas">
-  No Construtor de Vendas (acesso como **Gestor**), acesse:
-
-  **Integrações → Webhooks → Criar novo Webhook**
-
-  Preencha os campos:
-  - **Nome:** use o mesmo nome do token para facilitar organização
-  - **Funcionalidade:** escolha a opção da lista para o gatilho desejado
-  - **Empreendimento:** selecione um específico, se necessário (opcional)
-  - **Gatilho:** ex: `Quando entrar na Situação "Finalizado"`
-  - **Endereço:**
+    1. Defina um nome para esse gatilho — recomendamos seguir o mesmo nome do Token para facilitar na sua organização.
+    2. Escolha a funcionalidade (qual opção da lista você gostaria de utilizar para o gatilho).
+    3. Você pode escolher um empreendimento específico, caso deseje (opcional).
+    4. Em alguns casos poderão aparecer outros campos para filtros como: assunto, sub-assuntos etc. Use apenas se deseja realizar alguns filtros adicionais para esse gatilho.
+    5. Escolha qual gatilho deseja utilizar (exemplo: Quando entrar na Situação "Finalizado").
+    6. **Endereço:**
     ```
-    https://integration.services.amplifique.me/cv/cf/webhook?access_token=Bearer+SEU_TOKEN
+    https://integration.services.amplifique.me/cv/cf/webhook?access_token=Bearer+INSIRA AQUI O SEU TOKEN
     ```
-  - **Status:** Ativo
-</Step>
+    Exemplo de endereço:
+    ```
+    https://integration.services.amplifique.me/cv/cf/webhook?access_token=Bearer+eyJhbGciOiJIuz
+    ```
+    7. Defina como **ativo**, para que o gatilho comece a funcionar desde já.
+  </Step>
 
-<Step title="Teste o gatilho">
-  Faça o gatilho ser acionado pelos critérios definidos e verifique se a pesquisa foi disparada.
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que ele seja acionado pelos critérios definidos.
 
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
 </Steps>
 
 ---
 
-## Próximo passo
+## Dados passíveis de integração
 
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| Dado | Descrição |
+|---|---|
+| **Nome** | Nome do Contato/Lead/Cliente |
+| **Email** | Email do Contato/Lead/Cliente |
+| **Telefone** | Telefone do Contato/Lead/Cliente |
+| **corretor** | Nome do corretor |
+| **empreendimento** | Nome do empreendimento |
+| **imobiliaria** | Nome da imobiliária |
+| **chamado** | ID do chamado |
+| **assunto** | Assunto do atendimento |

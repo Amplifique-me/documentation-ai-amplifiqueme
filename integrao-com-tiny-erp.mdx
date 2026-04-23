@@ -1,64 +1,52 @@
 ---
 title: "Integração com Tiny ERP"
-description: "Dispare pesquisas automaticamente quando um pedido for faturado no Tiny ERP. Meça a satisfação pós-compra por e-mail, SMS ou WhatsApp."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos (webhooks) do Tiny ERP via SMS, E-mail ou WhatsApp quando um pedido for faturado."
 ---
 
 ## Visão geral
 
-A integração entre o **Tiny ERP** e a Amplifique.me permite disparar pesquisas automaticamente quando um pedido tiver uma atualização ou inclusão com a situação **Faturado** — por e-mail, SMS ou WhatsApp.
+A integração entre o Tiny ERP e a Amplifique.me tem como objetivo, a partir de gatilhos (webhooks) do sistema Tiny ERP, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp quando um pedido tiver uma atualização ou inclusão com a situação = **faturado**.
+
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Crie um Token de API">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **Tiny**. Crie um Token de API, dê um nome que remeta ao que essa integração faz (exemplo: `Tiny - Novo Pedido - Pesquisa CSAT`), escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, você pode configurar nessa etapa.
+  </Step>
+
+  <Step title="Obtenha o Token da API do Tiny">
+    Dentro da plataforma da Tiny, encontre o **Token (Chave) da API**.
+  </Step>
+
+  <Step title="Insira a Chave de API na Amplifique.me">
+    Insira no campo **Chave de API** do menu Integrações da Amplifique.me a chave obtida no passo anterior.
+  </Step>
+
+  <Step title="Configure o Webhook no Tiny">
+    Após os passos acima, aparecerá a **URL do Ponto de Extremidade**. Essa URL deverá ser configurada nos Webhooks do Tiny.
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um contato atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Tiny ERP |
+| Dado | Descrição |
 |---|---|
-| Nome | Primeiro nome + último nome do contato |
-| E-mail | E-mail do contato |
-| Telefone | Telefone do contato |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Acesse Integrações → Tiny na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → Tiny**.
-
-  Crie um token de API. Sugestão de nome:
-
-  `Tiny - Novo Pedido - Pesquisa CSAT`
-</Step>
-
-<Step title="Insira a chave de API do Tiny na Amplifique.me">
-  No Tiny ERP, localize o **Token (Chave) de API** e insira no campo **Chave de API** na configuração de integração da Amplifique.me.
-
-  Após salvar, a **URL do Ponto de Extremidade** será exibida.
-</Step>
-
-<Step title="Configure o webhook no Tiny ERP">
-  No painel do Tiny ERP, acesse os **Webhooks** e configure a URL do Ponto de Extremidade gerada na etapa anterior.
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça um pedido ser faturado e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Primeiro nome e último nome do Contato |
+| **Email** | E-mail do Contato |
+| **Telefone** | Telefone do Contato |

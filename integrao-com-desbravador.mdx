@@ -1,68 +1,44 @@
 ---
 title: "Integração com Desbravador"
-description: "Dispare pesquisas automaticamente quando um hóspede realizar o checkout no Desbravador. A ativação exige contratação da integração junto ao seu gerente de conta do Desbravador."
+description: "Realize o disparo de pesquisas na Amplifique.me via SMS, E-mail ou WhatsApp quando um hóspede realiza o checkout no Desbravador."
 ---
 
 ## Visão geral
 
-A integração entre o **Desbravador** e a Amplifique.me permite disparar pesquisas automaticamente quando um hóspede realiza o checkout — por e-mail, SMS ou WhatsApp.
+A integração entre a Desbravador e a Amplifique.me tem como objetivo o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp quando um hóspede realiza o checkout.
 
 <Callout kind="alert">
-  Esta integração tem **custo adicional do lado do Desbravador**. Antes de iniciar, entre em contato com seu gerente de conta do Desbravador para contratar a integração com a Amplifique.me.
+  Para ativar essa integração existem custos do lado do Desbravador. Converse inicialmente com seu gerente de conta do Desbravador para contratar a integração com a Amplifique.me.
 </Callout>
+
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie um Token de API na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione **Desbravador**. Crie um Token para a pesquisa que deseja enviar no checkout.
+  </Step>
+
+  <Step title="Insira a Chave de Acesso do Desbravador">
+    Insira a **Chave de Acesso do Desbravador**, que será fornecida pela equipe do Desbravador ao contratar a integração com a Amplifique.me.
+  </Step>
+
+  <Step title="Teste a integração">
+    Realize o teste da integração, fazendo com que um hóspede realize o checkout, e aguarde entre 30 minutos e 1 hora para que chegue o primeiro checkout.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Desbravador |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome do hóspede |
-| E-mail | E-mail do hóspede |
-| Telefone | Telefone do hóspede |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Contrate a integração com o Desbravador">
-  Entre em contato com seu **gerente de conta do Desbravador** para contratar a integração com a Amplifique.me. Essa etapa é obrigatória antes de prosseguir.
-</Step>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa de pós-checkout e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Acesse Integrações → Desbravador na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → Desbravador**.
-
-  Crie um token para a pesquisa de checkout.
-</Step>
-
-<Step title="Insira a Chave de Acesso fornecida pelo Desbravador">
-  Após contratar a integração, o Desbravador fornecerá uma **Chave de Acesso**. Insira-a no campo correspondente na configuração da integração na Amplifique.me.
-</Step>
-
-<Step title="Teste a integração">
-  Realize um checkout de teste e aguarde entre **30 minutos a 1 hora** para receber o primeiro disparo.
-
-  <Callout kind="tip">
-    O intervalo de processamento do Desbravador pode levar até 1 hora — é o comportamento esperado da integração.
-  </Callout>
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me após o processamento.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome da Pessoa associada à negociação |
+| **Email** | Email da Pessoa associada à negociação |
+| **Telefone** | Telefone da Pessoa associada à negociação |

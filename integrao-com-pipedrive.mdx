@@ -1,85 +1,71 @@
 ---
 title: "Integração com Pipedrive"
-description: "Dispare pesquisas automaticamente quando uma negociação mudar de estágio no Pipedrive. Configure via webhook (v1 ou v2) com dados do contato e da negociação passados automaticamente."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir do gatilho de mudança de estágio de uma negociação em um Pipeline do Pipedrive via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **Pipedrive** e a Amplifique.me permite disparar pesquisas automaticamente quando uma negociação é movida para um estágio específico de um Pipeline — por e-mail, SMS ou WhatsApp.
+A integração entre o Pipedrive e a Amplifique.me tem como objetivo realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp a partir do gatilho de mudança de estágio de uma negociação em um Pipeline do Pipedrive.
+
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Copie o Token de API do Pipedrive">
+    Dentro do Pipedrive, acesse o menu de **Preferências pessoais → API** e copie o **TOKEN DE API PESSOAL**.
+  </Step>
+
+  <Step title="Configure a integração na Amplifique.me">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione **Pipedrive**. Cole o TOKEN DE API PESSOAL no campo **Chave de API do Pipedrive**.
+  </Step>
+
+  <Step title="Selecione ou crie um Token de integração">
+    Selecione um Token de integração da Amplifique.me ou crie um, com a pesquisa que você deseja enviar na integração.
+  </Step>
+
+  <Step title="Selecione o estágio do Pipedrive">
+    Selecione um estágio do Pipedrive. A pesquisa será enviada quando a negociação chegar até o estágio selecionado.
+  </Step>
+
+  <Step title="Copie a URL do Ponto de Extremidade">
+    Copie a **URL do Ponto de Extremidade** que será gerada no último campo da configuração na Amplifique.me.
+  </Step>
+
+  <Step title="Configure o webhook no Pipedrive">
+    Acesse o Pipedrive → **Configurações da Empresa → Ferramentas e Aplicativos → Webhooks** e crie um webhook com uma das configurações abaixo:
+
+    **Opção 1 — Webhooks v1:**
+    - Ação do Evento: `Updated`
+    - Objeto do Evento: `Deal`
+    - URL do Ponto de Extremidade: URL copiada da plataforma da Amplifique.me
+
+    **Opção 2 — Webhooks v2:**
+    - Ação do Evento: `Changed`
+    - Objeto do Evento: `Deal`
+    - URL do Ponto de Extremidade: URL copiada da plataforma da Amplifique.me
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que uma negociação seja movida para o estágio determinado na configuração da integração.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Pipedrive |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome da pessoa associada à negociação |
-| E-mail | E-mail da pessoa associada à negociação |
-| Telefone | Telefone da pessoa associada à negociação |
-| Empresa | Nome da empresa associada à negociação |
-| `owner_name` | Nome do responsável pela negociação |
-| `deal_title` | Nome da negociação |
-| `user_id` | ID do responsável por mover a negociação |
-| `deal_id` | ID da negociação |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Copie seu token de API pessoal no Pipedrive">
-  No Pipedrive, acesse **Preferências pessoais → API** e copie o **Token de API Pessoal**.
-</Step>
-
-<Step title="Acesse Integrações → Pipedrive na Amplifique.me">
-  No menu lateral, vá em **`⋯` → Integrações → Pipedrive**.
-
-  Cole o **Token de API Pessoal** do Pipedrive no campo **Chave de API do Pipedrive**.
-</Step>
-
-<Step title="Crie ou selecione um token de integração">
-  Selecione um token de integração existente ou crie um novo vinculando a pesquisa que deseja enviar.
-</Step>
-
-<Step title="Selecione o estágio de disparo">
-  Escolha o estágio do Pipedrive que acionará o envio da pesquisa. Quando uma negociação chegar a esse estágio, a pesquisa será disparada.
-</Step>
-
-<Step title="Copie a URL do Ponto de Extremidade gerada">
-  A URL estará disponível no último campo da configuração na Amplifique.me.
-</Step>
-
-<Step title="Crie o webhook no Pipedrive">
-  No Pipedrive, acesse **Configurações da Empresa → Ferramentas e Aplicativos → Webhooks**.
-
-  Escolha uma das versões de webhook disponíveis:
-
-  **Webhooks v1:**
-  - Ação do Evento: `Updated`
-  - Objeto do Evento: `Deal`
-  - URL: URL copiada da Amplifique.me
-
-  **Webhooks v2:**
-  - Ação do Evento: `Changed`
-  - Objeto do Evento: `Deal`
-  - URL: URL copiada da Amplifique.me
-</Step>
-
-<Step title="Teste o gatilho">
-  Mova uma negociação para o estágio configurado e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome da Pessoa associada à negociação |
+| **Email** | Email da Pessoa associada à negociação |
+| **Telefone** | Telefone da Pessoa associada à negociação |
+| **Empresa** | Nome da Empresa associada à negociação |
+| **owner_name** | Nome do responsável pela negociação |
+| **deal_title** | Nome da negociação |
+| **user_id** | Id do responsável por mover a negociação |
+| **deal_id** | Id da negociação |

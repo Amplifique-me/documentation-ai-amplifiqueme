@@ -1,99 +1,76 @@
 ---
 title: "Integração com Zendesk"
-description: "Dispare pesquisas automaticamente a partir de gatilhos do Zendesk via webhook. Configure regras de negócio para enviar NPS ou CSAT ao encerrar tickets, com dados do solicitante e do ticket passados automaticamente."
+description: "Realize o disparo de pesquisas na Amplifique.me a partir de gatilhos do sistema Zendesk via SMS, E-mail ou WhatsApp."
 ---
 
 ## Visão geral
 
-A integração entre o **Zendesk** e a Amplifique.me permite disparar pesquisas automaticamente quando um ticket atinge critérios definidos nas regras de negócio do Zendesk — por e-mail, SMS ou WhatsApp via API Oficial Amplifique.me.
+A integração entre a Zendesk e a Amplifique.me tem como objetivo, a partir de gatilhos do sistema Zendesk, realizar o disparo de pesquisas na plataforma da Amplifique.me através dos canais de SMS, E-mail ou WhatsApp (API Oficial Amplifique.me).
 
-**Exemplo de gatilho:** ticket encerrado, atualizado para determinado status, atribuído a um grupo.
+---
+
+## Processo de integração
+
+<Steps>
+  <Step title="Crie as pesquisas na Amplifique.me">
+    Crie as pesquisas na plataforma da Amplifique.me e ative os canais pelo qual deseja realizar os envios.
+  </Step>
+
+  <Step title="Crie um Token de API">
+    Dentro da plataforma da Amplifique.me, acesse o menu lateral **Integrações** e selecione a opção **API**. Crie um Token de API para cada pesquisa/gatilho que deseja enviar utilizando um gatilho da Zendesk. Dê um nome para o Token que remeta ao que essa integração faz (exemplo: `Zendesk - Fechamento de Ticket - Pesquisa CSAT`), escolha a pesquisa e o canal que deseja realizar o envio. Caso deseje adicionar um atraso no envio ou agendar para um horário específico, você pode configurar nessa etapa.
+  </Step>
+
+  <Step title="Crie o webhook na Zendesk">
+    Após possuir o(s) Token(s) de API da Amplifique.me, acesse o **Painel Administrativo → Aplicativos e Integrações → Webhooks** e crie um novo webhook com as seguintes configurações:
+
+    - **Maneira de conectar:** Gatilho ou automação
+    - **Nome:** a seu critério (exemplo: `Amplifique.me - Fechamento de Ticket - Pesquisa CSAT`)
+    - **Descrição:** a seu critério
+    - **URL do ponto de extremidade:** `https://integration.services.amplifique.me/zendesk/cf?access_token=Bearer+INSIRA AQUI O SEU TOKEN`
+    - **Método de solicitação:** POST
+    - **Formato da solicitação:** JSON
+    - **Autenticação:** nenhuma (já inserimos ela na URL)
+  </Step>
+
+  <Step title="Configure o gatilho na Zendesk">
+    Ainda na Zendesk, acesse **Painel Administrativo → Objetos e Regras → Regras de Negócios → Gatilhos**, escolha os critérios desejados para o disparo da pesquisa e coloque como ação **Notificar webhook ativo**. No campo **Corpo do JSON**, defina os seguintes dados:
+
+    ```json
+    {
+      "name":"{{ticket.requester.name}}",
+      "email":"{{ticket.requester.email}}",
+      "phone":"{{ticket.requester.phone}}",
+      "company":"{{ticket.organization.name}}",
+      "custom_fields":{
+        "ticket_id":"{{ticket.id}}",
+        "ticket_channel":"{{ticket.via}}",
+        "ticket_type":"{{ticket.ticket_type}}",
+        "ticket_assignee_email":"{{ticket.assignee.email}}"
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="Teste o gatilho">
+    Realize o teste do gatilho, fazendo com que um ticket atinja os critérios definidos.
+
+    <Callout kind="success">
+      Integração configurada e testada com sucesso!
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
 ## Dados integrados
 
-| Campo | Origem no Zendesk |
+| Dado | Descrição |
 |---|---|
-| Nome | Nome do cliente solicitante |
-| E-mail | E-mail do cliente solicitante |
-| Telefone | Telefone do cliente solicitante |
-| Empresa | Organização do cliente |
-| `ticket_id` | ID do ticket |
-| `ticket_channel` | Canal de abertura do ticket |
-| `ticket_type` | Tipo do ticket |
-| `ticket_assignee_email` | E-mail do responsável pelo ticket |
-
----
-
-## Como configurar
-
-<Steps>
-
-<Step title="Crie a pesquisa e ative o canal na Amplifique.me">
-  Crie a pesquisa e ative o canal desejado (E-mail, SMS ou WhatsApp).
-</Step>
-
-<Step title="Gere um token de API na Amplifique.me">
-  Acesse **`⋯` → Integrações → API** e crie um token. Sugestão de nome:
-
-  `Zendesk - [Gatilho] - [Pesquisa]`
-
-  Ex: `Zendesk - Fechamento de Ticket - NPS Suporte`
-</Step>
-
-<Step title="Crie o webhook no Zendesk">
-  No Zendesk, acesse:
-
-  **Painel Administrativo → Aplicativos e Integrações → Webhooks → Criar webhook**
-
-  Preencha os campos:
-  - **Maneira de conectar:** Gatilho ou automação
-  - **Nome:** ex: `Amplifique.me - Fechamento de Ticket - CSAT`
-  - **URL do ponto de extremidade:**
-    ```
-    https://integration.services.amplifique.me/zendesk/cf?access_token=Bearer+SEU_TOKEN
-    ```
-  - **Método de solicitação:** POST
-  - **Formato da solicitação:** JSON
-  - **Autenticação:** nenhuma (já está na URL)
-</Step>
-
-<Step title="Configure o gatilho no Zendesk">
-  Acesse **Painel Administrativo → Objetos e Regras → Regras de Negócios → Gatilhos**.
-
-  Defina os critérios desejados e configure a ação **Notificar webhook ativo**, inserindo no campo **Corpo do JSON**:
-
-  ```json
-  {
-    "name": "{{ticket.requester.name}}",
-    "email": "{{ticket.requester.email}}",
-    "phone": "{{ticket.requester.phone}}",
-    "company": "{{ticket.organization.name}}",
-    "custom_fields": {
-      "ticket_id": "{{ticket.id}}",
-      "ticket_channel": "{{ticket.via}}",
-      "ticket_type": "{{ticket.ticket_type}}",
-      "ticket_assignee_email": "{{ticket.assignee.email}}"
-    }
-  }
-  ```
-</Step>
-
-<Step title="Teste o gatilho">
-  Faça um ticket atingir os critérios configurados e verifique se a pesquisa foi disparada.
-
-  <Callout kind="success">
-    A pesquisa deve aparecer como solicitação na aba **Respostas** da pesquisa na Amplifique.me.
-  </Callout>
-</Step>
-
-</Steps>
-
----
-
-## Próximo passo
-
-<Card title="Como gerar tokens de API?" icon="key" href="/integracoes/tokens-api" cta="Ver artigo">
-  Veja como criar e gerenciar tokens de API para cada integração.
-</Card>
+| **Nome** | Nome de Negócio do Cliente |
+| **Email** | Email do Cliente criador do Ticket |
+| **Telefone** | Telefone do Cliente criador do Ticket |
+| **Empresa** | Organização do Cliente criador do Ticket |
+| **ticket_id** | ID do Ticket |
+| **ticket_channel** | Canal de abertura do Ticket |
+| **ticket_type** | Tipo do Ticket |
+| **ticket_assignee_email** | E-mail do responsável do Ticket |
