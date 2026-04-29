@@ -1,103 +1,127 @@
 ---
-title: Como configurar domínio customizado de e-mail?
-description: >-
-  Configure um domínio próprio para envio de pesquisas (ex:
-  pesquisas@suaempresa.com.br), com apontamentos DNS, validação e teste de
-  entregabilidade. Recurso pago — R$99/mês.
+title: "Como configurar domínio customizado de e-mail?"
+description: "Envie pesquisas usando o e-mail da sua empresa como remetente (ex: pesquisas@suaempresa.com.br) em vez do endereço padrão da Amplifique.me. Recurso pago — R$99/mês."
 ---
+
 ## Visão geral
 
-O **domínio customizado** permite que os e-mails de pesquisas enviados pela Amplifique.me usem o domínio da sua empresa como remetente (ex: `pesquisas@pesquisa.suaempresa.com.br`) em vez do domínio padrão da plataforma. Isso melhora a entregabilidade dos e-mails e fortalece a identidade da marca nas comunicações.
+Por padrão, as pesquisas da Amplifique.me são enviadas com um endereço de e-mail da própria plataforma. Com o domínio customizado, você passa a usar o e-mail da sua empresa como remetente — por exemplo, `pesquisas@pesquisa.suaempresa.com.br`.
 
-<Callout kind="alert" collapsed="false">
-  O domínio customizado é um **recurso pago separadamente**, com valor atual de R$99,00 mês. Entre em contato com o time da Amplifique.me para contratar e ativar o recurso antes de configurar.
+Isso faz duas coisas: os clientes reconhecem o remetente e confiam mais no e-mail, e a chance de a mensagem cair na caixa de spam diminui.
+
+<Callout kind="alert">
+  O domínio customizado é um recurso pago (R$99/mês). **Você precisa contratar com o time da Amplifique.me antes de configurar.** Só depois da ativação a opção aparece em Configurações (⚙️) → Domínio Customizado.
 </Callout>
 
-<Callout kind="info" collapsed="false">
-  Após ativado, acesse em `Configurações (⚙️) → Domínio Customizado`. A opção só aparece se o recurso estiver contratado.
+<Callout kind="info">
+  **Quem precisa participar dessa configuração:** você (para preencher os dados na plataforma) e alguém do time de TI ou infraestrutura da sua empresa (para fazer um ajuste técnico no provedor de domínio). Explique isso para o seu time antes de começar.
 </Callout>
 
 ---
 
-## Como configurar o domínio
+## Passo a passo
 
 <Steps>
-  <Step title="Defina os dados do domínio" title-type="p">
-    Na tela de configuração, preencha:
 
-    | Campo                  | Descrição                                                            | Exemplo             |
-    | ---------------------- | -------------------------------------------------------------------- | ------------------- |
-    | **Endereço de e-mail** | Parte antes do `@`                                                   | `pesquisas`         |
-    | **Subdomínio**         | Subdomínio do seu domínio (não aceitamos apenas o domínio principal) | `pesquisa`          |
-    | **Domínio**            | Endereço completo do domínio da empresa                              | `suaempresa.com.br` |
-    | **DKIM** (opcional)    | Identificador de até 3 caracteres para personalizar o DKIM           | `amp`, `001`        |
+<Step title="Preencha os dados do domínio">
 
-    Seguindo os exemplos acima, o e-mail final de disparo seria: `pesquisas@pesquisa.suaempresa.com.br`
+Acesse **Configurações (⚙️) → Domínio Customizado** e preencha os campos:
 
-    <Callout kind="tip" collapsed="false">
-      O campo **DKIM** não é obrigatório — se deixado em branco, o sistema gera um DKIM automaticamente. Só personalize se houver necessidade técnica específica.
-    </Callout>
-  </Step>
+| Campo | O que é | Exemplo |
+|---|---|---|
+| **Endereço de e-mail** | O nome que aparece antes do @ | `pesquisas` |
+| **Subdomínio** | Uma "pasta" dentro do seu domínio, usada para separar os e-mails de pesquisa | `pesquisa` |
+| **Domínio** | O endereço do site da sua empresa | `suaempresa.com.br` |
+| **DKIM** *(opcional)* | Um código de identificação técnico — deixe em branco se não souber o que é | `amp` ou `001` |
 
-  <Step title="Gere os registros DNS" title-type="p">
-    Após preencher os dados e salvar, a plataforma gerará os **registros DNS** necessários para configuração no seu provedor de domínio. Esses registros precisam ser inseridos pelo time de TI, desenvolvimento ou infraestrutura da sua empresa.
-  </Step>
+Com os exemplos acima, o e-mail final ficaria assim: **pesquisas@pesquisa.suaempresa.com.br**
 
-  <Step title="Configure os registros DNS no provedor" title-type="p">
-    Compartilhe os registros DNS gerados com o responsável técnico da sua empresa para que ele os configure no provedor de domínio (ex: Registro.br, Cloudflare, GoDaddy).
+<Callout kind="tip">
+  **Não sabe o que colocar no subdomínio?** Use `pesquisa` ou `nps` — são os mais comuns. O importante é não deixar igual ao domínio principal (`suaempresa.com.br` sem nada antes não é aceito).
+</Callout>
 
-    <Callout kind="danger" collapsed="false">
-      Os registros DNS **não devem ser alterados ou removidos** enquanto o domínio estiver ativo na Amplifique.me. Qualquer alteração pode danificar a reputação do domínio da sua empresa e dos IPs de envio da plataforma. Se precisar desativar o domínio, entre em contato com o suporte imediatamente.
-    </Callout>
-  </Step>
+</Step>
 
-  <Step title="Aguarde a validação e verifique os status" title-type="p">
-    Na tela de configuração, aguarde todos os registros aparecerem com status **OK**. Isso pode levar algumas horas dependendo do provedor de domínio.
+<Step title="Salve e copie os registros gerados">
 
-    Quando todos estiverem OK, a plataforma já está habilitada para enviar com o domínio customizado.
-  </Step>
+Após salvar, a plataforma vai gerar uma lista de **registros DNS** — são instruções técnicas que precisam ser inseridas no sistema onde o domínio da sua empresa está registrado (chamado de "provedor de domínio").
 
-  <Step title="Teste a entregabilidade" title-type="p">
-    Após todos os registros validados, recomendamos um teste adicional com o [Mail Tester](https://www.mail-tester.com/):
+<Callout kind="info">
+  **O que é um provedor de domínio?** É o serviço onde o domínio da sua empresa foi comprado e configurado. Os mais comuns são Registro.br, GoDaddy e Cloudflare. Se não souber qual é o da sua empresa, pergunte ao time de TI.
+</Callout>
 
-    1. Acesse o Mail Tester e copie o endereço de e-mail gerado pelo site
+Copie ou exporte esses registros — você vai precisar enviá-los para o responsável técnico no próximo passo.
 
-    2. Crie um contato na Amplifique.me com esse endereço
+</Step>
 
-    3. Envie uma pesquisa para esse contato
+<Step title="Peça ao time de TI para inserir os registros">
 
-    4. Volte ao Mail Tester e verifique a pontuação
+Encaminhe os registros DNS gerados para o time de TI, desenvolvimento ou infraestrutura da sua empresa. Eles vão inserir essas informações no painel do provedor de domínio.
 
-    <Callout kind="tip" collapsed="false">
-      A pontuação ideal é **10/10**. Se a nota for menor, verifique os registros DNS com o time de TI ou entre em contato com o suporte da Amplifique.me para orientação.
-    </Callout>
+**Você não precisa entender os detalhes técnicos — só precisa repassar os registros exatamente como foram gerados.**
 
-    <Callout kind="success" collapsed="false">
-      Domínio configurado e validado! A partir de agora, todos os disparos usarão o domínio da sua empresa como remetente.
-    </Callout>
-  </Step>
+<Callout kind="danger">
+  ⚠️ **Atenção para o time de TI:** os registros DNS **não podem ser alterados ou removidos** enquanto o domínio estiver ativo na Amplifique.me. Qualquer modificação pode prejudicar a entregabilidade dos e-mails e afetar a reputação do domínio da empresa. Se precisar desativar o domínio, entre em contato com o suporte da Amplifique.me **antes** de fazer qualquer alteração.
+</Callout>
+
+</Step>
+
+<Step title="Aguarde a confirmação na tela">
+
+Depois que o time de TI inserir os registros, volte à tela de configuração e acompanhe o status de cada registro.
+
+Quando todos estiverem marcados como **OK**, o domínio está ativo e pronto para uso.
+
+<Callout kind="info">
+  Essa etapa pode levar de alguns minutos até 48 horas. É normal — o sistema de internet precisa de um tempo para reconhecer as novas configurações. Não precisa fazer nada, só aguardar e verificar periodicamente.
+</Callout>
+
+</Step>
+
+<Step title="Faça um teste de entregabilidade">
+
+Com tudo validado, recomendamos um teste rápido para confirmar que os e-mails vão chegar corretamente na caixa de entrada dos seus clientes:
+
+1. Acesse **[mail-tester.com](https://www.mail-tester.com)** e copie o endereço de e-mail gerado pelo site
+2. Na Amplifique.me, crie um contato com esse endereço
+3. Envie uma pesquisa para esse contato
+4. Volte ao Mail Tester e clique em **"Verificar minha pontuação"**
+
+<Callout kind="tip">
+  A pontuação ideal é **10/10**. Se for menor, algum registro DNS pode não ter sido inserido corretamente — fale com o time de TI ou abra um chamado com o suporte da Amplifique.me.
+</Callout>
+
+<Callout kind="success">
+  ✅ Pronto! A partir de agora, todas as pesquisas enviadas pela plataforma usarão o e-mail da sua empresa como remetente.
+</Callout>
+
+</Step>
+
 </Steps>
 
 ---
 
-## Domínio customizado por unidade
+## Configurando um domínio diferente por unidade
 
-Também é possível configurar domínios diferentes para unidades distintas da conta. O processo é o mesmo, mas a configuração deve ser feita em:
+Se a sua conta tem mais de uma unidade (filiais, regionais, marcas), é possível configurar um endereço de e-mail diferente para cada uma.
 
-`Configurações → Unidade → Domínio de E-mail Customizado`
+O processo é idêntico ao descrito acima, mas deve ser acessado em:
+**Configurações → Unidade → Domínio de E-mail Customizado**
 
 ---
 
-## Liberação de domínios para TI
+## Informações para o time de TI
 
-Para que a Amplifique.me funcione corretamente em empresas com políticas restritivas de TI, os seguintes domínios precisam estar **desbloqueados** nos servidores e filtros de e-mail da sua empresa:
+Se a sua empresa tem restrições de firewall ou filtros de e-mail, o time de TI pode precisar liberar os seguintes endereços para que a Amplifique.me funcione corretamente:
 
+**Domínios da plataforma:**
 `ampl.me` · `amplifique.me` · `url6939.amplifique.me` · `amplifiqueme.com` · `amplifiqueme.com.br` · `chat.amplifiqueme.com.br` · `*.amplifique.me` · `*.amplifiqueme.com.br` · `engager.whatsdrive.com.br`
 
-Ferramentas de comunicação e colaboração usadas pela plataforma: `cal.com` · `tldv.io` · `meet.google.com` · `amplifiqueme.notion.site` · `mixpanel.com`
+**Ferramentas de comunicação utilizadas:**
+`cal.com` · `tldv.io` · `meet.google.com` · `amplifiqueme.notion.site` · `mixpanel.com`
 
-<Callout kind="info" collapsed="false">
-  Todas as ferramentas listadas são utilizadas também por empresas da Fortune 500 (Uber, Amazon, Netflix, Oracle, entre outras) e passam por rigorosos critérios de segurança. Se o time de TI tiver dúvidas, o suporte da Amplifique.me pode ajudar a esclarecer.
+<Callout kind="info">
+  Todas essas ferramentas são utilizadas por grandes empresas globais e passam por critérios rigorosos de segurança. Se o time de TI tiver dúvidas, o suporte da Amplifique.me pode ajudar.
 </Callout>
 
 ---
@@ -105,24 +129,27 @@ Ferramentas de comunicação e colaboração usadas pela plataforma: `cal.com` �
 ## Perguntas frequentes
 
 <ExpandableGroup>
-  <Expandable title="Posso usar o domínio principal (sem subdomínio)?" default-open="false">
-    Não. Por questões de organização e segurança de reputação, a Amplifique.me exige o uso de um subdomínio. Não é possível configurar apenas `suaempresa.com.br` — precisa ser `pesquisa.suaempresa.com.br` ou similar.
-  </Expandable>
 
-  <Expandable title="Quanto tempo leva para os registros DNS propagarem?" default-open="false">
-    Depende do provedor de domínio. Em geral, de alguns minutos até 48 horas. Monitore o status na tela de configuração.
-  </Expandable>
+<Expandable title="Por que preciso de um subdomínio? Não posso usar só suaempresa.com.br?">
+  Não é possível usar apenas o domínio principal. A Amplifique.me exige um subdomínio (como `pesquisa.suaempresa.com.br`) para proteger a reputação do seu domínio principal — se algo der errado nos envios, apenas o subdomínio é afetado, não o domínio raiz da empresa.
+</Expandable>
 
-  <Expandable title="O domínio customizado melhora a entregabilidade dos e-mails?" default-open="false">
-    Sim. Usar o domínio da própria empresa como remetente melhora a reputação de envio e reduz a chance dos e-mails caírem em spam — especialmente se o domínio já tiver histórico de boas práticas de envio.
-  </Expandable>
+<Expandable title="Quanto tempo leva para ficar pronto?">
+  Depois que o time de TI inserir os registros, o processo de validação leva de alguns minutos até 48 horas. Você pode acompanhar o andamento diretamente na tela de configuração do domínio.
+</Expandable>
+
+<Expandable title="Os e-mails vão parar de cair no spam?">
+  Sim, na maioria dos casos. Usar o domínio da própria empresa melhora a reputação de envio e reduz bastante a chance de os e-mails serem classificados como spam — principalmente se o domínio já tiver histórico positivo de comunicações.
+</Expandable>
+
+<Expandable title="O que acontece se o time de TI remover os registros DNS depois de configurado?">
+  Os e-mails param de funcionar corretamente e a reputação do domínio pode ser afetada. Se precisar fazer qualquer alteração nos registros, entre em contato com o suporte da Amplifique.me antes — eles orientam sobre como proceder com segurança.
+</Expandable>
+
 </ExpandableGroup>
 
 ---
 
-## Próximo passo
-
-<Card title="Como enviar pesquisas em massa?" href="/pesquisas/enviar-em-massa" icon="send" cta="Ver artigo" horizontal="false">
-  Com o domínio configurado, seus disparos usarão o remetente personalizado automaticamente.
+<Card title="Como enviar pesquisas em massa?" icon="send" href="/pesquisas/como-enviar-em-massa" cta="Ver artigo">
+  Com o domínio configurado, seus disparos já usarão o remetente personalizado automaticamente.
 </Card>
-
