@@ -1,0 +1,74 @@
+---
+title: "Quais domínios liberar para o time de TI?"
+description: "Lista completa de domínios e endereços que precisam estar desbloqueados no firewall ou filtro de e-mail da sua empresa para que a Amplifique.me funcione corretamente."
+---
+
+## Visão geral
+
+Em algumas empresas, o time de TI bloqueia endereços externos por padrão por questões de segurança. Se a Amplifique.me não estiver funcionando corretamente — e-mails não chegando, plataforma inacessível ou integrações falhando — o problema pode ser um bloqueio de firewall ou filtro de e-mail.
+
+<Callout kind="info">
+  Este artigo é voltado para o **time de TI ou infraestrutura** da sua empresa. Se você é gestor ou analista, basta encaminhar este link para o responsável técnico.
+</Callout>
+
+---
+
+## Domínios que precisam estar liberados
+
+### Plataforma Amplifique.me
+
+| Domínio | Finalidade |
+|---|---|
+| `ampl.me` | Links curtos usados nos disparos de pesquisa |
+| `amplifique.me` | Plataforma principal |
+| `url6939.amplifique.me` | Rastreamento de e-mails enviados |
+| `amplifiqueme.com` | Domínio institucional |
+| `amplifiqueme.com.br` | Domínio institucional (Brasil) |
+| `chat.amplifiqueme.com.br` | Canal de suporte via chat |
+| `*.amplifique.me` | Subdomínios da plataforma |
+| `*.amplifiqueme.com.br` | Subdomínios da plataforma (Brasil) |
+| `engager.whatsdrive.com.br` | Envios via WhatsApp |
+
+### Ferramentas de comunicação e colaboração
+
+| Domínio | Finalidade |
+|---|---|
+| `cal.com` | Agendamento de reuniões com o time Amplifique.me |
+| `tldv.io` | Gravação e transcrição de reuniões |
+| `meet.google.com` | Videoconferências |
+| `amplifiqueme.notion.site` | Documentos e materiais compartilhados |
+| `mixpanel.com` | Análise de uso da plataforma |
+
+<Callout kind="tip">
+  Todas as ferramentas listadas são utilizadas por grandes empresas globais — incluindo Fortune 500 como Uber, Amazon e Netflix — e passam por critérios rigorosos de segurança e conformidade. Dúvidas sobre alguma delas? O suporte da Amplifique.me pode ajudar a esclarecer.
+</Callout>
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Preciso liberar todos os domínios ou só alguns?">
+  Depende do que sua empresa usa. Para o funcionamento básico da plataforma e envio de pesquisas por e-mail, libere todos os domínios da seção "Plataforma Amplifique.me". Os domínios de ferramentas de comunicação são necessários para o relacionamento com o time da Amplifique.me (suporte, reuniões, onboarding).
+</Expandable>
+
+<Expandable title="O que significa o asterisco (*) nos domínios?">
+  O `*` é um curinga — significa "qualquer subdomínio". Por exemplo, `*.amplifique.me` cobre `app.amplifique.me`, `api.amplifique.me` e qualquer outro subdomínio da plataforma. Liberar o curinga evita que novos subdomínios sejam bloqueados no futuro sem necessidade de reconfiguração.
+</Expandable>
+
+<Expandable title="Os e-mails de pesquisa estão caindo no spam. Isso é problema de bloqueio?">
+  Não necessariamente. Spam é diferente de bloqueio. Se os e-mails chegam mas vão para spam, o problema provavelmente é de configuração de domínio customizado — veja o artigo sobre como configurar domínio de e-mail. Se os e-mails não chegam de forma alguma, aí pode ser um bloqueio de firewall ou filtro.
+</Expandable>
+
+<Expandable title="Como saber se o bloqueio foi o que causou o problema?">
+  Peça ao time de TI para verificar os logs do firewall e do filtro de e-mail buscando pelos domínios listados acima. Se aparecerem como bloqueados ou rejeitados, a liberação resolve. Se tiver dúvidas, entre em contato com o suporte da Amplifique.me — podemos ajudar a identificar a causa.
+</Expandable>
+
+</ExpandableGroup>
+
+---
+
+<Card title="Como configurar domínio customizado de e-mail?" icon="mail" href="/configuracoes/dominio-customizado-email" cta="Ver artigo">
+  Se o objetivo é enviar pesquisas usando o e-mail da sua empresa como remetente, veja o guia completo de configuração.
+</Card>

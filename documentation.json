@@ -261,6 +261,10 @@
             "group": "Técnicos e Devs",
             "pages": [
               {
+                "title": "Quais domínios liberar para o time de TI?",
+                "path": "quais-domnios-liberar-para-o-time-de-ti"
+              },
+              {
                 "title": "Como funcionam as integrações?",
                 "path": "como-funcionam-as-integraes"
               },
