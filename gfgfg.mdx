@@ -1,0 +1,178 @@
+---
+title: "Listar Respostas"
+description: "Retorna as respostas das pesquisas de uma unidade, com todos os dados preenchidos pelos contatos e filtros por data, pesquisa e status de conclusão."
+---
+
+## Visão geral
+
+Retorna as respostas das pesquisas de uma unidade. Cada registro inclui as respostas de todas as perguntas, os dados do contato, métricas de tempo e o AmpliScore.
+
+```
+POST https://api.amplifique.me/partners/cf/answers
+```
+
+<Callout kind="info">
+  Use o parâmetro `only_finalized=complete` para retornar apenas pesquisas totalmente respondidas. Respostas parciais (contato abriu mas não concluiu) são retornadas com `finalized: false`.
+</Callout>
+
+---
+
+## Autenticação
+
+```bash
+Authorization: YOUR_API_KEY
+```
+
+---
+
+## Parâmetros de query
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+|---|---|---|---|
+| `limit` | integer | Não | Quantidade de registros por página. Mín: `1`, Máx: `1000` |
+| `page` | integer | Não | Página a retornar. Começa em `0` |
+| `start` | date | Não | Data inicial (`dd/MM/yyyy`). Requer `end` |
+| `end` | date | Não | Data final (`dd/MM/yyyy`). Requer `start` |
+| `include_survey` | boolean | Não | Se `true`, retorna a estrutura completa da pesquisa junto de cada resposta |
+| `only_finalized` | string | Não | Filtra por status de conclusão: `complete`, `incomplete` ou `all` |
+| `survey` | string | Não | Filtra por pesquisa específica. Informe o ID da pesquisa. Ex: `67f578cccc4ab22df8543fcc` |
+
+---
+
+## Exemplo de requisição
+
+```bash
+curl -X POST "https://api.amplifique.me/partners/cf/answers?limit=1000&page=0&start=01/01/2025&end=31/01/2025&only_finalized=complete" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: YOUR_API_KEY"
+```
+
+---
+
+## Resposta — 200
+
+```json
+{
+  "data": [
+    {
+      "_id": "645e95240c1647609077969b",          // ID da resposta
+      "_survey": "60afce1ca9680b000eca2459",       // ID da pesquisa
+      "channel": 4,                                // Canal (ver tabela abaixo)
+      "answered": true,                            // Se foi respondida
+      "opened": true,                              // Se foi aberta
+      "opened_at": "2023-05-12T19:36:04.367Z",
+      "finalized": true,                           // Se foi finalizada (submetida)
+      "deleted": false,
+      "anonymized": false,
+      "resolved": false,                           // Se foi marcada como resolvida
+      "attempts": 1,
+      "_customer": "645e95240c16476090779698",
+      "_business": "5b5765bec9498b0014883c0b",
+      "answers": [
+        {
+          "internal_name": "nps_1",               // Nome interno da pergunta
+          "answer": 10,                            // Resposta (tipo varia por pergunta)
+          "isMainMetric": true,                    // Se é a métrica principal
+          "type": "nps",                           // Tipo da pergunta
+          "_id": "645e9557fdfa5a0ffd07289e"
+        },
+        { "internal_name": "csat_atendimento", "answer": 4, "isMainMetric": false, "type": "csat", "_id": "..." },
+        { "internal_name": "ces_adicionar_usuario", "answer": 7, "isMainMetric": false, "type": "ces", "_id": "..." },
+        { "internal_name": "text_4", "answer": "Gostei muito do atendimento", "isMainMetric": false, "type": "text", "_id": "..." },
+        { "internal_name": "thumbs_teste", "answer": "up", "isMainMetric": false, "type": "thumbs", "_id": "..." },
+        { "internal_name": "likert_teste", "answer": 10, "isMainMetric": false, "type": "likert", "_id": "..." },
+        { "internal_name": "multiple_elogios", "answer": ["agilidade", "qualidade da solução"], "isMainMetric": false, "type": "multiple", "_id": "..." },
+        { "internal_name": "unique_ponto_positivo", "answer": "agilidade", "isMainMetric": false, "type": "unique", "_id": "..." },
+        { "internal_name": "select_negativo", "answer": "erros", "isMainMetric": false, "type": "select", "_id": "..." },
+        { "internal_name": "matriz_geral", "answer": { "atendimento": "Bom", "solucao": "Regular" }, "isMainMetric": false, "type": "matrix", "_id": "..." }
+      ],
+      "created_at": "2023-05-12T19:36:04.368Z",
+      "answered_at": "2023-05-12T19:36:55.614Z",
+      "finalized_at": "2023-05-12T19:36:55.625Z",
+      "time_to_answer": 50.757,                   // Duração da pesquisa em segundos
+      "score": 100,                                // AmpliScore
+      "customer": {
+        "name": "João da Silva",
+        "email": "joao@example.com",
+        "tel": "+5542999999999",
+        "custom_fields": {}
+      },
+      "custom_fields": {},
+      "notes": [],
+      "deleted_by": {}
+    }
+  ],
+  "total": 123,   // Total de registros
+  "pages": 10,    // Total de páginas
+  "page": 0       // Página atual
+}
+```
+
+---
+
+## Tipos de resposta por pergunta
+
+O campo `answer` dentro de `answers` varia conforme o `type` da pergunta:
+
+| Tipo (`type`) | Formato do `answer` | Exemplo |
+|---|---|---|
+| `nps` | integer (0–10) | `10` |
+| `csat` | integer (1–5) | `4` |
+| `ces` | integer (1–7) | `7` |
+| `thumbs` | string (`up` ou `down`) | `"up"` |
+| `likert` | integer | `5` |
+| `text` | string | `"Gostei muito"` |
+| `unique` | string (valor da opção) | `"agilidade"` |
+| `multiple` | array de strings | `["agilidade", "qualidade"]` |
+| `select` | string (valor da opção) | `"erros"` |
+| `matrix` | object (coluna → valor) | `{ "atendimento": "Bom" }` |
+
+### Tabela de canais
+
+| Valor | Canal |
+|---|---|
+| `0` | SMS |
+| `1` | E-mail |
+| `2` | WhatsApp (Twilio) |
+| `3` | Link / QR Code |
+| `4` | InApp |
+| `6` | WhatsApp API Oficial |
+
+---
+
+## Erros comuns
+
+| Código | Causa | O que fazer |
+|---|---|---|
+| `401` | API Key ausente ou inválida | Verifique o header `Authorization` |
+| `400` | Parâmetros de data inválidos ou incompletos | Verifique se `start`+`end` foram enviados em par |
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Como filtrar apenas respostas de uma pesquisa específica?">
+    Use o parâmetro `survey` com o ID da pesquisa. Você encontra o ID da pesquisa na URL ao abrir a pesquisa na plataforma, ou no campo `_survey` das respostas já retornadas.
+  </Expandable>
+
+  <Expandable title="Qual a diferença entre answered, finalized e opened?">
+    `opened: true` significa que o contato acessou o link da pesquisa. `answered: true` significa que respondeu ao menos uma pergunta. `finalized: true` significa que chegou ao final e submeteu a pesquisa. Para análise de dados, use `finalized: true` como critério principal.
+  </Expandable>
+
+  <Expandable title="O que é o AmpliScore (campo score)?">
+    O AmpliScore é uma métrica calculada pela Amplifique.me que consolida as respostas de múltiplas perguntas em um único índice de 0 a 100. Quanto maior, melhor a avaliação geral do contato.
+  </Expandable>
+
+  <Expandable title="Como paginar corretamente para exportar todos os dados?">
+    Faça a primeira requisição com `page=0` e `limit=1000`. Use o campo `pages` da resposta para saber o total de páginas e itere incrementando `page` até cobrir todas. O campo `total` informa o número total de registros disponíveis.
+  </Expandable>
+</ExpandableGroup>
+
+---
+
+## Próximo passo
+
+<Card title="Autenticação" icon="lucide-key" href="/api" cta="Ver documentação">
+  Revise como gerar e usar sua API Key corretamente nas requisições.
+</Card>
