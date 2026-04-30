@@ -1,0 +1,173 @@
+---
+title: "Como integrar dados da Amplifique.me com um BI?"
+description: "Entenda as duas formas de levar respostas de pesquisas para seu sistema de BI: via Webhook (dados enviados automaticamente pela plataforma) ou via API (consulta periódica por data)."
+---
+
+## Visão geral
+
+Existem duas formas de integrar os dados de respostas da Amplifique.me com um sistema externo, como um BI (Business Intelligence). A escolha depende de como você quer receber as informações: **de forma automática e em tempo real** (Webhook) ou **de forma programada e sob demanda** (API).
+
+<Columns cols={2}>
+  <Card title="Webhook" icon="lucide-webhook" href="#webhook-receber-respostas-em-tempo-real">
+    A plataforma envia os dados automaticamente para o seu sistema a cada nova resposta.
+  </Card>
+  <Card title="API" icon="lucide-database" href="#api-buscar-respostas-periodicamente">
+    O seu sistema consulta a API da Amplifique.me de tempos em tempos para buscar as respostas.
+  </Card>
+</Columns>
+
+---
+
+## Webhook — Receber respostas em tempo real
+
+No modelo de webhook, **a Amplifique.me envia ativamente os dados para o seu sistema** sempre que uma nova resposta for registrada. Você não precisa fazer nenhuma consulta — basta ter um endpoint no seu servidor preparado para receber e processar o payload.
+
+**Como funciona:**
+
+1. Você cria um endpoint no seu servidor que aceita requisições `POST`
+2. Registra a URL desse endpoint nas configurações de Webhook da Amplifique.me
+3. A partir daí, toda vez que uma pesquisa for respondida, a plataforma envia automaticamente os dados para o seu endpoint
+4. Seu sistema recebe, processa e salva as respostas no banco do BI
+
+**Quando usar:**
+- Você quer os dados no BI imediatamente após cada resposta
+- Seu sistema consegue manter um endpoint sempre disponível para receber requisições
+
+<Callout kind="tip">
+  O webhook é a abordagem mais simples para manter o BI atualizado em tempo real, sem necessidade de agendamentos ou consultas periódicas.
+</Callout>
+
+**Payload recebido no seu endpoint:**
+
+```json
+{
+  "event": {
+    "event_type": "cf_response",
+    "customer": {
+      "name": "Nome do Respondente",
+      "email": "email@respondente.com",
+      "phone": "+5542999999999"
+    },
+    "cf_response": {
+      "_id": "AAAAAAAAAAAAAAAAAAAAAA",
+      "_survey": "AAAAAAAAAAAAAAAAAAAAAA",
+      "channel": "E-mail",
+      "finalized_at": "2024-01-15T14:30:00.000Z",
+      "responses": [
+        {
+          "internal_name": "nps_1",
+          "type": "nps",
+          "answer": "9"
+        }
+      ]
+    }
+  }
+}
+```
+
+Consulte a documentação completa do payload em [Webhook: Nova Resposta](/webhook-cf-response).
+
+---
+
+## API — Buscar respostas periodicamente
+
+No modelo de API, **o seu sistema faz consultas periódicas à Amplifique.me** para buscar as respostas de um determinado período. Você agenda essa consulta (por exemplo, diariamente ou a cada hora) e salva os dados retornados no banco do BI.
+
+**Como funciona:**
+
+1. Você agenda uma rotina no seu sistema (ex: todo dia à meia-noite)
+2. A rotina chama o endpoint **Listar Respostas** passando o intervalo de datas desejado
+3. A API retorna todas as respostas daquele período
+4. Seu sistema salva os dados no banco do BI
+
+**Quando usar:**
+- Você prefere processar os dados em lote em horários específicos
+- Seu sistema não consegue manter um endpoint receptor disponível 24h
+- Você precisa fazer uma importação histórica de um período passado
+
+<Callout kind="tip">
+  Use os parâmetros `start` e `end` para buscar apenas as respostas do intervalo desejado. Combinado com paginação (`page` e `limit`), você consegue processar grandes volumes sem sobrecarregar a requisição.
+</Callout>
+
+**Exemplo de requisição — respostas de um dia específico:**
+
+```bash
+curl -X POST "https://api.amplifique.me/partners/cf/answers?start=15/01/2024&end=15/01/2024&only_finalized=complete&limit=1000&page=0" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: YOUR_API_KEY"
+```
+
+**Exemplo de resposta:**
+
+```json
+{
+  "data": [
+    {
+      "_id": "645e95240c1647609077969b",
+      "_survey": "60afce1ca9680b000eca2459",
+      "channel": 1,
+      "finalized": true,
+      "finalized_at": "2024-01-15T19:36:55.625Z",
+      "answers": [
+        { "internal_name": "nps_1", "type": "nps", "answer": 10 }
+      ],
+      "customer": {
+        "name": "João da Silva",
+        "email": "joao@example.com"
+      }
+    }
+  ],
+  "total": 123,
+  "pages": 1,
+  "page": 0
+}
+```
+
+Consulte a documentação completa dos parâmetros em [Listar Respostas](/api-reference/listar-respostas).
+
+---
+
+## Comparativo entre as abordagens
+
+| | Webhook | API |
+|---|---|---|
+| **Quem inicia** | A Amplifique.me | O seu sistema |
+| **Frequência** | A cada nova resposta (tempo real) | Definida por você (ex: diário, horário) |
+| **Implementação** | Endpoint receptor no seu servidor | Rotina de consulta agendada |
+| **Dados históricos** | Não (apenas novas respostas) | Sim (filtrando por datas passadas) |
+| **Ideal para** | Atualizações em tempo real | Processamento em lote ou importação histórica |
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Posso usar as duas abordagens ao mesmo tempo?">
+    Sim. Uma estratégia comum é usar o **webhook para respostas em tempo real** e a **API para fazer uma importação histórica** inicial dos dados anteriores à ativação do webhook.
+  </Expandable>
+
+  <Expandable title="O que acontece se meu endpoint de webhook estiver fora do ar?">
+    Se o seu endpoint não estiver disponível no momento do envio, a Amplifique.me pode não reenviar automaticamente. Para evitar perda de dados, mantenha seu endpoint com alta disponibilidade ou combine o webhook com uma consulta periódica via API como fallback.
+  </Expandable>
+
+  <Expandable title="Como importar dados históricos para o BI?">
+    Use o endpoint **Listar Respostas** com os parâmetros `start` e `end` definindo o período desejado. Para volumes grandes, use paginação: `limit=1000` e incremente `page` até cobrir todas as páginas. O campo `pages` na resposta indica o total de páginas disponíveis.
+  </Expandable>
+
+  <Expandable title="Preciso de um desenvolvedor para fazer essa integração?">
+    Sim. Ambas as abordagens requerem desenvolvimento no lado do seu sistema — seja para criar o endpoint receptor do webhook ou para criar a rotina de consulta à API. Compartilhe essa documentação com o time técnico responsável pela integração com o BI.
+  </Expandable>
+</ExpandableGroup>
+
+---
+
+## Documentação relacionada
+
+<Columns cols={2}>
+  <Card title="Webhook: Nova Resposta" icon="lucide-webhook" href="/webhook-cf-response" cta="Ver payload completo">
+    Estrutura completa do payload enviado a cada nova resposta.
+  </Card>
+  <Card title="Listar Respostas" icon="lucide-bar-chart-2" href="/api-reference/listar-respostas" cta="Ver endpoint">
+    Parâmetros de filtro, paginação e estrutura da resposta.
+  </Card>
+</Columns>
