@@ -116,6 +116,10 @@
             "group": "Pesquisas e Respostas",
             "pages": [
               {
+                "title": "Calculadora de Métricas",
+                "path": "calculadora-de-mtricas"
+              },
+              {
                 "title": "Como criar uma pesquisa?",
                 "path": "criar-pesquisa"
               },
@@ -295,6 +299,10 @@
             "icon": "help-circle",
             "expandable": false,
             "pages": [
+              {
+                "title": "avaliacoes online",
+                "path": "avaliacoes-online"
+              },
               {
                 "title": "gfgfdhb",
                 "path": "gfgfdhb"

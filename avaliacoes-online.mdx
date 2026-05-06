@@ -1,0 +1,206 @@
+---
+title: Como usar a API de Pesquisas e Respostas?
+description: >-
+  Entenda quando usar cada endpoint do grupo Pesquisas e Respostas — enviar
+  pesquisas via API, monitorar solicitações e extrair respostas para análise ou
+  integração com BI.
+---
+## Visão geral
+
+O grupo Pesquisas e Respostas concentra os três endpoints mais usados da API da Amplifique.me. Juntos, eles cobrem o ciclo completo de uma pesquisa: **disparar**, **monitorar** e **extrair resultados**.
+
+<Columns cols="3">
+  <Card title="Enviar Pesquisa" href="#enviar-pesquisa" icon="lucide-send" horizontal="false">
+    Dispare uma pesquisa para um contato específico a partir de um evento no seu sistema.
+  </Card>
+
+  <Card title="Listar Solicitações" href="#listar-solicitações" icon="lucide-list" horizontal="false">
+    Monitore o status de envio e abertura das pesquisas disparadas.
+  </Card>
+
+  <Card title="Listar Respostas" href="#listar-respostas" icon="lucide-bar-chart-2" horizontal="false">
+    Extraia as respostas preenchidas pelos contatos para análise ou BI.
+  </Card>
+</Columns>
+
+---
+
+## Enviar Pesquisa
+
+**Quando usar:** quando um evento no seu sistema deve disparar automaticamente uma pesquisa para um contato — sem precisar entrar na plataforma para fazer o envio manual.
+
+```bash
+POST https://api.amplifique.me/partners/cf
+```
+
+**Casos de uso típicos:**
+
+- CRM dispara NPS quando uma negociação é ganha
+
+- ERP dispara CSAT quando um pedido é faturado
+
+- Helpdesk dispara CES quando um ticket é encerrado
+
+- Sistema de hotelaria dispara NPS no checkout
+
+**Como funciona:** cada token de API já está vinculado a uma pesquisa e canal. Você só precisa enviar os dados do contato — a Amplifique.me cuida do disparo.
+
+```bash
+curl -X POST "https://api.amplifique.me/partners/cf" \
+  -H "Authorization: YOUR_API_KEY" \
+  -d '{
+    "name": "João da Silva",
+    "email": "joao@empresa.com",
+    "phone": "+5542999999999",
+    "transactionId": "PEDIDO-4521",
+    "custom_fields": { "filial": "Curitiba" }
+  }'
+```
+
+<Callout kind="tip" collapsed="false">
+  Use `transactionId` para rastrear qual evento originou cada pesquisa — útil para cruzar respostas com dados do seu sistema (ex: número do pedido, ID do ticket).
+</Callout>
+
+**Precisa retornar um link em vez de disparar?** Use `channel: "wa-link"` — a resposta incluirá uma URL curta que você pode embutir em e-mails transacionais, notificações ou mensagens do seu próprio sistema.
+
+```bash
+-d '{ "name": "João", "email": "joao@empresa.com", "channel": "wa-link" }'
+```
+
+```json
+{ "link": { "shortUrl": "https://ampl.me/aKTX9BfbY" } }
+```
+
+---
+
+## Listar Solicitações
+
+**Quando usar:** quando você precisa monitorar se as pesquisas estão sendo entregues e abertas — sem precisar acessar o painel da Amplifique.me.
+
+```bash
+POST https://api.amplifique.me/partners/cf/requests
+```
+
+**Casos de uso típicos:**
+
+- Dashboard interno de operações mostrando taxa de entrega e abertura por período
+
+- Auditoria de disparos: confirmar que todos os contatos de uma campanha receberam a pesquisa
+
+- Identificar pesquisas com erro de entrega (`source_status: ERROR`) para reenvio
+
+<Callout kind="info" collapsed="false">
+  **Solicitação ≠ Resposta.** Uma solicitação é criada quando a pesquisa é enviada. A resposta só existe se o contato preencheu. Use este endpoint para monitorar entrega; use Listar Respostas para analisar dados.
+</Callout>
+
+```bash
+# Solicitações do último mês com status de entrega
+curl -X POST "https://api.amplifique.me/partners/cf/requests?start=01/04/2024&end=30/04/2024&limit=1000&page=0" \
+  -H "Authorization: YOUR_API_KEY"
+```
+
+**O que monitorar na resposta:**
+
+| Campo                      | O que indica                                      |
+| -------------------------- | ------------------------------------------------- |
+| `opened: true`             | O contato abriu o link da pesquisa                |
+| `finalized: true`          | O contato concluiu e submeteu a pesquisa          |
+| `source_status: DELIVERED` | Entrega confirmada pelo canal                     |
+| `source_status: ERROR`     | Falha no envio — contato pode precisar de reenvio |
+
+---
+
+## Listar Respostas
+
+**Quando usar:** quando você precisa extrair os dados coletados pelas pesquisas para análise, relatórios ou integração com um BI.
+
+```bash
+POST https://api.amplifique.me/partners/cf/answers
+```
+
+**Casos de uso típicos:**
+
+- Alimentar um BI com respostas de NPS/CSAT filtradas por período
+
+- Exportar respostas de uma pesquisa específica para um relatório
+
+- Processar respostas abertas para análise de sentimento em outro sistema
+
+- Importação histórica inicial ao migrar para um novo BI
+
+```bash
+# Respostas finalizadas de abril, pesquisa específica
+curl -X POST "https://api.amplifique.me/partners/cf/answers?start=01/04/2024&end=30/04/2024&only_finalized=complete&survey=ID_DA_PESQUISA&limit=1000&page=0" \
+  -H "Authorization: YOUR_API_KEY"
+```
+
+<Callout kind="tip" collapsed="false">
+  Use `only_finalized=complete` para retornar apenas respostas concluídas — descarta acessos parciais onde o contato abriu mas não respondeu.
+</Callout>
+
+**Para volumes grandes, use paginação:**
+
+```
+1ª chamada: page=0 → verifique o campo "pages" na resposta
+2ª chamada: page=1
+...
+Nª chamada: page=N-1
+```
+
+---
+
+## Como escolher entre API e Webhook para receber respostas
+
+Se o objetivo é levar respostas para um BI ou sistema externo, você tem duas opções complementares:
+
+|                      | Listar Respostas (API)           | Webhook cf\_response             |
+| -------------------- | -------------------------------- | -------------------------------- |
+| **Quem inicia**      | Seu sistema                      | A Amplifique.me                  |
+| **Quando chega**     | Quando você consulta             | Imediatamente após cada resposta |
+| **Ideal para**       | Processamento em lote, histórico | Tempo real, alertas, automações  |
+| **Dados históricos** | ✅ Sim                            | ❌ Não (apenas novas respostas)   |
+
+A estratégia mais robusta é combinar os dois: **webhook para tempo real** + **consulta periódica via API como fallback** para garantir que nenhuma resposta seja perdida caso o endpoint receptor esteja fora do ar.
+
+Veja o guia completo em [Como integrar dados com um BI](/api-integracao-bi).
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Preciso de um token diferente para cada pesquisa que quero enviar?" default-open="false">
+    Sim. Cada token de API é vinculado a uma pesquisa e canal específicos. Se você dispara NPS por e-mail e CSAT por WhatsApp, precisa de dois tokens — um para cada combinação.
+  </Expandable>
+
+  <Expandable title="O que acontece se eu enviar uma pesquisa para um contato que já existe na base?" default-open="false">
+    O sistema atualiza os dados do contato existente com os enviados na requisição — sem duplicar o cadastro. A pesquisa é disparada normalmente.
+  </Expandable>
+
+  <Expandable title="Como filtro as respostas de uma pesquisa específica em Listar Respostas?" default-open="false">
+    Use o parâmetro `survey` com o ID da pesquisa. Você encontra o ID na URL ao abrir a pesquisa na plataforma, ou no campo `_survey` das respostas já retornadas.
+  </Expandable>
+
+  <Expandable title="Qual a diferença entre finalized e answered em Listar Respostas?" default-open="false">
+    `answered: true` significa que o contato respondeu ao menos uma pergunta. `finalized: true` significa que chegou ao final e submeteu a pesquisa. Para análise de dados confiável, use sempre `only_finalized=complete`.
+  </Expandable>
+</ExpandableGroup>
+
+---
+
+## Documentação relacionada
+
+<Columns cols="3">
+  <Card title="Enviar Pesquisa" href="/enviar-pesquisa" icon="lucide-send" cta="Ver endpoint" horizontal="false">
+    Parâmetros completos e exemplos de resposta.
+  </Card>
+
+  <Card title="Listar Solicitações" href="/api-reference/listar-solicitacoes" icon="lucide-list" cta="Ver endpoint" horizontal="false">
+    Filtros por data, canal e status de entrega.
+  </Card>
+
+  <Card title="Listar Respostas" href="/api-reference/listar-respostas" icon="lucide-bar-chart-2" cta="Ver endpoint" horizontal="false">
+    Filtros, paginação e estrutura completa da resposta.
+  </Card>
+</Columns>
+
