@@ -289,6 +289,14 @@
                 "path": "documentao-da-api-amplifiqueme"
               },
               {
+                "title": "Como integrar dados da Amplifique.me com um BI?",
+                "path": "Como integrar dados da Amplifique.me com um BI"
+              },
+              {
+                "title": "Como usar a API de Pesquisas e Respostas?",
+                "path": "Como usar a API de Pesquisas e Respostas"
+              },
+              {
                 "title": "Implementação técnica de pesquisas In-App",
                 "path": "implementao-tcnica-de-pesquisas-in-app"
               }
@@ -299,14 +307,6 @@
             "icon": "help-circle",
             "expandable": false,
             "pages": [
-              {
-                "title": "avaliacoes online",
-                "path": "avaliacoes-online"
-              },
-              {
-                "title": "gfgfdhb",
-                "path": "gfgfdhb"
-              },
               {
                 "title": "FAQ técnico: In-App e sincronização de dados",
                 "path": "faq-tcnico-in-app-e-sincronizao-de-dados"
