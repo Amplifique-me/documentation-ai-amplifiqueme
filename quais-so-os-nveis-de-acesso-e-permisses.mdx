@@ -1,87 +1,241 @@
 ---
 title: "Quais são os níveis de acesso e permissões?"
 description: "Entenda o que cada nível de usuário pode fazer na Amplifique.me: Proprietário, Administrador, Analista, Operador, Apenas Leitura e Apenas Painel."
+slug: quais-so-os-nveis-de-acesso-e-permisses
 ---
 
 ## Visão geral
 
-Na Amplifique.me, cada usuário tem um nível de acesso que define o que ele pode visualizar e executar na plataforma. Os níveis são atribuídos por usuário e se aplicam a todas as unidades às quais ele tem acesso.
+A Amplifique.me possui 6 níveis de usuário. Cada nível define o que a pessoa pode visualizar e executar dentro da plataforma. Atribuir o nível correto garante que cada pessoa acesse apenas o que precisa — protegendo dados sensíveis e evitando alterações indevidas.
+
+<Columns cols={3}>
+  <Card title="Proprietário" icon="lucide-shield" horizontal="false">
+    Acesso total. Único nível com acesso ao Saldo do Mês e gestão completa de usuários.
+  </Card>
+  <Card title="Administrador" icon="lucide-shield-check" horizontal="false">
+    Acesso operacional completo. Não acessa Saldo do Mês nem gerencia usuários.
+  </Card>
+  <Card title="Analista" icon="lucide-bar-chart-2" horizontal="false">
+    Foco em análise, pesquisas e respostas. Não acessa configurações da conta.
+  </Card>
+  <Card title="Operador" icon="lucide-send" horizontal="false">
+    Envia pesquisas, gerencia contatos e importa. Não acessa relatórios nem painéis de edição.
+  </Card>
+  <Card title="Apenas Leitura" icon="lucide-eye" horizontal="false">
+    Visualiza painéis, respostas, análises e Insights. Não executa ações nem acessa Contatos.
+  </Card>
+  <Card title="Apenas Painel" icon="lucide-layout-dashboard" horizontal="false">
+    Acesso restrito à tela de Painéis e Fechamento de Loop. Ideal para visualização executiva.
+  </Card>
+</Columns>
+
+---
+
+## Quando usar cada nível
+
+| Perfil da pessoa | Nível recomendado |
+|---|---|
+| Dono da conta, gestor geral com controle financeiro | Proprietário |
+| Gerente de operações, CS interno, gestor de CX | Administrador |
+| Analista de CX, analista de dados, coordenador de pesquisa | Analista |
+| Atendente, vendedor, operador de PDV | Operador |
+| Diretor, executivo que acompanha resultados sem editar | Apenas Leitura |
+| Stakeholder externo, visualização pontual de painel | Apenas Painel |
+
+---
+
+## Comparativo por área
+
+### Painéis
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar tela de Painéis | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Criar Painel | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Gerenciar Painéis | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Mover / Renomear / Remover / Editar / Clonar Card | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Criar Card | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Ver Respostas de um Card | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Filtrar Resultados de um Card | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Exportar Respostas / Solicitações de um Card | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Clicar em Palavras na Nuvem de Palavras | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Alternar Entre Painéis | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Aplicar Filtros | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Compartilhar o Painel | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### Contatos
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar tela de Contatos | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Filtrar / Acessar um Contato | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Criar / Editar Contato | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Excluir Contato | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Enviar Pesquisa | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Solicitar Avaliação Online | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Adicionar/Remover Etiqueta | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Adicionar Comentário | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Ativar/Desativar Comunicações | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Editar Dados do Contato | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Criar / Editar / Excluir Empresa | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Alterar Empresa do Contato | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+
+### Reputação Online
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar Avaliações | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Filtrar Avaliações | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Responder / Gerar resposta com IA / Excluir resposta | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Acessar Perfis e Configurações | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Editar / Conectar / Excluir Perfil | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Configurar textos, logo, tags e Insights | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### Pesquisas e Respostas
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar tela de Respostas | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Filtrar Respostas | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Anonimizar Respostas | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Mover para Lixeira / Excluir permanentemente | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Exportar Respostas | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Enviar por e-mail / Encaminhar / Criar Ticket | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Enviar WhatsApp / Ligar | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Abrir Lixeira | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Restaurar Resposta da Lixeira | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Disparar Webhook | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Marcar como Lida/Não Lida | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Acessar tela de Pesquisas | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Criar / Editar / Excluir / Clonar Pesquisas | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Acessar tela de Solicitações | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Filtrar / Exportar Solicitações | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Excluir Solicitação | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### Análise e Resultados
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar Visão Geral | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Filtrar Dados (Visão Geral) | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Exportar Dados (Visão Geral) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Acessar Resultados | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Alternar Entre Pesquisas / Filtrar Dados | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Adicionar / Gerenciar Grupos de Pesquisa | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Exportar Dados (Resultados) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Acessar Respostas | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Acessar Detalhamento | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Criar / Salvar Visualizações | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Filtrar Dados (Detalhamento) | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Exportar Dados (Detalhamento) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### Amplifique.me Insights
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar Visão Geral / Filtrar Dados | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Acessar Resumos / Filtrar Dados | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Copiar / Renomear / Exportar / Enviar Resumo | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Arquivar/Desarquivar Resumo | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Criar Resumo | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Gerenciar Resumos Recorrentes | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+
+### Fechamento de Loop
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Acessar Visão Geral e Fluxos | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 <Callout kind="info">
-  Apenas o **Proprietário** pode gerenciar outros usuários — convidar, editar permissões ou excluir. Essa capacidade não pode ser delegada a Administradores.
+  O Fechamento de Loop possui níveis próprios, independentes dos níveis de usuário listados aqui. Todos os níveis têm acesso às telas, mas as ações disponíveis dentro do módulo dependem do nível de Fechamento de Loop atribuído a cada usuário.
 </Callout>
 
----
+### Configurações
 
-## Tabela de permissões por nível
-
-| Nível | Gerenciar usuários | Criar/editar pesquisas | Enviar pesquisas | Responder avaliações | Exportar dados | Visualizar dashboards |
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Proprietário** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Administrador** | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Analista** | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ |
-| **Operador** | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ |
-| **Apenas Leitura** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Apenas Painel** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (só painéis) |
+| Meu Perfil (editar dados pessoais) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Receber Notificações de Saldo | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Receber Relatório Semanal | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Financeiro (acessar e atualizar dados) | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Usuários (convidar, editar, excluir) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Campos Customizados | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Nuvem de Palavras | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Fechamento de Loop (modelos e categorias) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Tags | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| SMS Internacional / Nacional | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Domínio Customizado (Organização e Unidade) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| WhatsApp (Meta) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Dados da Unidade | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| In-App | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Limite de Uso | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Saldo Padrão (quando habilitado) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Saldo do Mês | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### Importações, Exportações e Outros
+
+| Ação | Proprietário | Administrador | Analista | Operador | Apenas Leitura | Apenas Painel |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Integrações (acessar e configurar) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Importar Contatos | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Importar Respostas | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Exportações | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Fila de Envios | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Encurtador de Links | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Alternar Entre Unidades | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Central de Notificações | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Ajuda, Chat, Academy, Central de Ajuda | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ---
 
-## Detalhamento por nível
+## Limitação conhecida: Apenas Leitura e painéis bloqueados
 
-### 👑 Proprietário
-Acesso total à conta. É o único nível que pode gerenciar outros usuários (adicionar, editar permissões, excluir). Tem todos os direitos administrativos da conta.
+<Callout kind="alert">
+  Bloquear um painel para usuários com nível **Apenas Leitura** não impede que eles vejam os dados daquele painel. Isso ocorre porque a tela de **Análise e Resultados** não é afetada pelo bloqueio de painéis — e o Apenas Leitura tem acesso a ela.
 
-### 🔧 Administrador
-Acesso completo à plataforma, **exceto** gerenciar usuários. Pode criar, editar e excluir qualquer conteúdo, configurar pesquisas e visualizar todos os dados.
+  Na prática, é como trancar a porta da frente mas deixar as janelas abertas: o usuário pode acessar os mesmos dados por outro caminho.
+</Callout>
 
-### 📊 Analista
-Acesso operacional. Pode criar e importar contatos, enviar pesquisas e solicitações de avaliação, visualizar dashboards e exportar dados.
-
-**Restrições:**
-- **Reputação Online:** não pode conectar, editar ou excluir plataformas de avaliação nem configurar mensagens de solicitação
-- **Experiência do Cliente:** não pode criar, editar, reiniciar ou excluir pesquisas, nem apagar respostas ou solicitações
-
-### ⚙️ Operador
-Foco em execução. Pode criar e importar contatos, enviar solicitações de avaliação e pesquisas, e visualizar dashboards.
-
-**Restrições:**
-- Não pode responder avaliações nem pesquisas
-- Não pode exportar dados
-
-### 👁️ Apenas Leitura
-Pode visualizar dashboards e dados, mas **não pode criar, editar ou interagir** com nenhum conteúdo da plataforma.
-
-### 📋 Apenas Painel
-O nível mais restrito. Acessa apenas os **painéis** da plataforma, sem acesso a qualquer outra área ou funcionalidade.
+Se o objetivo é restringir completamente o acesso a determinados dados, use o nível **Apenas Painel** — ele não acessa Análise e Resultados.
 
 ---
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Qual nível usar para alguém que só precisa ver os painéis?">
+    Use **Apenas Painel**. Esse nível acessa exclusivamente a tela de Painéis e Fechamento de Loop — não vê Respostas, Análise e Resultados, Contatos nem Configurações.
+  </Expandable>
 
-<Expandable title="Posso ter mais de um Proprietário na conta?">
-  Cada conta tem apenas um Proprietário. Se precisar transferir a propriedade da conta, entre em contato com o suporte da Amplifique.me.
-</Expandable>
+  <Expandable title="Qual nível usar para alguém que precisa ver respostas sem poder alterar nada?">
+    Use **Apenas Leitura**. É o único nível que permite visualizar respostas, análises, Insights e painéis sem executar ações. Atenção: esse nível acessa Análise e Resultados mesmo que painéis estejam bloqueados.
+  </Expandable>
 
-<Expandable title="Um Administrador pode criar pesquisas mas não pode convidar usuários?">
-  Correto. O Administrador tem acesso a todas as funcionalidades de produto (pesquisas, contatos, análises), mas a gestão de usuários é exclusiva do Proprietário.
-</Expandable>
+  <Expandable title="O Operador consegue ver as respostas das pesquisas?">
+    Não. O Operador foca em ações operacionais — enviar pesquisas, gerenciar contatos, importar contatos e acessar a Fila de Envios. Ele não acessa a tela de Respostas, Painéis (edição) nem Análise e Resultados.
+  </Expandable>
 
-<Expandable title="Posso alterar o nível de um usuário depois que ele já aceitou o convite?">
-  Sim. Acesse `Configurações → Usuários`, clique nos três pontos ao lado do usuário e selecione **Editar Usuário** para alterar o nível a qualquer momento.
-</Expandable>
+  <Expandable title="Qual a diferença entre Administrador e Analista?">
+    O Administrador tem acesso operacional mais amplo: gerencia configurações da conta (domínio, WhatsApp, In-App, tags), acessa financeiro e pode criar resumos recorrentes no Insights. O Analista não acessa configurações da conta nem gerencia usuários, mas tem acesso completo a análises, pesquisas e respostas.
+  </Expandable>
 
-<Expandable title="O nível de acesso ao Fechamento de Loop é separado desse nível geral?">
-  Sim. O Fechamento de Loop tem seu próprio sistema de permissões (Administrador, Analista, Agente) configurado separadamente em `Configurações → Usuários`. Um usuário pode ser Analista na plataforma geral e Administrador no Fechamento de Loop.
-</Expandable>
+  <Expandable title="Quem pode disparar Webhook manualmente em uma resposta?">
+    Apenas o **Proprietário**. Nenhum outro nível tem essa permissão.
+  </Expandable>
 
+  <Expandable title="O Proprietário é o único que acessa o Saldo do Mês?">
+    Sim. O acesso à tela de Saldo do Mês é exclusivo do Proprietário.
+  </Expandable>
+
+  <Expandable title="Posso ter mais de um Proprietário na conta?">
+    Sim. É possível ter múltiplos usuários com nível Proprietário. Recomenda-se limitar esse nível a pessoas com responsabilidade total sobre a conta.
+  </Expandable>
 </ExpandableGroup>
 
 ---
 
 ## Próximo passo
 
-<Card title="Como convidar e gerenciar usuários?" icon="user-plus" href="/configuracoes/usuarios" cta="Ver artigo">
-  Com os níveis definidos, saiba como convidar novos usuários e gerenciar convites pendentes.
+<Card title="Como convidar e gerenciar usuários?" icon="lucide-users" href="/como-convidar-e-gerenciar-usuarios" cta="Ver artigo">
+  Veja como adicionar usuários à conta, definir níveis e gerenciar acessos por unidade.
 </Card>
