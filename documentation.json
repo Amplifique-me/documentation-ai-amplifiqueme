@@ -228,6 +228,10 @@
             "group": "Configurações",
             "pages": [
               {
+                "title": "Limpar cache do navegador",
+                "path": "limparcachenavegador"
+              },
+              {
                 "title": "O que tem no módulo de Configurações?",
                 "path": "domnio-customizado"
               },
